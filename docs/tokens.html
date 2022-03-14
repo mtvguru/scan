@@ -1,0 +1,387 @@
+<!doctype html>
+<html>
+<meta charset="UTF-8">
+<!--
+0x93321165acc35263edd18bda7c2437f2a758f2ec		moonswap	masterchef
+0xabcdc91b5f8746a6e5298c6ba04c72e29ebd2460		kucoin		hotwallet
+0x4c659709750567bd505db6fab163c107bea9f161		moonswap	xmoon
+
+-->
+<head>
+<meta name="description" content="All Granaries - MTV.guru : Kompound Protocol">
+<meta name="keywords" content="Granary, Finance, Compound, Vault, Interest, Decentralized Finance, defi, yield farming, Guru Network, MultiVAC, MTV">
+<title>Token Explorer: mtvscan | MTV.guru</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="https://ftm.guru/crypto-icons/64.png"/>
+<style>
+
+*{
+scroll-behavior: smooth !important;
+}
+body {
+  background:#17082f;
+  color: white;
+  margin:auto;
+  font-family:helvetica nueve, helvetica, robotica, ubuntu, roboto, sans-serif;
+}
+.body{
+  margin: 8%
+}
+.topbar {
+  background: #6f42c1;
+  width: calc(100%-10px);
+  display:flex;
+  flex-wrap: wrap;
+  position:sticky;
+  top:0;
+  z-index: 1;
+  border-bottom: 8px ridge #17082f
+}
+.topbar a, details a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  font-weight: bolder;
+  margin: auto
+}
+.topbar a:first-child{font-size: 2em}
+h1{font-size: 3em}
+h2{}
+h1,h2,h3{color:#32fbe2;}
+
+.lowerbar{
+  font-size: 1.25em;
+  font-weight: bolder;
+}
+.lowerbar a{
+  font-size: 0.75em;
+  font-weight: lighter;
+  padding: 10px 10px 10px 0px;
+  color:#32fbe2;
+  text-decoration: none
+}
+.lowerbar img{width:24px;height:24px}
+.lowerbar .subimg{width:16px;height:16px;position: relative;right:9px;top:4px;margin-right:-11px}
+.hr1{
+  color: transparent;
+  border-top: 16px dotted #ea39b8;
+  max-width: 50%
+}
+.fore{color: gold !important;font-weight:400;font-size:1.337em}
+
+strike{color: pink;font-style: italic;font-weight: lighter;font-size:1.2em}
+ul{font-size:1.1em}
+ul i{font-size:0.85em;}
+
+td{font-family:mono;text-align:right;padding:4px 16px;min-width:max-content;font-size:1em;}
+td a{color: #fff;text-decoration:underline dotted #1ea;cursor: zoom-in}
+#pfd{font-size: 2.5em;font-weight: bold;}
+thead tr td{font-weight: bold;font-size: 1.2em;text-align: center;text-decoration:underline dotted gold;cursor: alias}
+.toggs{margin: 1%}
+details{font-size: 0.7em}
+td:first-child,td:nth-child(2), thead tr td{font-family:inherit !important}
+
+
+input,button{height:36px}
+#err {
+	color: #f23;
+	font-weight: bold;
+	text-shadow: 1px 1px 5px rgba(255,127,127,0.5);
+}
+@media(min-width:641px){
+  details{font-size: 1rem}
+  .card{width:40%;margin:4% auto}
+  .head2{display:block}
+  .partners{display: grid;grid-template-columns: 50% 50%}
+}</style>
+</head>
+<body>
+<div class="topbar">
+	<a href="">MTV.guru</a>
+	<a href="GRAIN/index.html">Kompound Protocol</a>
+	<a href="mtvscan/index.html" class="head2">MTVScan</a>
+	<a href="airdropper.html" class="head2">Airdrop Tool</a>
+	<a href="cv/index.html" class="head2">Verify Contract Source</a>
+	<div class="lowerbar" align="center">
+		<a target="_blank" href="https://fmc.guru"><img src="https://ftm.guru/crypto-icons/mtv.png"></a>
+		<a target="_blank" href="https://kcc.guru"><img src="https://ftm.guru/crypto-icons/kcc.png"></a>
+		<a target="_blank" href="https://ftm.guru"><img src="https://ftm.guru/crypto-icons/ftm.svg"></a>
+	</div>
+	<!--
+	<a href="">FMC.guru</a>
+	<a href="">Others</a>
+	<a href="">Kompound</a>
+	<a href="">T</a>
+	<a href="">T</a>
+	<a href="">D</a>
+	-->
+</div>
+<div class="body">
+<h1>Token Explorer</h1>
+<h3 class="fore">General token info & transactions</h3>
+<i>Address & from-to combo filters!</i><br><br>
+
+
+
+
+<br><br>
+How to use?
+<br><span style="font-size:0.8em">
+	Enter token address to know basic token info.<br>
+	<b>Optional fields (Filters)</b><br>
+	Holder's address: A specific user's transactions.<br>
+	Sender's address: Filter transactions by Sender.<br>
+	Receiver's address: Recipient-address filter.<br>
+
+</span>
+
+<br><br><br><br><br><br>
+
+<input id="tkad" placeholder="Token's address">
+<input id="hoad" placeholder="Holder's address">
+<input id="sead" placeholder="Sender's address">
+<input id="read" placeholder="Receiver's address">
+<button id="find" onclick="findtx()">Find</button>
+<br><br><span id="err"></span>
+<br><br><br><br>
+<span>Name</span> <span class="fore" id="t_n"></span><br>
+<span>Symbol</span> <span class="fore" id="t_s"></span><br>
+<span>Decimals</span> <span class="fore" id="t_d"></span><br>
+<span>Total Supply</span> <span class="fore" id="t_t"></span><br>
+
+
+<br><br><br>
+
+<hr class="hr1">
+<br><br>
+<i class="fore" id="tnum"></i>
+<br><br><br>
+<div style="overflow:auto">
+<table>
+	<thead>
+		<tr>
+			<td>Block</td>
+			<td>Tx. Hash</td>
+			<td>Amount</td>
+			<td>Sender's address</td>
+			<td>Receiver's address</td>
+		</tr>
+	</thead>
+	<tbody id="txt">
+	</tbody>
+</table>
+</div>
+
+
+<br><br><br><br><br><br>
+
+
+
+
+
+
+
+<br><br><br><br><br><br>
+<hr class="hr1">
+<br><br><br><br>
+<div align="center"><i>Want to see more?<br><br>
+<a href="mailto:ftm1337@protonmail.com">📧</a> Let us know!</i><br>
+	<div class="lowerbar">
+	<a target="_blank" href="https://twitter.com/ftm1337"><img src="https://ftm.guru/crypto-icons/twitter.svg"></a>
+	<a target="_blank" href="https://t.me/ftm1337"><img src="https://ftm.guru/crypto-icons/telegram.svg"></a>
+	<a target="_blank" href="https://discord.com/invite/QpyfMarNrV"><img src="https://ftm.guru/crypto-icons/discord.svg"></a>
+	</div>
+</div>
+<br><br><br><br><br><br>
+<div onclick="pantvl()">
+	<span style="font-size:2.5em;font-weight:bold" id="pantvl" class="fore">$0.000</span><sup style="font-size:1.2em;position:relative;top: -14px;">⟳</sup><br>
+	(Total Value Locked on MTV.guru)
+</div>
+
+<br><br>
+<div class="lowerbar">Powered by Guru Network.
+<br>
+	<a target="_blank" href="https://kcc.guru">KCC.guru</a>
+	<a target="_blank" href="https://ftm.guru">FTM.guru</a>
+	<a target="_blank" href="https://fmc.guru">FMC.guru</a>
+	<a target="_blank" href="https://fmc.guru">MTV.guru</a>
+	<br><br>
+	<a target="_blank" href="https://kcc.guru"><img src="https://ftm.guru/crypto-icons/kcc.png"></a>
+	<a target="_blank" href="https://mtv.guru"><img src="https://ftm.guru/crypto-icons/mtv.png"></a>
+	<a target="_blank" href="https://projects.fantom.network/project-detail/6125a8b6800c225308858b02"><img src="https://ftm.guru/crypto-icons/ftm.svg"></a>
+	<a target="_blank" href="https://fmc.guru"><img src="https://ftm.guru/crypto-icons/FMC.svg"></a>
+	<a target="_blank" href="https://ftm.guru"><img src="https://ftm.guru/crypto-icons/64.png"></a>
+	<a target="_blank" href="https://kcc.guru/casino"><img src="https://ftm.guru/crypto-icons/kucino.svg"></a>
+	<a target="_blank" href="https://medium.com/@ftm1337"><img src="https://ftm.guru/crypto-icons/medium.svg"></a>
+	<a target="_blank" href="https://www.coingecko.com/coins/elite-1337"><img src="https://ftm.guru/crypto-icons/gecko.svg"></a>
+	<a target="_blank" href="https://coinmarketcap.com/currencies/elite-1337"><img src="https://ftm.guru/crypto-icons/cmc.svg"></a>
+	<a target="_blank" href="https://defillama.com/protocol/ftmguru"><img src="https://ftm.guru/crypto-icons/defillama.svg"><img class="subimg" src="https://ftm.guru/crypto-icons/64.png"></a><a target="_blank" href="https://defillama.com/protocol/kccguru"><img src="https://ftm.guru/crypto-icons/defillama.svg"><img class="subimg" src="https://ftm.guru/crypto-icons/kucino.svg"></a><a target="_blank" href="https://defillama.com/protocol/ftmguru"><img src="https://ftm.guru/crypto-icons/nomics.svg"></a>
+</div>
+
+<br><br><br><br><br><hr class="hr1">
+
+</div>
+</body>
+<script src="../web3.min.js"></script>
+<script>
+CHAINID = 62621
+RPC_URL = "https://rpc.mtv.ac"
+window.addEventListener(
+	'load',
+	async function()
+	{
+		if(window.ethereum&&Number(window.ethereum.chainId)==CHAINID)
+		{web3 = new Web3(web3.currentProvider);if(!(window.ethereum.selectedAddress==null)){cw()}}
+		else
+		{
+			console.log("didnt find user addr, printing just the apr & tvl")
+			web3 = new Web3(RPC_URL);
+			//$("mainstage").innerHTML="";
+			//for(i=0;i< grains.length;i++){ggs(grains[i])};
+		}
+		pantvl()
+	},
+	false
+);
+
+ab = [
+{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},
+{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},
+{"inputs":[],"name":"decimals","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},
+{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}
+]
+
+
+async function findtx()
+{
+	_t = $("tkad").value;
+	_h = $("hoad").value;
+	_s = $("sead").value;
+	_r = $("read").value;
+	if(!(web3.utils.isAddress(_t))){$("err").innerHTML = "Invalid token address!"; return}
+	T = new web3.eth.Contract(ab,_t);
+	_n_ = T.methods.name().call();
+	_s_ = T.methods.symbol().call();
+	_d_ = T.methods.decimals().call();
+	_t_ = T.methods.totalSupply().call();
+	TO=["0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"]
+	if(_h=="" && _s=="" && _r==""){;}
+	else if(_h!==""){TO.push([null,"0x000000000000000000000000"+_h.substr(2)]);TO.push(["0x000000000000000000000000"+_h.substr(2),null]);}
+	else if(_s!=="" && _r==""){TO.push("0x000000000000000000000000"+_s.substr(2))}
+	else if(_s=="" && _r!==""){TO.push(null);TO.push("0x000000000000000000000000"+_r.substr(2))}
+	else if(_s!=="" && _r!==""){TO.push("0x000000000000000000000000"+_s.substr(2));TO.push("0x000000000000000000000000"+_r.substr(2))}
+	_x_=await web3.eth.getPastLogs({address:_t,topics:TO,fromBlock:0,toBlock:"latest"})
+	await Promise
+	.all([_n_,_s_,_d_,_t_,_x_])
+	.then( rd => {
+		$("t_n").innerHTML = rd[0];
+		$("t_s").innerHTML = rd[1];
+		$("t_d").innerHTML = rd[2];
+		$("t_t").innerHTML = Number(rd[3])/10**Number(rd[2]);
+		x=rd[4];$("txt").innerHTML=""
+		for(i=0;i< x.length;i++)
+		{
+			let r = document.createElement("tr");
+			r.innerHTML = `
+				<td><a target="_blank" href="https://e.mtv.ac/block.html?number=${x[i].blockNumber}">${x[i].blockNumber}</a></td>
+				<td><a target="_blank" href="https://e.mtv.ac/transaction.html?hash=${x[i].transactionHash}">${x[i].transactionHash.substr(0,8)}</a></td>
+				<td>${(Number(x[i].data)/(10**(Number(rd[2])))).toFixed(Number(rd[2]))}</td>
+				<td>${x[i].topics[1].replaceAll("000000000000000000000000","")}</td>
+				<td>${x[i].topics[2].replaceAll("000000000000000000000000","")}</td>
+			`;
+			$("txt").append(r)
+		}
+		$("tnum").innerHTML = "Found "+x.length+" transactions.."
+		window.location="#err"
+	})
+}
+
+function pantvl()
+{
+	pt=new web3.eth.Contract([{"constant": true,"inputs": [],"name": "tvl","outputs": [{"internalType": "uint256","name": "","type": "uint256"}],"payable": false,"stateMutability": "view","type": "function"}],"0xe345A50C33e5c9D0284D6fF0b891c4Fc99a9C117")
+	pt.methods.tvl().call((e,r)=>{$("pantvl").innerHTML = "$"+(Number(r)/1e18).toLocaleString()});
+}
+function fornum(n,d)
+{
+	_n=(Number(n)/10**Number(d));
+	n_=_n;
+	if(_n>1e18){n_=(_n/1e18).toFixed(2)+"Qt"}
+	else if(_n>1e15){n_=(_n/1e15).toFixed(2)+"Qd"}
+	else if(_n>1e12){n_=(_n/1e12).toFixed(2)+"Tn"}
+	else if(_n>1e9){n_=(_n/1e9).toFixed(2)+"Bn"}
+	else if(_n>1e6){n_=(_n/1e6).toFixed(2)+"Mn"}
+	else if(_n>1e3){n_=(_n/1e3).toFixed(2)+"Th"}
+	else if(_n>0){n_=(_n/1e0).toFixed(5)+""}
+	return(n_);
+}
+function $(_) {return document.getElementById(_);}
+function cw(){}
+function switchchain(v)
+{
+	if(v=="250"){window.location="https://ftm.guru/GRAIN"}
+	if(v=="321"){window.location="https://kcc.guru/kompound"}
+	if(v=="62621"){window.location="https://mtv.guru"}
+}
+function dive()
+{
+	if($("ddb").parentElement.parentElement.getAttribute("open")==null)
+	{
+		$("ddb").parentElement.parentElement.setAttribute("open","");
+		$("ddb").children[0].innerHTML="Deeper Dive"
+	}
+	else
+	{
+		$("ddb").parentElement.parentElement.removeAttribute("open")
+		$("ddb").children[0].innerHTML="Dive Deeper"
+	}
+}
+function togcar()
+{
+	ac2 = document.getElementsByClassName("cardhide");
+	for(i=0;i< ac2.length;i++)
+	{
+		ac2[i].style.display=ac2[i].style.display=="block"?"none":"block"
+	}
+}
+function fornumstd(n,d){return Number((Number(n)/10**d).toFixed(2)).toLocaleString()}
+function sortit(n) {
+  var t, r, z, i, x, y, v, b, c = 0;
+  t = document.getElementById("mainstage");
+  z = true;
+  b = "a";
+  while (z) {
+    z = false;
+    r = t.rows;
+    for (i = 0; i < (r.length - 1); i++) {
+      v = false;
+      x = (r[i].getElementsByTagName("TD")[n].innerHTML).replaceAll(/,| |\.|\$|%/g,'');
+      if(isFinite(x)){x=Number(x)}else{x=x.toLowerCase()}
+      y = (r[i + 1].getElementsByTagName("TD")[n].innerHTML).replaceAll(/,| |\.|\$|%/g,'');
+      if(isFinite(y)){y=Number(y)}else{y=y.toLowerCase()}
+      if (b == "a") {
+        if ((x) > (y)) {
+          v= true;
+          break;
+        }
+      } else if (b == "d") {
+        if ((x) < (y)) {
+          v = true;
+          break;
+        }
+      }
+    }
+    if (v) {
+      r[i].parentNode.insertBefore(r[i + 1], r[i]);
+      z = true;
+      c ++;
+    } else {
+      if (c == 0 && b == "a") {
+        b = "d";
+        z = true;
+      }
+    }
+  }
+}
+const addCSS = s => document.head.appendChild(document.createElement("style")).innerHTML=s;
+</script>
+</html>
