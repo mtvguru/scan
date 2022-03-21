@@ -1,0 +1,2106 @@
+<!doctype html><html><meta charset="UTF-8">
+<head>
+<meta name="description" content="scan.mtv.guru/dex by Guru Network : MultiVAC Network, DEX listings, Market Cap, Live Trading Data, Total Value Locked, Statistics & Analytics">
+<meta name="keywords" content="MTV, MultiVAC, DEX, DeFI, Decentralized Finance, Guru Network">
+<title>DEX List | scan.MTV.guru : List of All DEX on MultiVAC</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="https://ftm.guru/icons/FMC.svg" />
+<style>html{background:radial-gradient(circle at center, #127, #122, #100);color:#e3e9f2;font-family:helvetica nueve, helvetica, robotica, ubuntu, roboto, sans-serif;background-attachment: fixed;}
+.toprow{display:grid;grid-template-columns:max-content auto max-content}
+.topfind{text-align:center;min-width:80%}
+.stage{overflow-x:auto}
+table:hover td:first-child,table:hover th:first-child{position: sticky;left:0;background:rgba(17,27,27,0.75);}
+tr:hover td{background: aqua !important;color:#020611;}
+td,th{min-width:max-content;min-width: -moz-max-content;}
+td:first-child{text-align: left}
+thead tr:hover{background: aqua;color:#020611}
+pre{margin:0}
+a{color:white;text-decoration-line:none}
+hr{box-shadow: rgba(0,255,255,0.2) 0px 0px 10px 10px;background: #090919;border-radius: 15px;border:aqua 2px solid;}
+table{border-collapse:collapse;overflow:hidden}
+h5 a{color: aqua}
+#spadi{width:100%}
+option{cursor:pointer}
+#tags div{border: 4px #e3e9f2 dotted;color:aqua;width: max-content;float: right;background: rgba(0,255,255,.25);border-radius: 10px;padding:0 2px;margin:4px;padding:4px}
+#tags div:hover{border: 4px dashed;cursor: alias ;color:aliceblue}
+#usdftm2{border: 4px dashed;color:#020611;background: rgba(255,255,255,1);border-radius: 10px;padding:0 2px;margin:4px;padding:4px}
+#usdftm2:hover{border: 4px dotted;cursor: alias }
+#degmod{border: 4px dashed;color:#020611;background: rgba(255,127,127,1);border-radius: 10px;padding:0 2px;margin:4px;padding:4px}
+#degmod:hover{border: 4px dotted;cursor: alias ;}
+.statcounter{font-size: 0}
+#spadfi{width:100%}
+#maintable{width:max-content}
+.lowercat {text-align: left;padding:10px}
+.lowercat a{text-decoration-line: none}
+.lowercat span{font-size: 1.25em; font-weight:bold}
+.lowerbar{display: grid;grid-template-columns: auto;text-align:center}
+.pgb{display: grid;grid-template-columns: auto}
+.pgbs{
+	min-width: 200px;
+	margin: auto;
+	background: rgba(0,255,255,0.1);
+	border: 2px double aqua;
+	border-right: none;
+	border-top: none;
+	border-bottom: none;
+	padding: 10px 15px 10px 0px;
+	clip-path: polygon(calc(100% - 40px) 0%, 0 0, 0 100%, 95% 100%, 95% 50%);
+	margin-top:15px
+}
+.pgb2s{
+	min-width: 200px;
+	margin: auto;
+	background: rgba(0,255,255,0.1);
+	border: 2px double aqua;
+	border-right: none;
+	border-top: none;
+	border-bottom: none;
+	padding: 10px 15px 10px 0px;
+	clip-path: polygon(100% 0%, 0 0, 0 100%, 100% 100%, 90% 50%);
+	margin-top:15px
+}
+.pgb2s:nth-of-type(2n){
+
+	border:none;
+	border-right: 2px double aqua;
+	border-top: none;
+	border-bottom: none;
+	clip-path: polygon(100% 0%, 0% 0%, 10% 50%, 0% 100%, 100% 1000%);}
+td{padding:2px 5px;text-align:right;}
+td{font-family: mono, monospace;font-weight:bold}
+td:first-child,td:nth-last-child(2){font-family: inherit;font-weight: normal}
+/*td:nth-child(4),td:nth-child(5),th:nth-child(4),th:nth-child(5){display:none}*/
+td:last-child{text-align:center}
+td{font-size: 1.25em;}
+th{font-size:1.25em;padding: 12px 5px;text-align:center}
+td:nth-last-child(2){font-size: 1em}
+* {
+  scrollbar-width: thick;
+  scrollbar-color: #07f #147;
+}
+*::-webkit-scrollbar {
+  width: 20px;
+}
+*::-webkit-scrollbar-track {
+  background: #147;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #07f;
+  border-radius: 20px;
+  border: 3px solid #147;
+}
+
+td:nth-child(3),th:nth-child(3),
+td:nth-child(4),th:nth-child(4),
+td:nth-child(6),th:nth-child(6),
+td:nth-child(7),th:nth-child(7),
+td:nth-child(8),th:nth-child(8),
+td:nth-child(9),th:nth-child(9)
+{display:none}
+
+
+table{
+  counter-reset: rowNumber;
+}
+tbody tr::before {
+  counter-increment: rowNumber;
+  content: counter(rowNumber) ".";
+	position:relative; top:5px;
+}
+thead tr::before{
+  counter-increment: (rowNumber+1);
+  content: "#";
+	position:relative; top:12px
+}
+.cards{
+  display: flex;
+  flex-wrap:  wrap;
+}
+.card{
+  margin:10px 20px 10px 0px;
+  width: 260px;
+  padding: 10px 10px 10px 20px;
+  border: 2px solid #1f5;
+  border-radius: 5px;
+  background: rgba(0,255,255,0.1);
+}
+.card hr{color: #1f5;border:solid 2px}
+.card:hover{
+  transform: translate(5px,-5px);
+  box-shadow: -5px 5px 5px rgba(16,240,80,0.75);
+  transition: 0.25s;
+  background: rgba(16,240,80,0.1);
+  cursor:pointer;
+}
+.ki{font-size: 3em }
+@media(min-width:641px){
+	#spadi{width:80%}
+	.lowerbar{display: grid;grid-template-columns: auto auto auto auto;text-align:center}
+	.hhr{width: 555px}
+	.pgb{display: grid;grid-template-columns: auto auto auto}
+	.pgb2{display: grid;grid-template-columns: auto auto}
+	.pgb2s{min-width: 40vw;}
+	td{padding: 10px;line-height:0.8}
+	tbody tr::before {
+		counter-increment: rowNumber;
+		content: counter(rowNumber) ".";
+		position:relative; top:10px;
+	}
+}
+#tags{width: max-content}
+#tags span{width: max-content;float: left;border-radius: 10px;padding:0 2px;margin:4px;padding:4px}
+#tags span:hover{border: 1px solid;cursor: alias ;color:aliceblue}
+.selcol{color:#020611 !important;background:aqua !important; border:1px #e3e9f2 ridge !important;}
+.discol{color:aqua !important;background:rgba(0,255,255,0.25) !important;border:1px #e3e9f2 dashed !important;}
+
+
+
+</style>
+</head>
+<body>
+
+<div class="toprow" style="font-weight:bolder">
+	<div><a href="index.html"><img style="position:relative;top:2px" src="https://ftm.guru/icons/FMC.svg" width="16px"> scan.mtv.guru/dex</a></div>
+	<div></div>
+	<div>By <a href="https://ftm.guru">MTV.guru</a></div>
+</div>
+<h1 align="center"><img style="position:relative;top:16px" src="https://ftm.guru/icons/FMC.svg" width="64px"> MultiVAC DEX List<br><span id="tmc"></span> <span id="tmcunit"></span></h1>
+<div align="center">
+<h4>Discover the best DEXes at MultiVAC Network with MTV.Guru!</h4>
+</div>
+<div align="center" class="pgb2">
+	<div align="center" class="pgb2s"><b>Overall DEX Liquidity</b><br>$<span id="os_l" style="font-size:2em">0</span></div>
+	<div align="center" class="pgb2s"><b>Current USD Velocity</b><br>$<span id="os_v" style="font-size:2em">0</span>/sec.</div>
+	<div align="center" class="pgb2s"><b>Net Money Exchanged</b><br>$<span id="os_e" style="font-size:2em">0</span></div>
+	<div align="center" class="pgb2s"><b>Total No. of Trades</b><br><span id="os_t" style="font-size:2em">0</span></div>
+</div>
+<br>
+<div class="stage" align="center">
+	<div id="tags">
+		<span onclick="togcol(1)" class="selcol">Pools</span>
+		<span onclick="togcol(2)" class="discol">Total Value Locked</span>
+		<span onclick="togcol(3)" class="discol">Total Liquidity</span>
+		<span onclick="togcol(4)" class="selcol">Age</span>
+		<span onclick="togcol(5)" class="discol">Volume Today</span>
+		<span onclick="togcol(6)" class="discol">All Time Volume</span>
+		<span onclick="togcol(7)" class="discol">Total Transactions</span>
+		<span onclick="togcol(8)" class="discol">Unique Users</span>
+	</div>
+	<table id="maintable" class="centerstage">
+		<thead>
+			<tr>
+				<th onclick="sortit(0)">D.E.X.⇅</th>
+				<th onclick="sortit(1)">Pools⇅</th>
+				<th onclick="sortit(2)">Value Locked⇅</th>
+				<th onclick="sortit(3)">Net Liquidity⇅</th>
+				<th onclick="sortit(4)">Age⇅</th>
+				<th onclick="sortit(5)">Vol. Today⇅</th>
+				<th onclick="sortit(6)">All Time Vol.⇅</th>
+				<th onclick="sortit(7)">Total Txns.⇅</th>
+				<th onclick="sortit(8)">Users⇅</th>
+				<th onclick="sortit(9)">Trading Interface</th>
+				<th>Links</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="" id="d_moonswap">
+				<td>MoonSwap</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>mtv.moonswap.tech</td>
+				<td><span>
+					<a href="https://mtv.moonswap.tech/swap/" target="_blank">💱</a>
+					<a href="https://mtv.moonswap.tech/farms" target="_blank">🌾</a>
+				</span></td>
+			</tr>
+			<tr class="" id="d_cyberswap">
+				<td>CyberSwap</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>mtv.thexdao.org</td>
+				<td><span>
+					<a href="https://mtv.thexdao.org/#/swap" target="_blank">💱</a>
+					<a href="https://mtv.thexdao.org/#/farms" target="_blank">🌾</a>
+				</span></td>
+			</tr>
+			<tr class="" id="d_mtvswap">
+				<td>MtvSwap</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>mtvswap.finance</td>
+				<td><span><a href="https://mtvswap.finance" target="_blank">💱</a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<!--<div align="center"><br><b>1 2 3 4 5 … 6 7 8 9 10</b></div>-->
+<br>
+<br>
+<br>
+<div align="center" style="margin:0;padding:0"><u>Legend:</u><br>💱DEX-UI 🚜Farm<br>📊Analytics 🌐Website<br>🎮Discord ✈Telegram 🐦Twitter<br>🐙Github 🔎Explorer</div>
+
+<br>
+<br>
+<h2>Explore more FMC Lists</h2>
+<br>
+<br>
+<div class="cards">
+
+	<div class="card" onclick="window.location='tokens.html'">
+		<span class="ki">Tokens</span>
+		<br><br>
+		<hr>
+		Best Tokens on Fantom, indexed by On-chain Price, Market Cap, Liquidity and Supply.
+	</div>
+	<div class="card" onclick="window.location='dex.html'">
+		<span class="ki">DEXes</span>
+		<br><br>
+		<hr>
+		Ranking of All Decentralized Echanges (DEX) running on the Fantom Opera Blockchain.
+	</div>
+	<div class="card" onclick="window.location='defi.html'">
+		<span class="ki">DeFi Pro.</span>
+		<br><br>
+		<hr>
+		Synopsis of the major DeFi Protocols that harness the speed of Opera the best.
+	</div>
+	<div class="card" onclick="window.location='aggregators.html'">
+		<span class="ki">Aggregator</span>
+		<br><br>
+		<hr>
+		List of all DEX and Liquidity Aggregation services present on Opera Network.
+	</div>
+
+</div>
+<br>
+<br>
+<h5 align="center" id="disclaimer"><b><u>Disclaimer & Notice</u></b><br>
+All information presented here is only for aesthetic uses and posesses no validity to settle any claims. It is also non-exhaustive and prone to error. Advertisements are not endorsements. This dashboard is ultra-real time - It means that the data on this page has zero latency, unlike CMC or CG which have 1-10 minutes old data. FTM.guru and FMC.guru are trying to keep up with our <b>Fast First</b> motto. <i>A much deserved shoutout to all open-source and web3 developers for their benign Services!</i> A "-" or a "0" represents unavailability or anomalities in data and it is masked to suppress pollution.<br>We encourage you to report inconsistencies, ask business queries, request new Token, Protocol or DEX listings or start an ad campaign at one of our community channels:<br>
+<b><a href="https://t.me/FTM1337" target="_blank">Telegram</a> or <a href="https://discord.gg/QpyfMarNrV" target="_blank">Discord.</a></b><!--
+Our Address: 0x921Ed37f62CBe4d86D38b720EF4a4a44B24a1C5D--></h5>
+<br>
+<br>
+<div align="center" id="spadd" style="">
+<font id="spadf" size="2" style="text-align:center">(Sponsored Ad)</font>
+<br>
+<i><a href="https://t.me/FTM1337">Please Telegram us for queries.</a></i>
+<br>
+<a id="spada" href="" target="_blank">
+<img id="spadi" src="" width="80%"></img><br>
+</a>
+</div>
+
+<br><br>
+<hr class="hhr">
+<br><br>
+<div class="lowerbar" align="center">
+	<div align="left" class="lowercat">
+		<span>Ecosystem</span><br>
+		<a href="https://fmc.guru" target="_blank">FantomMarketCap</a><br>
+		<a href="https://ftm.guru" target="_blank">FTM1337</a><br>
+		<a href="https://kcc.guru" target="_blank">Kucino Casino</a><br>
+	</div>
+	<div align="left" class="lowercat">
+		<span>Farming</span><br>
+		<a href="https://ftm.guru/yieldstate.html">🔱 YieldState</a><br>
+		<a href="https://ftm.guru/LF">👽 LITE Farmlands</a><br>
+		<a href="https://vfat.tools/fantom/guru">🧑‍🌾 vfat.tools</a>
+	</div>
+	<div class="lowercat">
+		<span><a href="https://kcc.guru/casino.html">Casino & Games</a></span><br>
+		<a href="https://kcc.guru/jackpot_1.html">2-player Jackpot</a><br>
+		<a href="https://kcc.guru/instalotto.html">instaLOTTO</a><br>
+		<a href="https://kcc.guru/21hrlotto.html">🎟 21-hour LOTTO</a>
+	</div>
+	<div class="lowercat">
+		<span><a href="https://kcc.guru/dashboard.html">Dashboard</a></span><br>
+		<a href="https://kcc.guru/claimkcs.html">Claim KCS Earnings</a><br>
+		<a href="https://kcc.guru/markets.html">Market Statistics</a><br>
+		<a href="https://kcc.guru/balancesheet.html">Balance Sheet</a><br>
+	</div>
+	<div align="left" class="lowercat">
+		<span>Our Dapps</span><br>
+		<a href="https://ftm.guru/degam.html">✨ FTM CASINO</a><br>
+		<a href="https://ftm.guru/degam.html">🎰 KCS Kucino</a><br>
+		<a href="https://ftm.guru/approver.html">✅ Approver</a><br>
+		<a href="https://ftm.guru/airdrop.html">Airdrop-Tool</a><br>
+	</div>
+	<div align="left" class="lowercat">
+		<span>Chain Tools</span><br>
+		<a href="https://ftm.guru/pair.html">DEX-Explorer</a><br>
+		<a href="https://ftm.guru/fantomscan.html">🔍 FantomScan</a><br>
+		<a href="https://kcc.guru/kscan" target="_blank">🔎 kscan</a><br>
+		<a href="https://ftm.guru/apelist.html">Ape-List</a><br>
+	</div>
+	<div align="left" class="lowercat">
+		<span>Opera Utilities</span><br>
+		<a href="https://ftm.guru/elite.html">ELITE Analytics</a><br>
+		<a href="https://t.me/FTM1337/12497" target="_blank">🤖 GambleBot Telegram</a><br>
+		<a href="https://ftm.guru/index.html">🗳 Elite-Gems Voting</a>
+	</div>
+	<div class="lowercat">
+		<span>$KUCINO</span><br>
+		<a target="_blank" href="https://swap.kudex.finance/#/swap?outputCurrency=0x4c9fa6297d3413fbbe7ba935e14022d0e5a39dc7">Trade at Kudex</a><br>
+		<a target="_blank" href="https://explorer.kcc.io/token/0x4c9fa6297d3413fbbe7ba935e14022d0e5a39dc7">KCC Explorer</a><br>
+		<a target="_blank" href="https://t.me/kccguru">Chart at Poocoin</a><br>
+		<a target="_blank" href="https://testnet.bscscan.com/address/0x4c9fa6297d3413fbbe7ba935e14022d0e5a39dc7#code">View Source</a>
+	</div>
+	<div class="lowercat">
+		<span>Resources</span><br>
+		<a target="_blank" href="https://kcc.guru/roadmap">Kucino Roadmap</a><br>
+		<a target="_blank" href="https://kcc.guru/roadmap">KUCINO Tokenimcs</a><br>
+		<a target="_blank" href="https://ftmscan.com/address/0x74bfb7e94bef5767f5f6ace2d0df73a224adb689">385 ELITE ETL</a><br>
+		<a target="_blank" href="https://kudex.finance/locker">KCS Liquidity Lock</a><br>
+		<a target="_blank" href="https://kudex.finance/locker">70% KUCINO ETL</a><br>
+		<a target="_blank" href="docs">📚 Documentation</a><br>
+	</div>
+	<div class="lowercat">
+		<span>Telegrams</span><br>
+		<a target="_blank" href="https://t.me/ftm1337">FantomOpera#1337</a><br>
+		<a target="_blank" href="https://t.me/ftmguru">Announcements</a><br>
+		<a target="_blank" href="https://t.me/kucino">Kucino Group</a><br>
+		<a target="_blank" href="https://t.me/kccguru">KCC.guru Channel</a><br>
+		<a target="_blank" href="https://t.me/kccguru">FMC New Listings</a><br>
+	</div>
+	<div class="lowercat">
+		<span>Social & Media</span><br>
+		<a target="_blank" href="https://medium.com/@ftm1337">Medium Journal</a><br>
+		<a target="_blank" href="https://discord.gg/QpyfMarNrV">Discord Server</a><br>
+		<a target="_blank" href="https://twitter.com/kccGuru">Kucino Twitter</a><br>
+		<a target="_blank" href="mailto:ftm1337@protonmail.com">Official Mail</a><br>
+	</div>
+	<div class="lowercat">
+		<a href="https://ftm.guru/index.html"><b style="font-size:2em"><code>FTM.guru</code></b></a><br>
+		<a href="https://fmc.guru/index.html"><b style="font-size:2em"><code>FMC.guru</code></b></a><br>
+		<a href="https://kcc.guru/index.html"><b style="font-size:2em"><code>KCC.guru</code></b></a>
+	</div>
+	<div class="lowercat">
+	</div>
+</div>
+</body>
+<!--<script src="d1.js">
+</script>-->
+<script src="../web3.min.js">
+</script>
+<script>
+o={}
+aa=$("maintable").getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+
+window.addEventListener('load',function()
+{
+	if(window.ethereum&&Number(window.ethereum.chainId==62621)){web3 = new Web3(web3.currentProvider);}
+	else{web3 = new Web3("https://rpc.mtv.ac")}
+	basics();
+}, false);
+function $(_) {return document.getElementById(_);}
+function basics()
+{
+	//advertise()
+	copsca()
+	fillage()
+	gp()
+	//tc()
+	//gg()
+	//arf()
+}
+
+
+
+
+
+
+
+//AMM: ROU-FAC-GEN
+//Leave Non-Factories Blank: ""
+di=
+[
+	["MoonSwap",		"0xf2350ebaa37d6e8ecaf00422e72cb7e5426a06e8",	"0x3e692D181E114FA0C47805b5e89244342c024e43",	"1637866385"],
+	["CyberSwap",		"0x4B4c5D87fa1aFE3365Fa1ee9cb6c38cC6FAB8fEf",	"0x2CFE0fF1819d02d30aEF4045aE771b33fCAc12a0",	"1645395659"],
+	["MtvSwap",			"0x5475d369ebc9521319b193d01e795ecf80915be6",	"0x971A49c760e0584Acac3e66100239e777323226e",	"1647816134"],
+]
+/*
+
+
+					[[ STABLE-SWAPS ]]
+
+
+Froyo
+	"Frozen.yogurt.finance FUSDT/USDC/DAI" (3FROYO) [USDC-DAI-fUSDT]
+	LPT = 0x4f85Bbf3B0265DCEd4Ec72ebD0358ccCf190F1B3
+	DEX = 0x83E5f18Da720119fF363cF63417628eB0e9fd523
+
+Synapse
+	""
+	LPT =
+	DEX = "0x2913E812Cf0dcCA30FB28E6Cac3d2DCFF4497688"
+Iron
+	"IronSwap 3USD" (IS3USD) [USDC-DAI-fUSDT]
+	LPT = 0xc143a1500ca4a471eE9cc70B9AC0C739576F84bb
+	DEX	= 0x952BDA8A83c3D5F398a686bb4e8C6DD90072d523
+
+Stable AMM - Steak
+	[USDC-FUSD]
+	LPT + DEX = 0xa0828eE559110b041DEdbf10Ae0cf42274251de1
+
+Saddle
+	[USDC-FRAX]
+	LPT = 0xc969dd0a7ab0f8a0c5a69c0839db39b6c928bc08
+	DEX = 0xbea9f78090bdb9e662d8cb301a00ad09a5b756e9
+Dictionary
+
+
+*/
+
+
+
+
+
+
+async function gp()
+{
+	for(i=0;i< di.length;i++)
+	{
+		//console.log("in gp at i= ",i)
+		if(di[i][2]==""){continue;}
+		gpi(i,di[i][2],"d_"+di[i][0].toLowerCase())
+	}
+}
+
+async function gpi(i,sc,el)
+{	//console.log("in gpi at i=",i)
+	F=new web3.eth.Contract(ab,di[i][2]);
+	if(el=="d_soul")
+	{
+		F=new web3.eth.Contract(ab,sc);
+		F.methods.totalPairs().call((e,r)=>{$(el).getElementsByTagName("td")[1].innerHTML=Number(r).toLocaleString()})
+	}
+	else if(el=="d_dmm")
+	{
+		F=new web3.eth.Contract(ab,sc);
+		F.methods.allPoolsLength().call((e,r)=>{$(el).getElementsByTagName("td")[1].innerHTML=Number(r).toLocaleString()})
+	}
+	else if(el=="d_curve")
+	{
+		F=new web3.eth.Contract(ab,sc);
+		F.methods.pool_count().call((e,r)=>{$(el).getElementsByTagName("td")[1].innerHTML=(Number(r)+2).toLocaleString()})
+	}
+	else
+	{
+		F=new web3.eth.Contract(ab,sc);
+		F.methods.allPairsLength().call((e,r)=>{$("d_"+di[i][0].toLowerCase()).getElementsByTagName("td")[1].innerHTML=Number(r).toLocaleString()})
+	}
+	/*
+	if(i%5==0 || i==di.length-1){
+		sortit(2);sortit(2);
+		//;console.log("tvlsort");
+		sortit(3);sortit(3);
+		//;console.log("liqsort");
+	}*/
+}
+
+ab=
+[
+	{"inputs":[],"name":"allPoolsLength","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},
+	{"inputs":[],"name":"allPairsLength","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},
+	{"inputs":[],"name":"totalPairs","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},
+	{"inputs":[],"name":"pool_count","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},
+	{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getReserves",
+		"outputs": [
+			{
+				"internalType": "uint112",
+				"name": "_reserve0",
+				"type": "uint112"
+			},
+			{
+				"internalType": "uint112",
+				"name": "_reserve1",
+				"type": "uint112"
+			},
+			{
+				"internalType": "uint32",
+				"name": "_blockTimestampLast",
+				"type": "uint32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "balanceOf",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
+
+function fornum(n,d)
+{
+	_n=(Number(n)/10**Number(d));
+	n_=_n;
+	if(_n>1e18){n_=(_n/1e18).toFixed(2)+" QN"}
+	else if(_n>1e15){n_=(_n/1e15).toFixed(2)+" QD"}
+	else if(_n>1e12){n_=(_n/1e12).toFixed(2)+" TN"}
+	else if(_n>1e9){n_=(_n/1e9).toFixed(2)+" BN"}
+	else if(_n>1e6){n_=(_n/1e6).toFixed(2)+" MN"}
+	else if(_n>1e3){n_=(_n/1e3).toFixed(2)+" TH"}
+	else if(_n>1){n_=(_n/1e1).toFixed(2)+""}
+	return(n_);
+}
+
+function sortit(n) {
+  var t, r, z, i, x, y, v, b, c = 0;
+  t = document.getElementById("maintable");
+  z = true;
+  b = "a";
+  while (z) {
+    z = false;
+    r = t.rows;
+    for (i = 1; i < (r.length - 1); i++) {
+      v = false;
+      x = (r[i].getElementsByTagName("TD")[n].innerHTML).replaceAll(/,| |\.|\$|%/g,'');
+      if(isFinite(x)){x=Number(x)}else{x=x.toLowerCase()}
+      y = (r[i + 1].getElementsByTagName("TD")[n].innerHTML).replaceAll(/,| |\.|\$|%/g,'');
+      if(isFinite(y)){y=Number(y)}else{y=y.toLowerCase()}
+      if (b == "a") {
+        if ((x) > (y)) {
+          v= true;
+          break;
+        }
+      } else if (b == "d") {
+        if ((x) < (y)) {
+          v = true;
+          break;
+        }
+      }
+    }
+    if (v) {
+      r[i].parentNode.insertBefore(r[i + 1], r[i]);
+      z = true;
+      c ++;
+    } else {
+      if (c == 0 && b == "a") {
+        b = "d";
+        z = true;
+      }
+    }
+  }
+}
+function copsca()
+{
+	rs=$("maintable").getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+	for(i=0;i< rs.length;i++)
+	{
+		sc=rs[i].getElementsByTagName("td")[Object.keys(rs[i].getElementsByTagName("td")).length-2];
+		sc.setAttribute("onClick","copsc(this)");
+		sc.style.cursor="copy";
+	}
+}
+function copsc(el)
+{
+	var inp =document.createElement('input');
+	document.body.appendChild(inp)
+	inp.value ="https://"+el.innerText;
+	inp.select();
+	document.execCommand('copy',false);
+	inp.remove();
+}
+var adi=1;
+function advertise()
+{
+	var x = setInterval(function(){ads()},10000);
+}
+function ads()
+{
+	if(adi==2)
+	{
+		$("spadi").src="img/ad-0001.png";
+		$("spada").href="https://shibafantom.com";
+		adi=1;
+	}
+	else
+	{
+		$("spadi").src="img/ad-0002.gif";
+		$("spada").href="https://spoon.finance";
+		adi=2;
+	}
+	//console.log(Date.now())
+}
+ldata={}
+fdata=[]
+async function tc()
+{
+//	pt(d1)
+	fetch("https://api.llama.fi/protocols").then(d1=>{return d1.json()}).then(d2d=>{pt(d2d);ldata=d2d})
+}
+function pt(d)
+{
+	//console.log(d);
+	for(j=0;j< d.length;j++)
+		{
+			if(d[j].chains.indexOf("Fantom")>=0){po(d[j]);fdata.push(d[j])}
+		}
+	sortit(3);sortit(3);
+	//;console.log("liqsort-llama");
+}
+function $v(_){return $(_).getElementsByTagName("td")[2]}
+function ssum (n){
+	let s = 0;
+	for(i=0;i < n.length;i++){	if(isFinite(n[i])){s+=Number(n[i])}	}
+	return s;
+}
+function po (di)
+{
+	v=typeof di.chainTvls.Fantom == "undefined"?
+		Number(di.tvl.toFixed(0)).toLocaleString():
+		Number((ssum([di.chainTvls["Fantom"],di.chainTvls["Fantom-pool2"],di.chainTvls["Fantom-staking"],di.chainTvls["Fantom-Treasury"],di.chainTvls["Fantom-offers"]])).toFixed(0)).toLocaleString();
+	V=typeof di.chainTvls.Fantom == "undefined"?
+		Number((di.tvl).toFixed(0)) :
+		(ssum([di.chainTvls["Fantom"],di.chainTvls["Fantom-pool2"],di.chainTvls["Fantom-staking"],di.chainTvls["Fantom-Treasury"],di.chainTvls["Fantom-offers"]])).toFixed(0);
+
+
+		//console.log(di.slug)
+		//console.log(di.slug,di)
+
+	if (di.slug ==  "curve" ){			$v("d_curve").innerHTML=v;$v("d_curve").nextElementSibling.innerHTML=v;gobj[0]+=Number(V);ctvl.push(Number(V));ref_os()}
+	if (di.slug ==  "sushiswap" ){		$v("d_sushi").innerHTML=v;}
+	if (di.slug ==  "spookyswap" ){		$v("d_spooky").innerHTML=v;}
+	if (di.slug ==  "spiritswap" ){		$v("d_spirit").innerHTML=v;}
+	if (di.slug ==  "hyperswap" ){		$v("d_hyper").innerHTML=v;$v("d_hyper").nextElementSibling.innerHTML=v;gobj[0]+=Number(V);ref_os()}
+	if (di.slug ==  "waka-finance" ){	$v("d_waka").innerHTML=v;}
+	if (di.slug ==  "elk" ){			$v("d_elk").innerHTML=v;}
+	if (di.slug ==  "paint-swap" ){		$v("d_paint").innerHTML=v;}
+	if (di.slug ==  "zoocoin" ){		$v("d_zoo").innerHTML=v;}
+	if (di.slug ==  "shiba-fantom" ){	$v("d_shiba").innerHTML=v;}
+	if (di.slug ==  "soulswap" ){		$v("d_soul").innerHTML=v;}
+	if (di.slug ==  "beethoven-x" ){	$v("d_beethoven").innerHTML=v;}
+	if (di.slug ==  "synapse" ){		$v("d_synapse").innerHTML=v;}
+	if (di.slug ==  "empire-dex" ){		$v("d_empire").innerHTML=v;}
+	if (di.slug ==  "dfyn-network" ){	$v("d_dfyn").innerHTML=v;}
+	if (di.slug ==  "morpheus-swap" ){	$v("d_morpheus").innerHTML=v;}
+	if (di.slug ==  "yoshi-exchange" ){	$v("d_yoshi").innerHTML=v;$v("d_yoshi").nextElementSibling.innerHTML=v;gobj[0]+=Number(V);ref_os()}
+	if (di.slug ==  "iron-finance" ){	$v("d_iron").innerHTML=v;}
+	if (di.slug ==  "empiredex" ){		$v("d_empire").innerHTML=v;}
+	if (di.slug ==  "stakesteak" ){		$v("d_steaksamm").innerHTML=v;}
+	if (di.slug ==  "vampireswap" ){	$v("d_vampire").innerHTML=v;_vam=di.chainTvls["Fantom"];$v("d_vampire").nextElementSibling.innerHTML=Number((_vam).toFixed(0)).toLocaleString();gobj[0]+=Number(_vam);ref_os()}
+	if (di.slug ==  "jetswap" ){		$v("d_jet").innerHTML=v;}
+	if (di.slug ==  "defyswap" ){		$v("d_defy").innerHTML=v;}
+	if (di.slug ==  "wingswap" ){		$v("d_wing").innerHTML=v;}
+	if (di.slug ==  "swap-cat" ){		tvl=Number((di.chainTvls["Fantom-offers"]).toFixed(0)).toLocaleString();$v("d_swapcat").innerHTML=tvl;$v("d_swapcat").nextElementSibling.innerHTML=tvl}
+	if (di.slug ==  "knightswap-finance"){$v("d_knight").innerHTML=v;}
+	if (di.slug ==  "saddle-finance")	{$v("d_saddle").innerHTML=v;$v("d_saddle").nextElementSibling.innerHTML=v;gobj[0]+=Number(V);ref_os()}
+	if (di.slug ==  "protofi")			{$v("d_protofi").innerHTML=v;}
+	if (di.slug ==  "degen-haus")		{$v("d_degenhaus").innerHTML=v;}
+	if (di.slug ==  "kyberswap")		{$v("d_dmm").innerHTML=v;}
+	if (di.slug ==  "pearzap")			{$v("d_pearzap").innerHTML=v;}
+	if (di.slug ==  "wigoswap")			{$v("d_wigo").innerHTML=v;}
+	if (di.slug ==  "tomb-finance")		{$v("d_tomb").innerHTML=v;}
+	if (di.slug ==  "solidly")	{$v("d_solidly").innerHTML=v;$v("d_solidly").nextElementSibling.innerHTML=v;gobj[0]+=Number(V);ref_os()}
+}
+date_id = Date.now();
+date_id = date_id/1000 - (date_id/1000)%1;
+date_id = date_id/86400 - (date_id/86400)%1;
+//gobj = {"liq":0,"dv":0,"tv":0,"tt":0}
+gobj=[0,0,0,0];
+async function gg()
+{
+//gobj=[0,0,0,0];
+
+try{
+	gdq_wraith =
+		`query {
+  		wraithFactories(first:1) {
+    		id
+    		totalVolumeUSD    totalVolumeFTM  untrackedVolumeUSD
+    		totalLiquidityUSD    totalLiquidityFTM
+    		totalTransactions    totalPairs
+  		}
+
+  		wraithSwapDayDatas(where:{id:${date_id}}){
+    		id  date
+    		dailyVolumeFTM	dailyVolumeUSD	dailyVolumeUntracked
+    		totalVolumeUSD	totalVolumeFTM
+    		totalLiquidityUSD	totalLiquidityFTM
+    		totalTransactions
+			}
+		}`
+	gdqr_wraith = new XMLHttpRequest();
+	gdqr_wraith.open("POST","https://api.thegraph.com/subgraphs/name/sy-finance/wraithswap",true);
+	gdqr_wraith.onload=function(){
+		gdqd_wraith=JSON.parse(this.response).data;
+		$("d_wraith").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_wraith.wraithFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
+		$("d_wraith").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_wraith.wraithSwapDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_wraith").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_wraith.wraithFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_wraith").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_wraith.wraithFactories[0].totalTransactions).toFixed(0)).toLocaleString()
+		gobj[0]+=Number(gdqd_wraith.wraithFactories[0].totalLiquidityUSD)
+		gobj[1]+=Number(gdqd_wraith.wraithSwapDayDatas[0].dailyVolumeUSD)
+		gobj[2]+=Number(gdqd_wraith.wraithFactories[0].totalVolumeUSD)
+		gobj[3]+=Number(gdqd_wraith.wraithFactories[0].totalTransactions)
+		ref_os();
+		sortit(3);sortit(3);
+	}
+	gdqr_wraith.send(JSON.stringify({query:gdq_wraith}))
+
+	gdq_zoo =
+		`query {
+  			uniswapFactories(first: 1) {
+    			id
+    			pairCount	txCount
+    			totalVolumeUSD    totalVolumeETH	untrackedVolumeUSD
+    			totalLiquidityUSD	totalLiquidityETH
+    			txCount
+  			}
+  			uniswapDayDatas(where:{id: ${date_id}}) {
+    			id	date
+    			txCount
+    			dailyVolumeUSD	dailyVolumeETH	dailyVolumeUntracked
+    			totalVolumeUSD	totalVolumeETH
+    			totalLiquidityUSD	totalLiquidityETH
+  			}
+		}`
+	gdqr_zoo = new XMLHttpRequest();
+	gdqr_zoo.open("POST","https://api.thegraph.com/subgraphs/name/ruvlol/graph-n",true);
+	gdqr_zoo.onload=function(){
+		gdqd_zoo=JSON.parse(this.response).data;
+		$("d_zoo").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_zoo.uniswapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
+		$("d_zoo").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_zoo.uniswapDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_zoo").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_zoo.uniswapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_zoo").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_zoo.uniswapFactories[0].txCount).toFixed(0)).toLocaleString()
+		gobj[0]+=Number(gdqd_zoo.uniswapFactories[0].totalLiquidityUSD)
+		gobj[1]+=Number(gdqd_zoo.uniswapDayDatas[0].dailyVolumeUSD)
+		gobj[2]+=Number(gdqd_zoo.uniswapFactories[0].totalVolumeUSD)
+		gobj[3]+=Number(gdqd_zoo.uniswapFactories[0].txCount)
+		ref_os();
+		sortit(3);sortit(3);
+	}
+	gdqr_zoo.send(JSON.stringify({query:gdq_zoo}))
+
+	gdq_sushi =
+		`query {
+  			factories(first:1){
+    			id	pairCount	userCount	txCount	tokenCount
+    			volumeUSD	volumeETH	untrackedVolumeUSD
+    			liquidityUSD	liquidityETH
+  			}
+  			dayDatas(where:{id: ${date_id}}){
+    			id	date	txCount
+    			volumeUSD	volumeUSD	untrackedVolume
+    			liquidityETH	liquidityUSD
+  			}
+		}`
+	gdqr_sushi = new XMLHttpRequest();
+	gdqr_sushi.open("POST","https://api.thegraph.com/subgraphs/name/sushiswap/fantom-exchange",true);
+	gdqr_sushi.onload=function(){
+		gdqd_sushi=JSON.parse(this.response).data;
+		$("d_sushi").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_sushi.factories[0].liquidityUSD).toFixed(0)).toLocaleString()
+		$("d_sushi").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_sushi.dayDatas[0].volumeUSD).toFixed(0)).toLocaleString()
+		$("d_sushi").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_sushi.factories[0].volumeUSD).toFixed(0)).toLocaleString()
+		$("d_sushi").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_sushi.factories[0].txCount).toFixed(0)).toLocaleString()
+		$("d_sushi").getElementsByTagName("td")[8].innerHTML=Number(Number(gdqd_sushi.factories[0].userCount).toFixed(0)).toLocaleString()
+		gobj[0]+=Number(gdqd_sushi.factories[0].liquidityUSD)
+		gobj[1]+=Number(gdqd_sushi.dayDatas[0].volumeUSD)
+		gobj[2]+=Number(gdqd_sushi.factories[0].volumeUSD)
+		gobj[3]+=Number(gdqd_sushi.factories[0].txCount)
+		ref_os();
+		sortit(3);sortit(3);
+	}
+	gdqr_sushi.send(JSON.stringify({query:gdq_sushi}))
+
+	gdq_spooky =
+		`query {
+  			uniswapFactories(first: 1) {
+    			id
+    			pairCount	txCount
+    			totalVolumeUSD    totalVolumeETH	untrackedVolumeUSD
+    			totalLiquidityUSD	totalLiquidityETH
+    			txCount
+  			}
+  			uniswapDayDatas(where:{id: ${date_id}}) {
+    			id	date
+    			txCount
+    			dailyVolumeUSD	dailyVolumeETH	dailyVolumeUntracked
+    			totalVolumeUSD	totalVolumeETH
+    			totalLiquidityUSD	totalLiquidityETH
+  			}
+		}`
+	gdqr_spooky = new XMLHttpRequest();
+	gdqr_spooky.open("POST","https://api.thegraph.com/subgraphs/name/eerieeight/spooky-swap-exchange",true);
+	gdqr_spooky.onload=function(){
+		gdqd_spooky=JSON.parse(this.response).data;
+		$("d_spooky").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_spooky.uniswapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
+		$("d_spooky").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_spooky.uniswapDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_spooky").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_spooky.uniswapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_spooky").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_spooky.uniswapFactories[0].txCount).toFixed(0)).toLocaleString()
+		gobj[0]+=Number(gdqd_spooky.uniswapFactories[0].totalLiquidityUSD)
+		gobj[1]+=Number(gdqd_spooky.uniswapDayDatas[0].dailyVolumeUSD)
+		gobj[2]+=Number(gdqd_spooky.uniswapFactories[0].totalVolumeUSD)
+		gobj[3]+=Number(gdqd_spooky.uniswapFactories[0].txCount)
+		ref_os();
+		sortit(3);sortit(3);
+	}
+	gdqr_spooky.send(JSON.stringify({query:gdq_spooky}))
+
+	gdq_spirit =
+		`query {
+  		spiritswapFactories(first:1) {
+    		id
+    		totalVolumeUSD    totalVolumeFTM  untrackedVolumeUSD
+    		totalLiquidityUSD    totalLiquidityFTM
+    		txCount    pairCount
+  		}
+
+  		spiritswapDayDatas(where:{id: ${date_id}}){
+    		id  date
+    		dailyVolumeUSD	dailyVolumeFTM	dailyVolumeUntracked
+    		totalVolumeUSD	totalVolumeFTM
+    		totalLiquidityUSD	totalLiquidityFTM
+    		txCount
+			}
+		}`
+	gdqr_spirit = new XMLHttpRequest();
+	gdqr_spirit.open("POST","https://api.thegraph.com/subgraphs/name/layer3org/spiritswap-analytics",true);
+	gdqr_spirit.onload=function(){
+		gdqd_spirit=JSON.parse(this.response).data;
+		$("d_spirit").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_spirit.spiritswapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
+		$("d_spirit").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_spirit.spiritswapDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_spirit").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_spirit.spiritswapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_spirit").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_spirit.spiritswapFactories[0].txCount).toFixed(0)).toLocaleString()
+		gobj[0]+=Number(gdqd_spirit.spiritswapFactories[0].totalLiquidityUSD)
+		gobj[1]+=Number(gdqd_spirit.spiritswapDayDatas[0].dailyVolumeUSD)
+		gobj[2]+=Number(gdqd_spirit.spiritswapFactories[0].totalVolumeUSD)
+		gobj[3]+=Number(gdqd_spirit.spiritswapFactories[0].txCount)
+		ref_os();
+		sortit(3);sortit(3);
+	}
+	gdqr_spirit.send(JSON.stringify({query:gdq_spirit}))
+
+	gdq_paint =
+		`query {
+  		paintFactories(first:1) {
+    		id
+    		totalVolumeUSD    totalVolumeFTM  untrackedVolumeUSD
+    		totalLiquidityUSD    totalLiquidityFTM
+    		totalPairs    totalTransactions
+  		}
+
+  		paintDayDatas(where:{id: ${date_id}}){
+    		id  date
+    		dailyVolumeUSD	dailyVolumeFTM	dailyVolumeUntracked
+    		totalVolumeUSD	totalVolumeFTM
+    		totalLiquidityUSD	totalLiquidityFTM
+    		totalTransactions
+			}
+		}`
+	gdqr_paint = new XMLHttpRequest();
+	gdqr_paint.open("POST","https://api.thegraph.com/subgraphs/name/paint-swap-finance/exchange",true);
+	gdqr_paint.onload=function(){
+		gdqd_paint=JSON.parse(this.response).data;
+		$("d_paint").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_paint.paintFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
+		$("d_paint").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_paint.paintDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_paint").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_paint.paintFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_paint").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_paint.paintFactories[0].totalTransactions).toFixed(0)).toLocaleString()
+		gobj[0]+=Number(gdqd_paint.paintFactories[0].totalLiquidityUSD)
+		gobj[1]+=Number(gdqd_paint.paintDayDatas[0].dailyVolumeUSD)
+		gobj[2]+=Number(gdqd_paint.paintFactories[0].totalVolumeUSD)
+		gobj[3]+=Number(gdqd_paint.paintFactories[0].totalTransactions)
+		ref_os();
+		sortit(3);sortit(3);
+	}
+	gdqr_paint.send(JSON.stringify({query:gdq_paint}))
+
+	gdq_waka =
+		`query {
+  		wakaSwapFactories(first:1) {
+    		id
+    		totalVolumeUSD    totalVolumeETH  untrackedVolumeUSD
+    		totalLiquidityUSD    totalLiquidityETH
+    		pairCount    txCount
+  		}
+
+  		wakaSwapDayDatas(where:{id: ${date_id}}){
+    		id  date
+    		dailyVolumeUSD	dailyVolumeETH	dailyVolumeUntracked
+    		totalVolumeUSD	totalVolumeETH
+    		totalLiquidityUSD	totalLiquidityETH
+    		txCount
+			}
+		}`
+	gdqr_waka = new XMLHttpRequest();
+	gdqr_waka.open("POST","https://api.thegraph.com/subgraphs/name/waka-finance/waka-graph",true);
+	gdqr_waka.onload=function(){
+		gdqd_waka=JSON.parse(this.response).data;
+		$("d_waka").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_waka.wakaSwapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
+		$("d_waka").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_waka.wakaSwapDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_waka").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_waka.wakaSwapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_waka").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_waka.wakaSwapFactories[0].txCount).toFixed(0)).toLocaleString()
+		gobj[0]+=Number(gdqd_waka.wakaSwapFactories[0].totalLiquidityUSD)
+		gobj[1]+=Number(gdqd_waka.wakaSwapDayDatas[0].dailyVolumeUSD)
+		gobj[2]+=Number(gdqd_waka.wakaSwapFactories[0].totalVolumeUSD)
+		gobj[3]+=Number(gdqd_waka.wakaSwapFactories[0].txCount)
+		ref_os();
+		sortit(3);sortit(3);
+	}
+	gdqr_waka.send(JSON.stringify({query:gdq_waka}))
+
+	gdq_elk =
+		`query {
+  		elkFactories(first:1) {
+    		id
+    		totalVolumeUSD    totalVolumeETH  untrackedVolumeUSD
+    		totalLiquidityUSD    totalLiquidityETH
+    		pairCount    txCount
+  		}
+
+  		elkDayDatas(where:{id: ${date_id}}){
+    		id  date
+    		dailyVolumeUSD	dailyVolumeETH	dailyVolumeUntracked
+    		totalVolumeUSD	totalVolumeETH
+    		totalLiquidityUSD	totalLiquidityETH
+    		txCount
+			}
+		}`
+	gdqr_elk = new XMLHttpRequest();
+	gdqr_elk.open("POST","https://api.thegraph.com/subgraphs/name/elkfinance/elkdex-ftm",true);
+	gdqr_elk.onload=function(){
+		gdqd_elk=JSON.parse(this.response).data;
+		$("d_elk").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_elk.elkFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
+		$("d_elk").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_elk.elkDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_elk").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_elk.elkFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_elk").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_elk.elkFactories[0].txCount).toFixed(0)).toLocaleString()
+		gobj[0]+=Number(gdqd_elk.elkFactories[0].totalLiquidityUSD)
+		gobj[1]+=Number(gdqd_elk.elkDayDatas[0].dailyVolumeUSD)
+		gobj[2]+=Number(gdqd_elk.elkFactories[0].totalVolumeUSD)
+		gobj[3]+=Number(gdqd_elk.elkFactories[0].txCount)
+		ref_os();
+		sortit(3);sortit(3);
+	}
+	gdqr_elk.send(JSON.stringify({query:gdq_elk}))
+
+	gdq_nipple =
+		`query {
+  			uniswapFactories(first: 1) {
+    			id
+    			pairCount	txCount
+    			totalVolumeUSD    totalVolumeFTM	untrackedVolumeUSD
+    			totalLiquidityUSD	totalLiquidityFTM
+    			txCount
+  			}
+  			uniswapDayDatas(where:{id: ${date_id}}) {
+    			id	date
+    			txCount
+    			dailyVolumeUSD	dailyVolumeFTM	dailyVolumeUntracked
+    			totalVolumeUSD	totalVolumeFTM
+    			totalLiquidityUSD	totalLiquidityFTM
+  			}
+		}`
+	gdqr_nipple = new XMLHttpRequest();
+	gdqr_nipple.open("POST","https://api.thegraph.com/subgraphs/name/nipple-labs/nipplelabs",true);
+	gdqr_nipple.onload=function(){
+		gdqd_nipple=JSON.parse(this.response).data;
+		$("d_nipple").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_nipple.uniswapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
+		$("d_nipple").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_nipple.uniswapDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_nipple").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_nipple.uniswapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_nipple").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_nipple.uniswapFactories[0].txCount).toFixed(0)).toLocaleString()
+		gobj[0]+=Number(gdqd_nipple.uniswapFactories[0].totalLiquidityUSD)
+		gobj[1]+=Number(gdqd_nipple.uniswapDayDatas[0].dailyVolumeUSD)
+		gobj[2]+=Number(gdqd_nipple.uniswapFactories[0].totalVolumeUSD)
+		gobj[3]+=Number(gdqd_nipple.uniswapFactories[0].txCount)
+		ref_os();
+		sortit(3);sortit(3);
+	}
+	gdqr_nipple.send(JSON.stringify({query:gdq_nipple}))
+
+	gdq_shiba =
+		`query {
+  			uniswapFactories(first: 1) {
+    			id
+    			pairCount	txCount
+    			totalVolumeUSD    totalVolumeFTM	untrackedVolumeUSD
+    			totalLiquidityUSD	totalLiquidityFTM
+    			txCount
+  			}
+  			uniswapDayDatas(where:{id: ${date_id}}) {
+    			id	date
+    			txCount
+    			dailyVolumeUSD	dailyVolumeFTM	dailyVolumeUntracked
+    			totalVolumeUSD	totalVolumeFTM
+    			totalLiquidityUSD	totalLiquidityFTM
+  			}
+		}`
+	gdqr_shiba = new XMLHttpRequest();
+	gdqr_shiba.open("POST","https://api.thegraph.com/subgraphs/name/shiba-fantom/exchange",true);
+	gdqr_shiba.onload=function(){
+		gdqd_shiba=JSON.parse(this.response).data;
+		$("d_shiba").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_shiba.uniswapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
+		$("d_shiba").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_shiba.uniswapDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_shiba").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_shiba.uniswapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_shiba").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_shiba.uniswapFactories[0].txCount).toFixed(0)).toLocaleString()
+		gobj[0]+=Number(gdqd_shiba.uniswapFactories[0].totalLiquidityUSD)
+		gobj[1]+=Number(gdqd_shiba.uniswapDayDatas[0].dailyVolumeUSD)
+		gobj[2]+=Number(gdqd_shiba.uniswapFactories[0].totalVolumeUSD)
+		gobj[3]+=Number(gdqd_shiba.uniswapFactories[0].txCount)
+		ref_os();
+		sortit(3);sortit(3);
+	}
+	gdqr_shiba.send(JSON.stringify({query:gdq_shiba}))
+
+	gdq_jet =
+		`query {
+  			uniswapFactories(first: 1) {
+    			id
+    			pairCount	txCount
+    			totalVolumeUSD    totalVolumeETH	untrackedVolumeUSD
+    			totalLiquidityUSD	totalLiquidityETH
+    			txCount
+  			}
+  			uniswapDayDatas(where:{id: ${date_id}}) {
+    			id	date
+    			txCount
+    			dailyVolumeUSD	dailyVolumeETH	dailyVolumeUntracked
+    			totalVolumeUSD	totalVolumeETH
+    			totalLiquidityUSD	totalLiquidityETH
+  			}
+		}`
+	gdqr_jet = new XMLHttpRequest();
+	gdqr_jet.open("POST","https://api.thegraph.com/subgraphs/name/smartcookie0501/jetswap-subgraph-fantom",true);
+	gdqr_jet.onload=function(){
+		gdqd_jet=JSON.parse(this.response).data;
+		$("d_jet").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_jet.uniswapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
+		$("d_jet").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_jet.uniswapDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_jet").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_jet.uniswapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_jet").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_jet.uniswapFactories[0].txCount).toFixed(0)).toLocaleString()
+		gobj[0]+=Number(gdqd_jet.uniswapFactories[0].totalLiquidityUSD)
+		gobj[1]+=Number(gdqd_jet.uniswapDayDatas[0].dailyVolumeUSD)
+		gobj[2]+=Number(gdqd_jet.uniswapFactories[0].totalVolumeUSD)
+		gobj[3]+=Number(gdqd_jet.uniswapFactories[0].txCount)
+		ref_os()
+
+		ref_os();
+		sortit(3);sortit(3);
+	}
+	gdqr_jet.send(JSON.stringify({query:gdq_jet}))
+
+/*
+	gdq_cyber =
+		`query {
+  		xdaoFactories(first:1) {
+    		id
+    		totalVolumeUSD    totalVolumeFTM  untrackedVolumeUSD
+    		totalLiquidityUSD    totalLiquidityFTM
+    		txCount    pairCount
+  		}
+
+  		xdaoDayDatas(where:{id:18897}){
+    		id  date
+    		dailyVolumeFTM	dailyVolumeUSD	dailyVolumeUntracked
+    		totalVolumeUSD	totalVolumeFTM
+    		totalLiquidityUSD	totalLiquidityFTM
+    		txCount
+			}
+		}`
+	gdqr_cyber = new XMLHttpRequest();
+	gdqr_cyber.open("POST","https://api.studio.thegraph.com/query/7564/xdaoexchange/1.1.2",true);
+	gdqr_cyber.onload=function(){
+		gdqd_cyber=JSON.parse(this.response).data;
+		$("d_cyber").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_cyber.xdaoFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
+		$("d_cyber").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_cyber.xdaoDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_cyber").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_cyber.xdaoFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_cyber").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_cyber.xdaoFactories[0].txCount).toFixed(0)).toLocaleString()
+		gobj[0]+=Number(gdqd_cyber.xdaoFactories[0].totalLiquidityUSD)
+		gobj[1]+=Number(gdqd_cyber.xdaoSwapDayDatas[0].dailyVolumeUSD)
+		gobj[2]+=Number(gdqd_cyber.xdaoFactories[0].totalVolumeUSD)
+		gobj[3]+=Number(gdqd_cyber.xdaoFactories[0].txCount)
+		ref_os();
+		sortit(3);sortit(3);
+	}
+	gdqr_cyber.send(JSON.stringify({query:gdq_cyber}))
+
+
+*/
+
+	fetch('https://api.studio.thegraph.com/query/7564/xdaoexchange/1.1.2', {
+  	method: 'POST',
+  	body: JSON.stringify({
+    	query: `query {
+  			xdaoFactories(first:1) {
+    			id
+    			totalVolumeUSD    totalVolumeFTM  untrackedVolumeUSD
+    			totalLiquidityUSD    totalLiquidityFTM
+    			txCount    pairCount
+  			}
+
+  			xdaoDayDatas(where:{id:18897}){
+    			id  date
+    			dailyVolumeFTM	dailyVolumeUSD	dailyVolumeUntracked
+    			totalVolumeUSD	totalVolumeFTM
+    			totalLiquidityUSD	totalLiquidityFTM
+    			txCount
+				}
+			}`,
+    	variables: {
+    	}
+  	}),
+  	headers: {
+      	'content-type': 'application/json'
+  	}
+	}).then(async (data) => {
+    	// Console log our return data
+    	var gdqd_cyber=(await data.json()).data;
+		$("d_cyber").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_cyber.xdaoFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
+		$("d_cyber").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_cyber.xdaoDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_cyber").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_cyber.xdaoFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_cyber").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_cyber.xdaoFactories[0].txCount).toFixed(0)).toLocaleString()
+		gobj[0]+=Number(gdqd_cyber.xdaoFactories[0].totalLiquidityUSD)
+		gobj[1]+=Number(gdqd_cyber.xdaoDayDatas[0].dailyVolumeUSD)
+		gobj[2]+=Number(gdqd_cyber.xdaoFactories[0].totalVolumeUSD)
+		gobj[3]+=Number(gdqd_cyber.xdaoFactories[0].txCount)
+	});
+
+
+
+
+	gdq_beethoven =
+		`query {
+  balancers(first:1){
+    totalLiquidity
+    totalSwapCount
+    poolCount
+    totalSwapVolume
+    totalSwapFee
+    id
+  }
+}`
+	gdqr_beethoven = new XMLHttpRequest();
+	//old:
+	gdqr_beethoven.open("POST","https://graph-node.beets-ftm-node.com/subgraphs/name/beethovenx",true);
+	//gdqr_beethoven.open("POST","https://graph-node.beets-ftm-node.com/subgraphs/name/beethovenx-v4",true);
+	//gdqr_beethoven.open("POST","https://eu-lb.beets-ftm-node.com/subgraphs/name/beethovenx-canary",true);
+	gdqr_beethoven.onload=function(){
+		gdqd_beethoven=JSON.parse(this.response).data.balancers[0];
+		$("d_beethoven").getElementsByTagName("td")[1].innerHTML=Number(Number(gdqd_beethoven.poolCount).toFixed(0)).toLocaleString()
+		$("d_beethoven").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_beethoven.totalLiquidity).toFixed(0)).toLocaleString()
+		$("d_beethoven").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_beethoven.totalSwapVolume).toFixed(0)).toLocaleString()
+		$("d_beethoven").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_beethoven.totalSwapCount).toFixed(0)).toLocaleString()
+		gobj[0]+=Number(gdqd_beethoven.totalLiquidity)
+		//gobj[1]+=Number(gdqd_beethoven.uniswapDayDatas[0].dailyVolumeUSD)
+		gobj[2]+=Number(gdqd_beethoven.totalSwapVolume)
+		gobj[3]+=Number(gdqd_beethoven.totalSwapCount)
+		ref_os();
+		sortit(3);sortit(3);
+	}
+	gdqr_beethoven.send(JSON.stringify({query:gdq_beethoven}))
+
+
+
+
+
+
+
+	/*
+
+
+	gdq_shiba =
+		`query {
+  			uniswapFactories(first: 1) {
+    			id
+    			pairCount	txCount
+    			totalVolumeUSD    totalVolumeFTM	untrackedVolumeUSD
+    			totalLiquidityUSD	totalLiquidityFTM
+    			txCount
+  			}
+  			uniswapDayDatas(where:{id: ${date_id}}) {
+    			id	date
+    			txCount
+    			dailyVolumeUSD	dailyVolumeFTM	dailyVolumeUntracked
+    			totalVolumeUSD	totalVolumeFTM
+    			totalLiquidityUSD	totalLiquidityFTM
+  			}
+		}`
+	gdqr_shiba = new XMLHttpRequest();
+	gdqr_shiba.open("POST","https://api.thegraph.com/subgraphs/name/shiba-fantom/exchange",true);
+	gdqr_shiba.onload=function(){
+		gdqd_shiba=JSON.parse(this.response).data;
+		$("d_shiba").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_shiba.uniswapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
+		$("d_shiba").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_shiba.uniswapDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_shiba").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_shiba.uniswapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_shiba").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_shiba.uniswapFactories[0].txCount).toFixed(0)).toLocaleString()
+		gobj[0]+=Number(gdqd_shiba.uniswapFactories[0].totalLiquidityUSD)
+		gobj[1]+=Number(gdqd_shiba.uniswapDayDatas[0].dailyVolumeUSD)
+		gobj[2]+=Number(gdqd_shiba.uniswapFactories[0].totalVolumeUSD)
+		gobj[3]+=Number(gdqd_shiba.uniswapFactories[0].txCount)
+		ref_os();
+		sortit(3);sortit(3);
+	}
+	gdqr_shiba.send(JSON.stringify({query:gdq_shiba}))
+
+	*/
+
+
+
+	gdq_dmm =
+		`query {
+  		dmmFactories(first:1) {
+    		id
+    		totalVolumeUSD    totalVolumeETH  untrackedVolumeUSD
+    		totalFeeUSD	untrackedFeeUSD totalProtocolFeeUSD
+    		totalLiquidityUSD    totalLiquidityETH
+    		txCount    pairCount	poolCount
+  		}
+
+  		dmmDayDatas(where:{id: ${date_id}}) {
+    		id  date
+    		dailyVolumeETH	dailyVolumeUSD	dailyVolumeUntracked
+    		totalVolumeUSD	totalVolumeETH
+    		totalLiquidityUSD	totalLiquidityETH
+    		txCount
+			}
+		}`
+	gdqr_dmm = new XMLHttpRequest();
+	gdqr_dmm.open("POST","https://api.thegraph.com/subgraphs/name/dynamic-amm/dmm-exchange-ftm",true);
+	gdqr_dmm.onload=function(){
+		gdqd_dmm=JSON.parse(this.response).data;
+		$("d_dmm").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_dmm.dmmFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
+		$("d_dmm").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_dmm.dmmDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_dmm").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_dmm.dmmFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_dmm").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_dmm.dmmFactories[0].txCount).toFixed(0)).toLocaleString()
+		gobj[0]+=Number(gdqd_dmm.dmmFactories[0].totalLiquidityUSD)
+		gobj[1]+=Number(gdqd_dmm.dmmDayDatas[0].dailyVolumeUSD)
+		gobj[2]+=Number(gdqd_dmm.dmmFactories[0].totalVolumeUSD)
+		gobj[3]+=Number(gdqd_dmm.dmmFactories[0].txCount)
+		ref_os();
+		sortit(3);sortit(3);
+	}
+	gdqr_dmm.send(JSON.stringify({query:gdq_dmm}))
+
+
+
+
+
+
+	gdq_empire =
+		`query {
+  			uniswapFactories(first: 1) {
+    			id
+    			pairCount	txCount
+    			totalVolumeUSD    totalVolumeETH	untrackedVolumeUSD
+    			totalLiquidityUSD	totalLiquidityETH
+    			txCount
+  			}
+  			uniswapDayDatas(where:{id: ${date_id}}) {
+    			id	date
+    			txCount
+    			dailyVolumeUSD	dailyVolumeETH	dailyVolumeUntracked
+    			totalVolumeUSD	totalVolumeETH
+    			totalLiquidityUSD	totalLiquidityETH
+  			}
+		}`
+
+
+	gdqr_empire = new XMLHttpRequest();
+	gdqr_empire.open("POST","https://api.thegraph.com/subgraphs/name/zikyfranky/empire-exchange",true);
+	gdqr_empire.onload=function(){
+		gdqd_empire=JSON.parse(this.response).data;
+		$("d_empire").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_empire.uniswapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
+		$("d_empire").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_empire.uniswapDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_empire").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_empire.uniswapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_empire").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_empire.uniswapFactories[0].txCount).toFixed(0)).toLocaleString()
+		gobj[0]+=Number(gdqd_empire.uniswapFactories[0].totalLiquidityUSD)
+		gobj[1]+=Number(gdqd_empire.uniswapDayDatas[0].dailyVolumeUSD)
+		gobj[2]+=Number(gdqd_empire.uniswapFactories[0].totalVolumeUSD)
+		gobj[3]+=Number(gdqd_empire.uniswapFactories[0].txCount)
+		ref_os();
+		sortit(3);sortit(3);
+	}
+	gdqr_empire.send(JSON.stringify({query:gdq_empire}))
+
+
+
+
+
+	gdq_dfyn =
+		`query {
+  			uniswapFactories(first: 1) {
+    			id
+    			pairCount	txCount
+    			totalVolumeUSD    totalVolumeETH	untrackedVolumeUSD
+    			totalLiquidityUSD	totalLiquidityETH
+    			txCount
+  			}
+  			uniswapDayDatas(where:{id: ${date_id}}) {
+    			id	date
+    			txCount
+    			dailyVolumeUSD	dailyVolumeETH	dailyVolumeUntracked
+    			totalVolumeUSD	totalVolumeETH
+    			totalLiquidityUSD	totalLiquidityETH
+  			}
+		}`
+
+
+	gdqr_dfyn = new XMLHttpRequest();
+	gdqr_dfyn.open("POST","https://api.thegraph.com/subgraphs/name/ss-sonic/fantom-v4",true);
+	gdqr_dfyn.onload=function(){
+		gdqd_dfyn=JSON.parse(this.response).data;
+		$("d_dfyn").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_dfyn.uniswapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
+		$("d_dfyn").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_dfyn.uniswapDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_dfyn").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_dfyn.uniswapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_dfyn").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_dfyn.uniswapFactories[0].txCount).toFixed(0)).toLocaleString()
+		gobj[0]+=Number(gdqd_dfyn.uniswapFactories[0].totalLiquidityUSD)
+		gobj[1]+=Number(gdqd_dfyn.uniswapDayDatas[0].dailyVolumeUSD)
+		gobj[2]+=Number(gdqd_dfyn.uniswapFactories[0].totalVolumeUSD)
+		gobj[3]+=Number(gdqd_dfyn.uniswapFactories[0].txCount)
+		ref_os();
+		sortit(3);sortit(3);
+	}
+	gdqr_dfyn.send(JSON.stringify({query:gdq_dfyn}))
+
+
+
+
+	gdq_morpheus =
+		`query {
+  			pancakeFactories(first: 1) {
+    			id
+    			totalPairs	totalTransactions
+    			totalVolumeUSD    totalVolumeBNB	untrackedVolumeUSD
+    			totalLiquidityUSD	totalLiquidityBNB
+  			}
+  			pancakeDayDatas(where:{id: ${date_id}})
+  {
+    			id	date
+    			totalTransactions
+    			dailyVolumeUSD	dailyVolumeBNB	dailyVolumeUntracked
+    			totalVolumeUSD	totalVolumeBNB
+    			totalLiquidityUSD	totalLiquidityBNB
+  			}
+		}`
+
+
+	gdqr_morpheus = new XMLHttpRequest();
+	gdqr_morpheus.open("POST","https://api.thegraph.com/subgraphs/name/daedboi/morpheus-swap",true);
+	gdqr_morpheus.onload=function(){
+		gdqd_morpheus=JSON.parse(this.response).data;
+		$("d_morpheus").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_morpheus.pancakeFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
+		$("d_morpheus").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_morpheus.pancakeDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_morpheus").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_morpheus.pancakeFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_morpheus").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_morpheus.pancakeFactories[0].totalTransactions).toFixed(0)).toLocaleString()
+		gobj[0]+=Number(gdqd_morpheus.pancakeFactories[0].totalLiquidityUSD)
+		gobj[1]+=Number(gdqd_morpheus.pancakeDayDatas[0].dailyVolumeUSD)
+		gobj[2]+=Number(gdqd_morpheus.pancakeFactories[0].totalVolumeUSD)
+		gobj[3]+=Number(gdqd_morpheus.pancakeFactories[0].totalTransactions)
+		ref_os();
+		sortit(3);sortit(3);
+	}
+	gdqr_morpheus.send(JSON.stringify({query:gdq_morpheus}))
+
+
+
+
+	gdq_firebird =
+		`query {
+  			exchanges(first: 1) {
+    			id
+    			poolCount	txCount
+    			totalSwapVolume
+    			totalLiquidity
+    			totalSwapFee	totalProtocolFee	protocolFee
+  			}
+  			exchangeDayDatas(where:{id: "${date_id}-1"})
+  {
+    			id	date	exchangeID {
+    			  id
+    			}
+    			txCount
+    			dailyVolumeUSD
+    			totalVolumeUSD
+    			totalLiquidityUSD
+    			dailyFeeUSD	dailyProtocolFeeUSD	totalFeeUSD
+  			}
+		}`
+
+
+	gdqr_firebird = new XMLHttpRequest();
+	gdqr_firebird.open("POST","https://api.thegraph.com/subgraphs/name/firebirdgraph/fantom-exchange",true);
+	gdqr_firebird.onload=function(){
+		gdqd_firebird=JSON.parse(this.response).data;
+		$("d_firebird").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_firebird.exchanges[0].totalLiquidity).toFixed(0)).toLocaleString()
+		$("d_firebird").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_firebird.exchangeDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_firebird").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_firebird.exchanges[0].totalSwapVolume).toFixed(0)).toLocaleString()
+		$("d_firebird").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_firebird.exchanges[0].txCount).toFixed(0)).toLocaleString()
+		gobj[0]+=Number(gdqd_firebird.exchanges[0].totalLiquidity)
+		gobj[1]+=Number(gdqd_firebird.exchangeDayDatas[0].dailyVolumeUSD)
+		gobj[2]+=Number(gdqd_firebird.exchanges[0].totalSwapVolume)
+		gobj[3]+=Number(gdqd_firebird.exchanges[0].txCount)
+		ref_os();
+		sortit(3);sortit(3);
+	}
+	gdqr_firebird.send(JSON.stringify({query:gdq_firebird}))
+
+
+
+	gdq_soul =
+		`query {
+  			uniswapFactories{
+    			id	pairCount	txCount
+    			totalVolumeUSD	totalVolumeETH	untrackedVolumeUSD
+    			totalLiquidityUSD	totalLiquidityETH
+  			}
+  			uniswapDayDatas(where:{id: ${date_id}}){
+    			id	date
+    			dailyVolumeUSD	dailyVolumeETH	dailyVolumeUntracked
+    			totalVolumeUSD	totalVolumeETH
+    			totalLiquidityUSD	totalLiquidityETH
+    			txCount
+  			}
+		}`
+	gdqr_soul = new XMLHttpRequest();
+	gdqr_soul.open("POST","https://api.thegraph.com/subgraphs/name/soulswapfinance/fantom-soulswap",true);
+	gdqr_soul.onload=function(){
+		gdqd_soul=JSON.parse(this.response).data;
+		$("d_soul").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_soul.uniswapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
+		$("d_soul").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_soul.uniswapDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_soul").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_soul.uniswapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_soul").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_soul.uniswapFactories[0].txCount).toFixed(0)).toLocaleString()
+		gobj[0]+=Number(gdqd_soul.uniswapFactories[0].totalLiquidityUSD)
+		gobj[1]+=Number(gdqd_soul.uniswapDayDatas[0].dailyVolumeUSD)
+		gobj[2]+=Number(gdqd_soul.uniswapFactories[0].totalVolumeUSD)
+		gobj[3]+=Number(gdqd_soul.uniswapFactories[0].txCount)
+		ref_os();
+		sortit(3);sortit(3);
+	}
+	gdqr_soul.send(JSON.stringify({query:gdq_soul}))
+
+
+
+	gdq_fbomb =
+		`query {
+  		bombswapFactories(first:1){
+    		id
+    		totalVolumeUSD    totalVolumeFTM  untrackedVolumeUSD
+    		totalLiquidityUSD    totalLiquidityFTM
+    		totalPairs    totalTransactions
+  		}
+
+  		bombswapDayDatas(where:{id: ${date_id}}){
+    		id  date
+    		dailyVolumeUSD	dailyVolumeFTM	dailyVolumeUntracked
+    		totalVolumeUSD	totalVolumeFTM
+    		totalLiquidityUSD	totalLiquidityFTM
+    		totalTransactions
+			}
+		}`
+	gdqr_fbomb = new XMLHttpRequest();
+	gdqr_fbomb.open("POST","https://api.thegraph.com/subgraphs/name/fbomb-finance/bombswap-exchange",true);
+	gdqr_fbomb.onload=function(){
+		gdqd_fbomb=JSON.parse(this.response).data;
+		$("d_fbomb").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_fbomb.bombswapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
+		$("d_fbomb").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_fbomb.bombswapDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_fbomb").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_fbomb.bombswapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_fbomb").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_fbomb.bombswapFactories[0].totalTransactions).toFixed(0)).toLocaleString()
+		gobj[0]+=Number(gdqd_fbomb.bombswapFactories[0].totalLiquidityUSD)
+		gobj[1]+=Number(gdqd_fbomb.bombswapDayDatas[0].dailyVolumeUSD)
+		gobj[2]+=Number(gdqd_fbomb.bombswapFactories[0].totalVolumeUSD)
+		gobj[3]+=Number(gdqd_fbomb.bombswapFactories[0].totalTransactions)
+		ref_os();
+		sortit(3);sortit(3);
+	}
+	gdqr_fbomb.send(JSON.stringify({query:gdq_fbomb}))
+
+
+
+
+	gdq_knight =
+		`query {
+  		uniswapFactories{
+    		id
+    		totalVolumeUSD    totalVolumeETH  untrackedVolumeUSD
+    		totalLiquidityUSD    totalLiquidityETH
+    		pairCount    txCount
+  		}
+
+  		uniswapDayDatas(where:{id: ${date_id}}){
+    		id  date
+    		dailyVolumeUSD	dailyVolumeETH	dailyVolumeUntracked
+    		totalVolumeUSD	totalVolumeETH
+    		totalLiquidityUSD	totalLiquidityETH
+    		txCount
+			}
+		}`
+	gdqr_knight = new XMLHttpRequest();
+	gdqr_knight.open("POST","https://api.thegraph.com/subgraphs/name/shahzeb8285/dark-knight-two",true);
+	gdqr_knight.onload=function(){
+		gdqd_knight=JSON.parse(this.response).data;
+		$("d_knight").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_knight.uniswapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
+		$("d_knight").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_knight.uniswapDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_knight").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_knight.uniswapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_knight").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_knight.uniswapFactories[0].txCount).toFixed(0)).toLocaleString()
+		gobj[0]+=Number(gdqd_knight.uniswapFactories[0].totalLiquidityUSD)
+		gobj[1]+=Number(gdqd_knight.uniswapDayDatas[0].dailyVolumeUSD)
+		gobj[2]+=Number(gdqd_knight.uniswapFactories[0].totalVolumeUSD)
+		gobj[3]+=Number(gdqd_knight.uniswapFactories[0].txCount)
+		ref_os();
+		sortit(3);sortit(3);
+	}
+	gdqr_knight.send(JSON.stringify({query:gdq_knight}))
+
+
+
+	gdq_defy =
+		`query {
+  		pancakeFactories(first:1) {
+    		id
+    		totalVolumeUSD    totalVolumeBNB  untrackedVolumeUSD
+    		totalLiquidityUSD    totalLiquidityBNB
+    		totalPairs    totalTransactions
+  		}
+
+  		pancakeDayDatas(where:{id: ${date_id}}){
+    		id  date
+    		dailyVolumeUSD	dailyVolumeBNB	dailyVolumeUntracked
+    		totalVolumeUSD	totalVolumeBNB
+    		totalLiquidityUSD	totalLiquidityBNB
+    		totalTransactions
+			}
+		}`
+	gdqr_defy = new XMLHttpRequest();
+	gdqr_defy.open("POST","https://api.thegraph.com/subgraphs/name/birchydefy/defyswapv2",true);
+	gdqr_defy.onload=function(){
+		gdqd_defy=JSON.parse(this.response).data;
+		$("d_defy").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_defy.pancakeFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
+		$("d_defy").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_defy.pancakeDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_defy").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_defy.pancakeFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_defy").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_defy.pancakeFactories[0].totalTransactions).toFixed(0)).toLocaleString()
+		gobj[0]+=Number(gdqd_defy.pancakeFactories[0].totalLiquidityUSD)
+		gobj[1]+=Number(gdqd_defy.pancakeDayDatas[0].dailyVolumeUSD)
+		gobj[2]+=Number(gdqd_defy.pancakeFactories[0].totalVolumeUSD)
+		gobj[3]+=Number(gdqd_defy.pancakeFactories[0].totalTransactions)
+		ref_os();
+		sortit(3);sortit(3);
+	}
+	gdqr_defy.send(JSON.stringify({query:gdq_defy}))
+
+
+
+
+	gdq_wing =
+		`query {
+  		wingSwapFactories(first:1) {
+    		id
+    		totalVolumeUSD    totalVolumeETH  untrackedVolumeUSD
+    		totalLiquidityUSD    totalLiquidityETH
+    		totalPairs    totalTransactions
+  		}
+
+  		wingSwapDayDatas(where:{id: ${date_id}}){
+    		id  date
+    		dailyVolumeUSD	dailyVolumeETH	dailyVolumeUntracked
+    		totalVolumeUSD	totalVolumeETH
+    		totalLiquidityUSD	totalLiquidityETH
+    		totalTransactions
+			}
+		}`
+	gdqr_wing = new XMLHttpRequest();
+	gdqr_wing.open("POST","https://api.thegraph.com/subgraphs/name/wingswap/wingswap-exchange",true);
+	gdqr_wing.onload=function(){
+		gdqd_wing=JSON.parse(this.response).data;
+		$("d_wing").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_wing.wingSwapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
+		$("d_wing").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_wing.wingSwapDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_wing").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_wing.wingSwapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_wing").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_wing.wingSwapFactories[0].totalTransactions).toFixed(0)).toLocaleString()
+		gobj[0]+=Number(gdqd_wing.wingSwapFactories[0].totalLiquidityUSD)
+		gobj[1]+=Number(gdqd_wing.wingSwapDayDatas[0].dailyVolumeUSD)
+		gobj[2]+=Number(gdqd_wing.wingSwapFactories[0].totalVolumeUSD)
+		gobj[3]+=Number(gdqd_wing.wingSwapFactories[0].totalTransactions)
+		ref_os();
+		sortit(3);sortit(3);
+	}
+	gdqr_wing.send(JSON.stringify({query:gdq_wing}))
+
+
+
+
+
+
+	gdq_degenhaus =
+		`query {
+  		pancakeFactories(first:1) {
+    		id
+    		totalVolumeUSD    totalVolumeBNB  untrackedVolumeUSD
+    		totalLiquidityUSD    totalLiquidityBNB
+    		totalPairs    totalTransactions
+  		}
+
+  		pancakeDayDatas(where:{id: ${date_id}}){
+    		id  date
+    		dailyVolumeUSD	dailyVolumeBNB	dailyVolumeUntracked
+    		totalVolumeUSD	totalVolumeBNB
+    		totalLiquidityUSD	totalLiquidityBNB
+    		totalTransactions
+      	}
+	}`
+	gdqr_degenhaus = new XMLHttpRequest();
+	gdqr_degenhaus.open("POST","https://api.thegraph.com/subgraphs/name/cryptoinhero/degenswap-exchange",true);
+	gdqr_degenhaus.onload=function(){
+		gdqd_degenhaus=JSON.parse(this.response).data;
+		$("d_degenhaus").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_degenhaus.pancakeFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
+		$("d_degenhaus").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_degenhaus.pancakeDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_degenhaus").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_degenhaus.pancakeFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_degenhaus").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_degenhaus.pancakeFactories[0].totalTransactions).toFixed(0)).toLocaleString()
+		gobj[0]+=Number(gdqd_degenhaus.pancakeFactories[0].totalLiquidityUSD)
+		gobj[1]+=Number(gdqd_degenhaus.pancakeDayDatas[0].dailyVolumeUSD)
+		gobj[2]+=Number(gdqd_degenhaus.pancakeFactories[0].totalVolumeUSD)
+		gobj[3]+=Number(gdqd_degenhaus.pancakeFactories[0].totalTransactions)
+		ref_os();
+		sortit(3);sortit(3);
+	}
+	gdqr_degenhaus.send(JSON.stringify({query:gdq_degenhaus}))
+
+
+
+
+	gdq_protofi =
+		`query {
+  		pancakeFactories(first:1) {
+    		id
+    		totalVolumeUSD    totalVolumeBNB  untrackedVolumeUSD
+    		totalLiquidityUSD    totalLiquidityBNB
+    		totalPairs    totalTransactions
+  		}
+
+  		pancakeDayDatas(where:{id: ${date_id}}){
+    		id  date
+    		dailyVolumeUSD	dailyVolumeBNB	dailyVolumeUntracked
+    		totalVolumeUSD	totalVolumeBNB
+    		totalLiquidityUSD	totalLiquidityBNB
+    		totalTransactions
+      	}
+	}`
+	gdqr_protofi = new XMLHttpRequest();
+	gdqr_protofi.open("POST","https://api.thegraph.com/subgraphs/name/theothercrypto/protofi-dex-fantom",true);
+	gdqr_protofi.onload=function(){
+		gdqd_protofi=JSON.parse(this.response).data;
+		$("d_protofi").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_protofi.pancakeFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
+		$("d_protofi").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_protofi.pancakeDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_protofi").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_protofi.pancakeFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_protofi").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_protofi.pancakeFactories[0].totalTransactions).toFixed(0)).toLocaleString()
+		gobj[0]+=Number(gdqd_protofi.pancakeFactories[0].totalLiquidityUSD)
+		gobj[1]+=Number(gdqd_protofi.pancakeDayDatas[0].dailyVolumeUSD)
+		gobj[2]+=Number(gdqd_protofi.pancakeFactories[0].totalVolumeUSD)
+		gobj[3]+=Number(gdqd_protofi.pancakeFactories[0].totalTransactions)
+		ref_os();
+		sortit(3);sortit(3);
+	}
+	gdqr_protofi.send(JSON.stringify({query:gdq_protofi}))
+
+
+
+
+	gdq_metro =
+		`query {
+  			uniswapFactories(first: 1) {
+    			id
+    			pairCount	txCount
+    			totalVolumeUSD    totalVolumeNativeCurrency	untrackedVolumeUSD
+    			totalLiquidityUSD	totalLiquidityNativeCurrency
+  			}
+  			uniswapDayDatas#(where:{id: ${date_id}}){
+  			{
+    			id	date
+    			txCount
+    			dailyVolumeUSD	dailyVolumeNativeCurrency	dailyVolumeUntracked
+    			totalVolumeUSD	totalVolumeNativeCurrency
+    			totalLiquidityUSD	totalLiquidityNativeCurrency
+  			}
+        }`
+	gdqr_metro = new XMLHttpRequest();
+	gdqr_metro.open("POST","https://api.thegraph.com/subgraphs/name/tetcoin/metroswap-fantom",true);
+	gdqr_metro.onload=function(){
+		gdqd_metro=JSON.parse(this.response).data;
+		//$("d_metro").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_metro.uniswapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
+		$("d_metro").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_metro.uniDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
+		//$("d_metro").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_metro.uniswapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_metro").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_metro.uniswapFactories[0].txCount).toFixed(0)).toLocaleString()
+		//gobj[0]+=Number(gdqd_metro.uniswapFactories[0].totalLiquidityUSD)
+		gobj[1]+=Number(gdqd_metro.uniDayDatas[0].dailyVolumeUSD)
+		//gobj[2]+=Number(gdqd_metro.uniswapFactories[0].totalVolumeUSD)
+		gobj[3]+=Number(gdqd_metro.uniswapFactories[0].txCount)
+		ref_os();
+		sortit(3);sortit(3);
+	}
+	gdqr_metro.send(JSON.stringify({query:gdq_metro}))
+	//console.log("sent metro")
+
+
+
+	gdq_wigo =
+		`query {
+  			wigoswapFactories(first: 1) {
+    			id
+    			totalPairs	totalTransactions
+    			totalVolumeUSD    totalVolumeFTM	untrackedVolumeUSD
+    			totalLiquidityUSD	totalLiquidityFTM
+  			}
+  			wigoDayDatas(where:{id: ${date_id}}){
+    			id	date
+    			totalTransactions
+    			dailyVolumeUSD	dailyVolumeFTM	dailyVolumeUntracked
+    			totalVolumeUSD	totalVolumeFTM
+    			totalLiquidityUSD	totalLiquidityFTM
+  			}
+        }`
+	gdqr_wigo = new XMLHttpRequest();
+	gdqr_wigo.open("POST","https://api.thegraph.com/subgraphs/name/wigoswap/exchange",true);
+	gdqr_wigo.onload=function(){
+		gdqd_wigo=JSON.parse(this.response).data;//console.log("WIGO",gdqd_wigo)
+		$("d_wigo").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_wigo.wigoswapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
+		$("d_wigo").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_wigo.wigoDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_wigo").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_wigo.wigoswapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
+		$("d_wigo").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_wigo.wigoswapFactories[0].totalTransactions).toFixed(0)).toLocaleString()
+		gobj[0]+=Number(gdqd_wigo.wigoswapFactories[0].totalLiquidityUSD)
+		gobj[1]+=Number(gdqd_wigo.wigoDayDatas[0].dailyVolumeUSD)
+		gobj[2]+=Number(gdqd_wigo.wigoswapFactories[0].totalVolumeUSD)
+		gobj[3]+=Number(gdqd_wigo.wigoswapFactories[0].totalTransactions)
+		ref_os();
+		sortit(3);sortit(3);
+	}
+	gdqr_wigo.send(JSON.stringify({query:gdq_wigo}))
+
+
+
+
+
+
+//ITVL - tvlGuru.sol, The Universal On-chain TVL Finder
+
+TVLGURU = "0x3f0458FfB6D106d2F5CdeC9CEdc9054A69275489"
+tvlAbi = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[],"name":"DAO","outputs":[{"internalType":"address payable","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"_bankOf_coin","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"_bankOf_e_usd","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"_bankOf_lpt_coin_usd","outputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"_bankOf_lpt_tt_coin_usd","outputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_f","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"_bankOf_lpt_tt_usd","outputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_u","type":"address"},{"internalType":"address","name":"u","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"_bankOf_lpt_usd","outputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"u","type":"address"},{"internalType":"address","name":"lp","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"_bankOf_t_coin_usd","outputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"_bankOf_t_tt_coin_usd","outputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_f","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"_bankOf_t_tt_usd","outputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_u","type":"address"},{"internalType":"address","name":"u","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"_bankOf_t_usd","outputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"u","type":"address"},{"internalType":"address","name":"lp","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256[]","name":"_e_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_coin_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_t_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_t_coin_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_t_tt_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_t_tt_coin_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_lpt_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_lpt_coin_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_lpt_tt_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_lpt_tt_coin_usd","type":"uint256[]"}],"name":"_puBankOf_pool2_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256[]","name":"_e_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_coin_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_t_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_t_coin_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_t_tt_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_t_tt_coin_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_lpt_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_lpt_coin_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_lpt_tt_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_lpt_tt_coin_usd","type":"uint256[]"}],"name":"_puBankOf_staking_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_pullBankOf_coin","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_pullBankOf_e_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_pullBankOf_lpt_coin_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_pullBankOf_lpt_tt_coin_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_pullBankOf_lpt_tt_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_pullBankOf_lpt_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_pullBankOf_t_coin_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_pullBankOf_t_tt_coin_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_pullBankOf_t_tt_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_pullBankOf_t_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"asset","type":"address"}],"name":"_pushBankOf_coin","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"asset","type":"address"}],"name":"_pushBankOf_e_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp","type":"address"}],"name":"_pushBankOf_lpt_coin_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_f","type":"address"}],"name":"_pushBankOf_lpt_tt_coin_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_u","type":"address"},{"internalType":"address","name":"u","type":"address"}],"name":"_pushBankOf_lpt_tt_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"u","type":"address"},{"internalType":"address","name":"lp","type":"address"}],"name":"_pushBankOf_lpt_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp","type":"address"}],"name":"_pushBankOf_t_coin_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_f","type":"address"}],"name":"_pushBankOf_t_tt_coin_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_u","type":"address"},{"internalType":"address","name":"u","type":"address"}],"name":"_pushBankOf_t_tt_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"u","type":"address"},{"internalType":"address","name":"lp","type":"address"}],"name":"_pushBankOf_t_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_tvlOf_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_tvlOf_e_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_tvlOf_lpt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_tvlOf_lpt_tt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_tvlOf_lpt_tt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_tvlOf_lpt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvlOf_pool2_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvlOf_staking_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_tvlOf_t_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_tvlOf_t_tt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_tvlOf_t_tt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_tvlOf_t_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_e_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_lpt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_lpt_tt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_lpt_tt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_lpt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_pool2_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_staking_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_t_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_t_tt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_t_tt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_t_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"coinusd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"lp","type":"address"}],"name":"p_lpt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"bt","type":"address"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_f","type":"address"}],"name":"p_lpt_tt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"bt","type":"address"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_u","type":"address"},{"internalType":"address","name":"u","type":"address"}],"name":"p_lpt_tt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"u","type":"address"},{"internalType":"address","name":"lp","type":"address"}],"name":"p_lpt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"lp","type":"address"}],"name":"p_t_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"qt","type":"address"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_f","type":"address"}],"name":"p_t_tt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"qt","type":"address"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_u","type":"address"},{"internalType":"address","name":"u","type":"address"}],"name":"p_t_tt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"u","type":"address"},{"internalType":"address","name":"lp","type":"address"}],"name":"p_t_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pool2","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"tokenAddress","type":"address"},{"internalType":"uint256","name":"tokens","type":"uint256"}],"name":"rescue","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"reset","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"u","type":"address"},{"internalType":"address","name":"w","type":"address"},{"internalType":"address","name":"l","type":"address"}],"name":"setUW","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"staking","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"tvl","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"q","type":"address"}],"name":"tvlOf_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"q","type":"address"}],"name":"tvlOf_e_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"components":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp","type":"address"}],"internalType":"struct tvlGuru.lpt_coin_usd","name":"q","type":"tuple"}],"name":"tvlOf_lpt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"components":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_f","type":"address"}],"internalType":"struct tvlGuru.lpt_tt_coin_usd","name":"q","type":"tuple"}],"name":"tvlOf_lpt_tt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"components":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_u","type":"address"},{"internalType":"address","name":"u","type":"address"}],"internalType":"struct tvlGuru.lpt_tt_usd","name":"q","type":"tuple"}],"name":"tvlOf_lpt_tt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"components":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"u","type":"address"},{"internalType":"address","name":"lp","type":"address"}],"internalType":"struct tvlGuru.lpt_usd","name":"q","type":"tuple"}],"name":"tvlOf_lpt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"components":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp","type":"address"}],"internalType":"struct tvlGuru.t_coin_usd","name":"q","type":"tuple"}],"name":"tvlOf_t_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"components":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_f","type":"address"}],"internalType":"struct tvlGuru.t_tt_coin_usd","name":"q","type":"tuple"}],"name":"tvlOf_t_tt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"components":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_u","type":"address"},{"internalType":"address","name":"u","type":"address"}],"internalType":"struct tvlGuru.t_tt_usd","name":"q","type":"tuple"}],"name":"tvlOf_t_tt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"components":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"u","type":"address"},{"internalType":"address","name":"lp","type":"address"}],"internalType":"struct tvlGuru.t_usd","name":"q","type":"tuple"}],"name":"tvlOf_t_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"usd","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"usd_d","outputs":[{"internalType":"uint8","name":"","type":"uint8"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"wcoin","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"wcoinusd","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"}]
+tvlGuru = new web3.eth.Contract(tvlAbi,TVLGURU);
+
+
+
+
+
+
+
+
+
+
+USDC = "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75";
+usdc = new web3.eth.Contract(ab,USDC);
+
+FUSD = "0xAd84341756Bf337f5a0164515b1f6F993D194E1f";
+fusd = new web3.eth.Contract(ab,FUSD);
+
+DAI  = "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E";
+dai  = new web3.eth.Contract(ab,DAI);
+
+USDT = "0x049d68029688eAbF473097a2fC38ef61633A3C7A";
+usdt = new web3.eth.Contract(ab,USDT);
+
+NUSD  = "0xED2a7edd7413021d440b09D654f3b87712abAB66";
+nusd  = new web3.eth.Contract(ab,NUSD);
+
+MIM   = "0x82f0B8B456c1A451378467398982d4834b6829c1";
+mim   = new web3.eth.Contract(ab,MIM);
+
+ETH   = "0x74b23882a30290451A17c44f4F05243b6b58C76d";
+eth   = new web3.eth.Contract(ab,ETH);
+
+NETH   = "0x67c10c397dd0ba417329543c1a40eb48aaa7cd00";
+neth   = new web3.eth.Contract(ab,NETH);
+
+
+
+
+
+
+
+
+
+
+	// IRON
+	fetch("https://api-v2.iron.finance/tvl?chainId=250")
+		.then(m=>{return (m.json())})
+		.then(d=>
+		{
+			$("d_iron").getElementsByTagName("td")[3].innerHTML=Number((Number(d["total"])/1e18).toFixed(0)).toLocaleString()
+			gobj[0]+=Number(d["total"])/1e18;
+			ref_os();
+			sortit(3);sortit(3);
+		})
+
+
+
+
+/**********************
+	// KEEP AT LAST
+	// CONTAINS AWAIT
+**********************/
+/**********************
+	// Don't worry
+	// Don't await
+**********************/
+
+
+
+	// FROYO
+	froyo_1 = "0x83E5f18Da720119fF363cF63417628eB0e9fd523";
+	froyoi = [{"stateMutability":"view","type":"function","name":"balances","inputs":[{"name":"arg0","type":"uint256"}],"outputs":[{"name":"","type":"uint256"}]}];
+
+	Promise.all([
+		usdt.methods.balanceOf(froyo_1).call(),
+		dai.methods.balanceOf(froyo_1).call(),
+		usdc.methods.balanceOf(froyo_1).call()
+	]).then(froyo_l=>{
+		froyo_tl = (froyo_l[0]/1e6) + (froyo_l[1]/1e18) +  (froyo_l[2]/1e6)
+		$("d_froyo").getElementsByTagName("td")[3].innerHTML=Number(Number(froyo_tl).toFixed(0)).toLocaleString()
+		gobj[0]+=froyo_tl;
+		ref_os();
+		sortit(3);sortit(3);
+	})
+
+
+	// SYNAPSE
+	synapse_1 = "0x2913E812Cf0dcCA30FB28E6Cac3d2DCFF4497688";
+	synapse_2 = "0x85662fd123280827e11C59973Ac9fcBE838dC3B4";
+	synapse_3 = "0x080F6AEd32Fc474DD5717105Dba5ea57268F46eb";
+	synapse_4 = "0x8d9ba570d6cb60c7e3e0f31343efe75ab8e65fb1";
+	synapsei = [{"stateMutability":"view","type":"function","name":"getTokenBalance","inputs":[{"name":"arg0","type":"uint256"}],"outputs":[{"name":"","type":"uint256"}]}];
+
+	Promise.all([
+		nusd.methods.balanceOf(synapse_1).call(),
+		mim.methods.balanceOf(synapse_1).call(),
+		usdc.methods.balanceOf(synapse_1).call(),
+		usdt.methods.balanceOf(synapse_1).call(),
+
+		nusd.methods.balanceOf(synapse_2).call(),
+		usdc.methods.balanceOf(synapse_2).call(),
+		usdt.methods.balanceOf(synapse_2).call(),
+
+		mim.methods.balanceOf(synapse_3).call(),
+		usdc.methods.balanceOf(synapse_3).call(),
+		usdt.methods.balanceOf(synapse_3).call(),
+
+		tvlGuru.methods.p_t_coin_usd("0x3d0bd54c48c2c433ea6fed609cc3d5fb7a77622b").call(),
+		eth.methods.balanceOf(synapse_4).call(),
+		neth.methods.balanceOf(synapse_4).call(),
+	]).then(synapse_l=>{
+		synapse_tl = 0
+			+ (synapse_l[0]/1e18) + (synapse_l[1]/1e18) + (synapse_l[2]/1e6) + (synapse_l[3]/1e6)
+			+ (synapse_l[4]/1e18) + (synapse_l[5]/1e6) + (synapse_l[6]/1e6)
+			+ (synapse_l[7]/1e18) + (synapse_l[8]/1e6) + (synapse_l[9]/1e6)
+			+ ( (synapse_l[11]/1e18) + (synapse_l[12]/1e18) ) * synapse_l[10]/1e18
+		;
+		$("d_synapse").getElementsByTagName("td")[3].innerHTML=Number(Number(synapse_tl).toFixed(0)).toLocaleString()
+		gobj[0]+=synapse_tl;
+		ref_os();
+		sortit(3);sortit(3);
+	})
+
+
+	// Steak-sAMM
+	steak_1	= "0xa0828eE559110b041DEdbf10Ae0cf42274251de1";
+	FUSD_USDC_PAIR = "0x679449a920087828776aeEF4074549410D5c8065";
+	steaki = [{"inputs":[],"name":"reserve0","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"reserve1","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}]
+
+	fusd_usdc_pair = new web3.eth.Contract(ab,FUSD_USDC_PAIR);
+	Promise.all([
+		usdc.methods.balanceOf(steak_1).call(),
+		fusd.methods.balanceOf(steak_1).call(),
+		fusd_usdc_pair.methods.getReserves().call()
+	]).then(steak_l=>{
+		steak_tl = (steak_l[0]/1e6) + (steak_l[1]/1e18) * ((Number(steak_l[2][0])/1e6)/(Number(steak_l[2][1])/1e18));
+		$("d_steaksamm").getElementsByTagName("td")[3].innerHTML=Number(Number(steak_tl).toFixed(0)).toLocaleString()
+		gobj[0]+=steak_tl;
+		ref_os();
+		sortit(3);sortit(3);
+	})
+
+
+	// funi
+	// Main pair has FUSD+WFTM, counting just 1 pool.
+	// Uses tvlGuru to find out TVL, & TVL === Liq
+	FUNI_0 = "0x34Bf23e2f08BFE00CAE2aDC15D4B47cF8B9ee7BF";	//Pair#0: FUSD-WFTM LPT
+	funi_0 = new web3.eth.Contract(ab,FUNI_0);
+	Promise.all([
+		tvlGuru.methods.p_lpt_coin_usd(FUNI_0).call(),
+		funi_0.methods.totalSupply().call()
+	]).then(funi_0_l=>{
+		//console.log("at uk",funi_0_l);
+		funi_0_tl = (Number(funi_0_l[0])*Number(funi_0_l[1]))/1e36;
+		$("d_funi").getElementsByTagName("td")[2].innerHTML=Number(Number(funi_0_tl).toFixed(0)).toLocaleString();
+		$("d_funi").getElementsByTagName("td")[3].innerHTML=Number(Number(funi_0_tl).toFixed(0)).toLocaleString();
+		gobj[0]+=funi_0_tl;
+		ref_os();
+		sortit(3);sortit(3);
+	})
+
+
+	//fanSwap
+	// Main pair has FTL+USDC, counting just 1 pool.
+	// TVL === Liq
+	usdc.methods.balanceOf("0x202D9b3ECA3C856F169FE383e2Ad326530aF0628").call((e,r)=>{	//Pair#0
+		$("d_fan").getElementsByTagName("td")[2].innerHTML=Number((Number(r)/1e6*2).toFixed(0)).toLocaleString();
+		$("d_fan").getElementsByTagName("td")[3].innerHTML=Number((Number(r)/1e6*2).toFixed(0)).toLocaleString();
+		gobj[0]+=(Number(r)/1e6*2);
+		ref_os();
+		sortit(3);sortit(3);
+	})
+
+
+	/*
+		//PanicSwap
+		// Main pair has FTL+USDC, counting just 1 pool.
+		// Uses tvlGuru to find out TVL, & TVL === Liq
+		panic_0_p = tvlGuru.methods.p_lpt_coin_usd("0x2502f5d1f11DEC4691FC75Fe46b2AC07bffdEF55").call()	//Pair#0
+		panic_0_s = (new web3.eth.Contract(ab,"0x2502f5d1f11DEC4691FC75Fe46b2AC07bffdEF55")).methods.totalSupply().call()
+		Promise.all([panic_0_p,panic_0_s]).then(r=>{
+			//$("d_panic").getElementsByTagName("td")[2].innerHTML=Number((Number(r[0])*Number(r[1])/1e36).toFixed(0)).toLocaleString();
+			$("d_panic").getElementsByTagName("td")[3].innerHTML=Number((Number(r[0])*Number(r[1])/1e36).toFixed(0)).toLocaleString();
+			gobj[0]+=(Number(r[0])*Number(r[1])/1e36);
+			ref_os();
+		})
+	*/
+
+
+
+	//PanicSwap
+	//console.log("PANIC!!")
+	//Using @PanicSwap/YVAprCalculator
+	//0x427dfbf4376ab621586fe0f218f5e28e1389ff7f
+	panic_tvlguru = new web3.eth.Contract([{"inputs":[],"name":"totalTvl","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}],"0x427dfbf4376ab621586fe0f218f5e28e1389ff7f");
+	panic_tvl = panic_tvlguru.methods.totalTvl().call()
+	Promise.all([panic_tvl]).then(_panic_tvl => {
+		//console.log("PANIC:",_panic_tvl)
+		$("d_panic").getElementsByTagName("td")[3].innerHTML=Number((Number(_panic_tvl)/1e18).toFixed(0)).toLocaleString();
+		$("d_panic").getElementsByTagName("td")[2].innerHTML=Number((Number(_panic_tvl)/1e18).toFixed(0)).toLocaleString();
+		gobj[0]+=(Number(tl)/1e36);
+		ref_os();
+		sortit(3);sortit(3);
+	})
+
+	//TombSwap
+	//0x9d2f00f684960Ec83a3d042F3EAdD70e105f83cb	0	tomb-tshare
+	//0xfca12A13ac324C09e9F43B5e5cfC9262f3Ab3223	1	tomb-ftm
+	//0x846f03785F665AC77862ED0F8F5061C0f5B3c7Bf	2	tshare-ftm
+	//0x2B2703716D3234b787C42E89950653688C012dEa	3	tomb-tbond
+	//0x45f4682B560d4e3B8FF1F1b3A38FDBe775C7177b	4	tomb-mai
+	//0xD4B8c09b1D79138bF2727b1656f552A543111914	5	ftm-tbond
+	// Uses tvlGuru to find out price of tomb, 2x those for balances in LP
+	// find p_lpt of tshare-ftm, x TotalSuppl
+	tomb_tom = new web3.eth.Contract(ab,"0x6c021ae822bea943b2e66552bde1d2696a53fbb7")
+	tomb_p_tom = tvlGuru.methods.p_t_coin_usd("0xfca12A13ac324C09e9F43B5e5cfC9262f3Ab3223").call()	//Price of tomb
+	tomb_plp_tsh = tvlGuru.methods.p_lpt_coin_usd("0x846f03785F665AC77862ED0F8F5061C0f5B3c7Bf").call()	//Price of tshare
+	tomb_lts_tsh = (new web3.eth.Contract(ab,"0x2502f5d1f11DEC4691FC75Fe46b2AC07bffdEF55")).methods.totalSupply().call() //tsup
+	tomb_tom_0 = tomb_tom.methods.balanceOf("0x9d2f00f684960Ec83a3d042F3EAdD70e105f83cb").call();
+	tomb_tom_1 = tomb_tom.methods.balanceOf("0xfca12A13ac324C09e9F43B5e5cfC9262f3Ab3223").call();
+	tomb_tom_3 = tomb_tom.methods.balanceOf("0x2B2703716D3234b787C42E89950653688C012dEa").call();
+	tomb_tom_4 = tomb_tom.methods.balanceOf("0x45f4682B560d4e3B8FF1F1b3A38FDBe775C7177b").call();
+	Promise.all([tomb_plp_tsh,tomb_lts_tsh, tomb_p_tom, tomb_tom_0,tomb_tom_1,tomb_tom_3,tomb_tom_4]).then(r=>{
+		tl = Number(r[0])*Number(r[1])/1e36	// tvl_lp_tsh#2
+			+ (Number(r[2])/1e18) *2	//p_tom
+			* (Number(r[3]) + Number(r[4]) + Number(r[5]) + Number(r[6])) /1e18;	//tom_bals
+		$("d_tomb").getElementsByTagName("td")[3].innerHTML=Number((tl).toFixed(0)).toLocaleString();
+		gobj[0]+=tl;
+		ref_os();
+		//console.log("TOMB: ",r)
+		sortit(3);sortit(3);
+	})
+
+
+
+}
+catch(e){}
+}
+
+
+function ref_os()
+{
+	$("os_l").innerHTML = Number(Number(gobj[0]).toFixed(0)).toLocaleString()
+	$("os_v").innerHTML = Number(Number(gobj[0]/((Date.now()%86400000)/1000)).toFixed(0)).toLocaleString();
+	$("os_e").innerHTML = Number(Number(gobj[2]).toFixed(0)).toLocaleString()
+	$("os_t").innerHTML = Number(Number(gobj[3]).toFixed(0)).toLocaleString()
+}
+
+
+function arf()
+{
+	iter = 0;
+	itera = 45000;
+	var xfr = setInterval(function()
+	{
+
+		gobj=[ctvl[0],0,0,0];
+		//console.log("refreshing stats", Date.now());
+		(iter==0)?itera=45000:gg();
+		(iter%1e5 == 0)?tc():false;
+		(iter%1e6 == 0)?gp():false;
+		iter++;
+	}, itera);
+}
+ctvl=[]
+
+
+function togcol(e)
+{
+	ad=document.getElementsByTagName("td")
+	for(i=0;i< ad.length/11;i++){ad[11*i+e].style.display=ad[11*i+e].style.display!="block"?"block":"none"}
+	document.getElementsByTagName("th")[e].style.display=document.getElementsByTagName("th")[e].style.display!="block"?"block":"none";
+	if($("tags").getElementsByTagName("span")[e-1].className=="selcol")
+		{$("tags").children[e-1].setAttribute("class","discol")}
+	else{$("tags").children[e-1].setAttribute("class","selcol")}
+}
+
+function fillage()
+{
+	n = Date.now();
+	for(i=0;i< di.length;i++){
+	console.log("d_"+di[i][0].toLowerCase());$("d_"+di[i][0].toLowerCase()).getElementsByTagName("td")[4].innerHTML=((n-di[i][3]*1e3)/(86400000)).toFixed()}
+}
+</script><!--
+<script defer type="text/javascript" async="true">
+var sc_project=12548358;
+var sc_invisible=0;
+var sc_security="da086e3e";
+var sc_remove_link=1;
+var scJsHost = "https://";
+document.write("<sc"+"ript type='text/javascript' src='" + scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>-->
+</html>
