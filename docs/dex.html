@@ -509,7 +509,7 @@ async function gpi(i,sc,el)
 	if(el=="d_soul")
 	{
 		F=new web3.eth.Contract(ab,sc);
-		F.methods.totalPairs().call((e,r)=>{$(el).getElementsByTagName("td")[1].innerHTML=Number(r).toLocaleString()})
+		F.methods.totalPairs().call((e,r)=>{$(el).getElementsByTagName("td")[1].innerHTML=Number(r).toLocaleString();})
 	}
 	else if(el=="d_dmm")
 	{
@@ -524,7 +524,7 @@ async function gpi(i,sc,el)
 	else
 	{
 		F=new web3.eth.Contract(ab,sc);
-		F.methods.allPairsLength().call((e,r)=>{$("d_"+di[i][0].toLowerCase()).getElementsByTagName("td")[1].innerHTML=Number(r).toLocaleString()})
+		F.methods.allPairsLength().call((e,r)=>{$("d_"+di[i][0].toLowerCase()).getElementsByTagName("td")[1].innerHTML=Number(r).toLocaleString();sortit(1);sortit(1);})
 	}
 	/*
 	if(i%5==0 || i==di.length-1){
@@ -533,8 +533,6 @@ async function gpi(i,sc,el)
 		sortit(3);sortit(3);
 		//;console.log("liqsort");
 	}*/
-	sortit(1)
-	sortit(1)
 }
 
 ab=
