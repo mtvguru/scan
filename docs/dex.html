@@ -90,8 +90,7 @@ td:nth-last-child(2){font-size: 1em}
   border: 3px solid #147;
 }
 
-td:nth-child(3),th:nth-child(3),
-td:nth-child(4),th:nth-child(4),
+
 td:nth-child(6),th:nth-child(6),
 td:nth-child(7),th:nth-child(7),
 td:nth-child(8),th:nth-child(8),
@@ -224,6 +223,22 @@ thead tr::before{
 				<td><span>
 					<a href="https://mtv.moonswap.tech/swap/" target="_blank">💱</a>
 					<a href="https://mtv.moonswap.tech/farms" target="_blank">🌾</a>
+				</span></td>
+			</tr>
+			<tr class="" id="d_asimovswap">
+				<td>AsimovSwap</td>
+				<td>4</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>asimov.ac/swap</td>
+				<td><span>
+					<a href="https://asimov.ac" target="_blank">🌐</a>
+					<a href="https://asimov.ac/swap" target="_blank">💱</a>
 				</span></td>
 			</tr>
 			<tr class="" id="d_cyberswap">
@@ -438,6 +453,7 @@ function basics()
 	gp()
 	//tc()
 	//gg()
+	ggmtv()
 	//arf()
 }
 
@@ -451,6 +467,7 @@ function basics()
 //Leave Non-Factories Blank: ""
 di=
 [
+	["AsimovSwap",		"",												"",												"1627238441"],
 	["MoonSwap",		"0xf2350ebaa37d6e8ecaf00422e72cb7e5426a06e8",	"0x3e692D181E114FA0C47805b5e89244342c024e43",	"1637866385"],
 	["CyberSwap",		"0x4B4c5D87fa1aFE3365Fa1ee9cb6c38cC6FAB8fEf",	"0x2CFE0fF1819d02d30aEF4045aE771b33fCAc12a0",	"1645395659"],
 	["MtvSwap",			"0x5475d369ebc9521319b193d01e795ecf80915be6",	"0x971A49c760e0584Acac3e66100239e777323226e",	"1647816134"],
@@ -2067,6 +2084,131 @@ neth   = new web3.eth.Contract(ab,NETH);
 }
 catch(e){}
 }
+
+
+
+
+async function ggmtv()
+{
+	//TVLGURUs
+	TVLGURU =
+	{
+		self: "0xe345A50C33e5c9D0284D6fF0b891c4Fc99a9C117",			//0x00aa470bc1a3434c609c27a4c10644f3b2156f54c6c07a546341195f8ba21586
+		xdao_lp: "0x5758c5c49a376c03a12a1a59f1ef1afddf993cbe",		//0xe494d84c015ed7360417bb826c7b59af3ae2ac59dc50770e3e37d272db5012cb
+		xdao_tvl: "0x425f98F727bF4d5C8FF1f1002b551A6E5CD22583",		//0xcc41c8b76fd501ba834cd7e93155dc6a1acf6cc80cb13470d93782ad88e35704
+		ms: "0xdf486980df72446a5eff76263efb2fa9391be136",			//?
+	}
+
+	//price of mtv from TvlGuru (wmtv.sh)
+	TVLGURUABI =	[{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[],"name":"DAO","outputs":[{"internalType":"address payable","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"_bankOf_coin","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"_bankOf_e_usd","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"_bankOf_lpt_coin_usd","outputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"_bankOf_lpt_tt_coin_usd","outputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_f","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"_bankOf_lpt_tt_usd","outputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_u","type":"address"},{"internalType":"address","name":"u","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"_bankOf_lpt_usd","outputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"u","type":"address"},{"internalType":"address","name":"lp","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"_bankOf_t_coin_usd","outputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"_bankOf_t_tt_coin_usd","outputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_f","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"_bankOf_t_tt_usd","outputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_u","type":"address"},{"internalType":"address","name":"u","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"_bankOf_t_usd","outputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"u","type":"address"},{"internalType":"address","name":"lp","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256[]","name":"_e_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_coin_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_t_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_t_coin_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_t_tt_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_t_tt_coin_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_lpt_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_lpt_coin_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_lpt_tt_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_lpt_tt_coin_usd","type":"uint256[]"}],"name":"_puBankOf_pool2_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256[]","name":"_e_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_coin_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_t_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_t_coin_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_t_tt_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_t_tt_coin_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_lpt_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_lpt_coin_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_lpt_tt_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_lpt_tt_coin_usd","type":"uint256[]"}],"name":"_puBankOf_staking_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_pullBankOf_coin","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_pullBankOf_e_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_pullBankOf_lpt_coin_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_pullBankOf_lpt_tt_coin_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_pullBankOf_lpt_tt_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_pullBankOf_lpt_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_pullBankOf_t_coin_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_pullBankOf_t_tt_coin_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_pullBankOf_t_tt_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_pullBankOf_t_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"asset","type":"address"}],"name":"_pushBankOf_coin","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"asset","type":"address"}],"name":"_pushBankOf_e_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp","type":"address"}],"name":"_pushBankOf_lpt_coin_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_f","type":"address"}],"name":"_pushBankOf_lpt_tt_coin_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_u","type":"address"},{"internalType":"address","name":"u","type":"address"}],"name":"_pushBankOf_lpt_tt_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"u","type":"address"},{"internalType":"address","name":"lp","type":"address"}],"name":"_pushBankOf_lpt_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp","type":"address"}],"name":"_pushBankOf_t_coin_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_f","type":"address"}],"name":"_pushBankOf_t_tt_coin_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_u","type":"address"},{"internalType":"address","name":"u","type":"address"}],"name":"_pushBankOf_t_tt_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"u","type":"address"},{"internalType":"address","name":"lp","type":"address"}],"name":"_pushBankOf_t_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_tvlOf_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_tvlOf_e_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_tvlOf_lpt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_tvlOf_lpt_tt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_tvlOf_lpt_tt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_tvlOf_lpt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvlOf_pool2_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvlOf_staking_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_tvlOf_t_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_tvlOf_t_tt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_tvlOf_t_tt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_tvlOf_t_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_e_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_lpt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_lpt_tt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_lpt_tt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_lpt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_pool2_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_staking_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_t_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_t_tt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_t_tt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_t_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"coinusd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"lp","type":"address"}],"name":"p_lpt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"bt","type":"address"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_f","type":"address"}],"name":"p_lpt_tt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"bt","type":"address"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_u","type":"address"},{"internalType":"address","name":"u","type":"address"}],"name":"p_lpt_tt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"u","type":"address"},{"internalType":"address","name":"lp","type":"address"}],"name":"p_lpt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"lp","type":"address"}],"name":"p_t_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"qt","type":"address"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_f","type":"address"}],"name":"p_t_tt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"qt","type":"address"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_u","type":"address"},{"internalType":"address","name":"u","type":"address"}],"name":"p_t_tt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"u","type":"address"},{"internalType":"address","name":"lp","type":"address"}],"name":"p_t_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pool2","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"tokenAddress","type":"address"},{"internalType":"uint256","name":"tokens","type":"uint256"}],"name":"rescue","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"reset","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"u","type":"address"},{"internalType":"address","name":"w","type":"address"},{"internalType":"address","name":"l","type":"address"}],"name":"setUW","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"staking","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"tvl","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"q","type":"address"}],"name":"tvlOf_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"q","type":"address"}],"name":"tvlOf_e_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"components":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp","type":"address"}],"internalType":"struct tvlGuru.lpt_coin_usd","name":"q","type":"tuple"}],"name":"tvlOf_lpt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"components":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_f","type":"address"}],"internalType":"struct tvlGuru.lpt_tt_coin_usd","name":"q","type":"tuple"}],"name":"tvlOf_lpt_tt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"components":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_u","type":"address"},{"internalType":"address","name":"u","type":"address"}],"internalType":"struct tvlGuru.lpt_tt_usd","name":"q","type":"tuple"}],"name":"tvlOf_lpt_tt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"components":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"u","type":"address"},{"internalType":"address","name":"lp","type":"address"}],"internalType":"struct tvlGuru.lpt_usd","name":"q","type":"tuple"}],"name":"tvlOf_lpt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"components":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp","type":"address"}],"internalType":"struct tvlGuru.t_coin_usd","name":"q","type":"tuple"}],"name":"tvlOf_t_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"components":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_f","type":"address"}],"internalType":"struct tvlGuru.t_tt_coin_usd","name":"q","type":"tuple"}],"name":"tvlOf_t_tt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"components":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_u","type":"address"},{"internalType":"address","name":"u","type":"address"}],"internalType":"struct tvlGuru.t_tt_usd","name":"q","type":"tuple"}],"name":"tvlOf_t_tt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"components":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"u","type":"address"},{"internalType":"address","name":"lp","type":"address"}],"internalType":"struct tvlGuru.t_usd","name":"q","type":"tuple"}],"name":"tvlOf_t_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"usd","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"usd_d","outputs":[{"internalType":"uint8","name":"","type":"uint8"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"wcoin","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"wcoinusd","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"}]
+
+	tvlGuru = new web3.eth.Contract(TVLGURUABI,TVLGURU.self)
+	tvlGuru_ms = new web3.eth.Contract(TVLGURUABI,TVLGURU.ms)
+
+	P_MTV_USD = await tvlGuru.methods.coinusd().call()
+
+
+	//asimov swap
+	asimov_mtv = web3.eth.getBalance("0x4fe527a58c990f5c283c2f8fc558c03474af1ee3")
+	//asimov_isaac =
+	Promise.all([asimov_mtv])
+	.then(_asimov=>
+	{
+		asimov_tvl = Number(_asimov[0]) * Number(P_MTV_USD) /1e36
+		$("d_asimovswap").getElementsByTagName("td")[2].innerHTML = (asimov_tvl).toLocaleString(undefined,{maxFractionDecimals:0})
+		$("d_asimovswap").getElementsByTagName("td")[3].innerHTML = (asimov_tvl).toLocaleString(undefined,{maxFractionDecimals:0})
+	})
+
+	//xdao
+		/*
+		0xfc0c8d38166fc417f19de5b44cfc339079a70913	htz
+		0x8e321596267a4727746b2f48bc8736db5da26977	wmtv
+		0xea1199d50ee09fa8062fd9da3d55c6f90c1babd2	usdc
+
+		0x5269308450724513887ef0d51234976d7229c18e	wmtv-htz
+		0x32f38698550d4b36168a09df49ddd8cba67eaee5	mtv-usdc
+		0xf0a21ff216f42d7b262261778b7ffe6685082169	usdc-htz
+		*/
+
+	xdao_p_lpt_wmtv_htz = tvlGuru.methods.p_lpt_coin_usd("0x5269308450724513887ef0d51234976d7229c18e").call()
+	xdao_p_lpt_mtv_usdc = tvlGuru.methods.p_lpt_coin_usd("0x32f38698550d4b36168a09df49ddd8cba67eaee5").call()
+	xdao_p_lpt_usdc_htz = tvlGuru.methods.p_lpt_usd("0xea1199d50ee09fa8062fd9da3d55c6f90c1babd2","0xf0a21ff216f42d7b262261778b7ffe6685082169").call()
+
+	xdao_lpt_wmtv_htz = new web3.eth.Contract(ab,"0x5269308450724513887ef0d51234976d7229c18e")
+	xdao_lpt_mtv_usdc = new web3.eth.Contract(ab,"0x32f38698550d4b36168a09df49ddd8cba67eaee5")
+	xdao_lpt_usdc_htz = new web3.eth.Contract(ab,"0xf0a21ff216f42d7b262261778b7ffe6685082169")
+
+	xdao_ts_lpt_wmtv_htz = xdao_lpt_wmtv_htz.methods.totalSupply().call()
+	xdao_ts_lpt_mtv_usdc = xdao_lpt_mtv_usdc.methods.totalSupply().call()
+	xdao_ts_lpt_usdc_htz = xdao_lpt_usdc_htz.methods.totalSupply().call()
+
+	xdao_b_mc_lpt_wmtv_htz = xdao_lpt_wmtv_htz.methods.balanceOf("0xbD59a890A6ba484578Be3b21f7C4d752bf34b0B6").call()
+	xdao_b_mc_lpt_mtv_usdc = xdao_lpt_mtv_usdc.methods.balanceOf("0xbD59a890A6ba484578Be3b21f7C4d752bf34b0B6").call()
+	xdao_b_mc_lpt_usdc_htz = xdao_lpt_usdc_htz.methods.balanceOf("0xbD59a890A6ba484578Be3b21f7C4d752bf34b0B6").call()
+
+	Promise.all([
+		xdao_p_lpt_wmtv_htz,	xdao_ts_lpt_wmtv_htz,	xdao_b_mc_lpt_wmtv_htz,
+		xdao_p_lpt_mtv_usdc,	xdao_ts_lpt_mtv_usdc,	xdao_b_mc_lpt_mtv_usdc,
+		xdao_p_lpt_usdc_htz,	xdao_ts_lpt_usdc_htz,	xdao_b_mc_lpt_usdc_htz
+	]).then(_xdao=>{
+		tv=0;lp=0;
+		console.log("xdao",_xdao)
+		for(i=0;i< 3;i++)
+		{
+			lp += Number(_xdao[i*3+0])/1e18 * Number(_xdao[i*3+1])/1e18;
+			tv += Number(_xdao[i*3+0])/1e18 * Number(_xdao[i*3+2])/1e18;
+		}
+		$("d_cyberswap").getElementsByTagName("td")[2].innerHTML = (tv).toLocaleString(undefined,{maxFractionDecimals:0})
+		$("d_cyberswap").getElementsByTagName("td")[3].innerHTML = (lp).toLocaleString(undefined,{maxFractionDecimals:0})
+	})
+
+	//MOONSWAP
+		/*
+		0x57e962Ac51b5b197aA0f11e8A0a42172A706a70C	1	moon-wmtv
+		0x6184E61aA610eFd4a37EC5E6b51f4cC5042e8fA0	2	busd-wmtv
+		0xbdE12b1a40d6E1B3f4558fBaADE2A60961e713e6	3	busd-moon
+
+		0x4c4a5d20f1ee40eaacb6a7787d20d16b7997363b	wmtv
+		0x338a6997011c4eee53822837c4f95bbba3a0a7f5	busd
+		0x0fed6177c230a6091e58d0081dcd31f88a256185	moon
+		*/
+
+	moon_p_lpt_wmtv_moon = tvlGuru_ms.methods.p_lpt_coin_usd("0x57e962Ac51b5b197aA0f11e8A0a42172A706a70C").call()
+	moon_p_lpt_wmtv_usdc = tvlGuru_ms.methods.p_lpt_coin_usd("0x6184E61aA610eFd4a37EC5E6b51f4cC5042e8fA0").call()
+	moon_p_lpt_usdc_moon = tvlGuru_ms.methods.p_lpt_usd("0x338a6997011c4eee53822837c4f95bbba3a0a7f5","0xbdE12b1a40d6E1B3f4558fBaADE2A60961e713e6").call()
+
+	moon_lpt_wmtv_moon = new web3.eth.Contract(ab,"0x57e962Ac51b5b197aA0f11e8A0a42172A706a70C")
+	moon_lpt_wmtv_usdc = new web3.eth.Contract(ab,"0x6184E61aA610eFd4a37EC5E6b51f4cC5042e8fA0")
+	moon_lpt_usdc_moon = new web3.eth.Contract(ab,"0xbdE12b1a40d6E1B3f4558fBaADE2A60961e713e6")
+
+	moon_ts_lpt_wmtv_moon = moon_lpt_wmtv_moon.methods.totalSupply().call()
+	moon_ts_lpt_wmtv_usdc = moon_lpt_wmtv_usdc.methods.totalSupply().call()
+	moon_ts_lpt_usdc_moon = moon_lpt_usdc_moon.methods.totalSupply().call()
+
+	moon_b_mc_lpt_wmtv_moon = moon_lpt_wmtv_moon.methods.balanceOf("0x93321165acc35263edd18bda7c2437f2a758f2ec").call()
+	moon_b_mc_lpt_wmtv_usdc = moon_lpt_wmtv_usdc.methods.balanceOf("0x93321165acc35263edd18bda7c2437f2a758f2ec").call()
+	moon_b_mc_lpt_usdc_moon = moon_lpt_usdc_moon.methods.balanceOf("0x93321165acc35263edd18bda7c2437f2a758f2ec").call()
+
+	Promise.all([
+		moon_p_lpt_wmtv_moon,	moon_ts_lpt_wmtv_moon,	moon_b_mc_lpt_wmtv_moon,
+		moon_p_lpt_wmtv_usdc,	moon_ts_lpt_wmtv_usdc,	moon_b_mc_lpt_wmtv_usdc,
+		moon_p_lpt_usdc_moon,	moon_ts_lpt_usdc_moon,	moon_b_mc_lpt_usdc_moon
+	]).then(_moon=>{
+		tv=0;lp=0;
+		console.log("moon",_moon)
+		for(i=0;i< 3;i++)
+		{
+			lp += Number(_moon[i*3+0])/1e18 * Number(_moon[i*3+1])/1e18;
+			tv += Number(_moon[i*3+0])/1e18 * Number(_moon[i*3+2])/1e18;
+		}
+		$("d_moonswap").getElementsByTagName("td")[2].innerHTML = (tv).toLocaleString(undefined,{maxFractionDecimals:0})
+		$("d_moonswap").getElementsByTagName("td")[3].innerHTML = (lp).toLocaleString(undefined,{maxFractionDecimals:0})
+	})
+
+
+
+}
+
 
 
 function ref_os()
