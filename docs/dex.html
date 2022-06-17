@@ -2153,8 +2153,8 @@ async function ggmtv()
 	.then(_asimov=>
 	{
 		asimov_tvl = Number(_asimov[0]) * Number(P_MTV_USD) /1e36
-		$("d_asimovswap").getElementsByTagName("td")[2].innerHTML = (asimov_tvl).toLocaleString(undefined,{maxFractionDecimals:0})
-		$("d_asimovswap").getElementsByTagName("td")[3].innerHTML = (asimov_tvl).toLocaleString(undefined,{maxFractionDecimals:0})
+		$("d_asimovswap").getElementsByTagName("td")[2].innerHTML = Number((asimov_tvl).toFixed()).toLocaleString()
+		$("d_asimovswap").getElementsByTagName("td")[3].innerHTML = Number((asimov_tvl).toFixed()).toLocaleString()
 	})
 
 	//xdao
@@ -2196,8 +2196,8 @@ async function ggmtv()
 			lp += Number(_xdao[i*3+0])/1e18 * Number(_xdao[i*3+1])/1e18;
 			tv += Number(_xdao[i*3+0])/1e18 * Number(_xdao[i*3+2])/1e18;
 		}
-		$("d_cyberswap").getElementsByTagName("td")[2].innerHTML = (tv).toLocaleString(undefined,{maxFractionDecimals:0})
-		$("d_cyberswap").getElementsByTagName("td")[3].innerHTML = (lp).toLocaleString(undefined,{maxFractionDecimals:0})
+		$("d_cyberswap").getElementsByTagName("td")[2].innerHTML = Number((tv).toFixed()).toLocaleString()
+		$("d_cyberswap").getElementsByTagName("td")[3].innerHTML = Number((lp).toFixed()).toLocaleString()
 	})
 
 	//MOONSWAP
@@ -2239,8 +2239,8 @@ async function ggmtv()
 			lp += Number(_moon[i*3+0])/1e18 * Number(_moon[i*3+1])/1e18;
 			tv += Number(_moon[i*3+0])/1e18 * Number(_moon[i*3+2])/1e18;
 		}
-		$("d_moonswap").getElementsByTagName("td")[2].innerHTML = (tv).toLocaleString(undefined,{maxFractionDecimals:0})
-		$("d_moonswap").getElementsByTagName("td")[3].innerHTML = (lp).toLocaleString(undefined,{maxFractionDecimals:0})
+		$("d_moonswap").getElementsByTagName("td")[2].innerHTML = Number((tv).toFixed()).toLocaleString()
+		$("d_moonswap").getElementsByTagName("td")[3].innerHTML = Number((lp).toFixed()).toLocaleString()
 	})
 
 
@@ -2262,8 +2262,8 @@ async function ggmtv()
 		).call()
 	]).then(m=>{
 		console.log("MTVSWAP: ",m[0])
-		$("d_mtvswap").getElementsByTagName("td")[2].innerHTML = (m[0][1]/1e18).toLocaleString(undefined,{maxFractionDecimals:0})
-		$("d_mtvswap").getElementsByTagName("td")[3].innerHTML = (m[0][1]/1e18).toLocaleString(undefined,{maxFractionDecimals:0})
+		$("d_mtvswap").getElementsByTagName("td")[2].innerHTML = Number((m[0][1]/1e18).toFixed()).toLocaleString()
+		$("d_mtvswap").getElementsByTagName("td")[3].innerHTML = Number((m[0][1]/1e18).toFixed()).toLocaleString()
 	})
 
 
@@ -2282,8 +2282,8 @@ async function ggmtv()
 		).call()
 	]).then(m=>{
 		console.log("MTVSWAP: ",m[0])
-		$("d_vax").getElementsByTagName("td")[2].innerHTML = (m[0][1]/1e18).toLocaleString(undefined,{maxFractionDecimals:0})
-		$("d_vax").getElementsByTagName("td")[3].innerHTML = (m[0][1]/1e18).toLocaleString(undefined,{maxFractionDecimals:0})
+		$("d_vax").getElementsByTagName("td")[2].innerHTML = Number((m[0][1]/1e18).toFixed()).toLocaleString()
+		$("d_vax").getElementsByTagName("td")[3].innerHTML = Number((m[0][1]/1e18).toFixed()).toLocaleString()
 		sortit(3);sortit(3);
 	})
 
