@@ -1,0 +1,363 @@
+<html>
+<!doctype html><html><meta charset="UTF-8">
+<head>
+<title>APR & Charts for VAX DEX Liquidity Providers - mtv.Guru</title>
+<meta name="description" content="VAX: Yields on Liquidity Positions & APR Charts - mtv.Guru : MultiVAC blockchain DEX pair Explorer, Real-Time Trades, Analytics, Charting, Terminal, VAXX, Guru">
+<meta name="keywords" content="VAX: Yields on Liquidity Positions & APR Charts - mtv.Guru : MultiVAC blockchain DEX pair Explorer, Real-Time Trades, Analytics, Charting, Terminal">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="https://ftm.guru/icons/FMC.svg" />
+</head>
+<style>
+*{
+scroll-behavior: smooth !important;
+}
+*{text-shadow:10px 10px 5px black;color:#e3e9f2}
+html{background:radial-gradient(circle at center,#071430 ,#020611);color:#e3e9f2;font-family:helvetica nueve, helvetica, robotica, ubuntu, roboto, sans-serif}
+table td{padding: 10px}
+span{font-weight:bolder;}
+tbody tr:hover{cursor:  zoom-in;background: rgba(0,255,255,0.25)}
+pre{overflow-x:auto;}
+.topbar div a, .advert a{text-decoration-line:none;padding:0 2px}
+hr{box-shadow: rgba(0,255,255,0.2) 0px 0px 10px 10px;background: #090919;border-radius: 15px;border:aqua 2px solid;}
+table{padding:15px;box-shadow: rgba(0,255,255,0.2) 0px 0px 10px 10px;background: #090919;margin:5%;border-radius: 15px;border:aqua 2px solid; min-width:max-content}
+.advert{background: linear-gradient(45deg, rgba(255,0,0,0.25), rgba(0,0,255,0.25));padding:15px}
+input,button{border-radius:25px;background:black;text-align:center;}
+.lowercat {text-align: left;padding:10px}
+.lowercat a{text-decoration-line: none}
+.lowercat span{font-size: 1.25em; font-weight:bold}
+.lowerbar2{display: grid;grid-template-columns: auto;text-align:center}
+thead{line-height: }
+.de td,.de{color: gray;cursor: not-allowed;font-weight: lighter}
+.car{max-width: 90%;padding:15px;box-shadow: rgba(0,255,255,0.2) 0px 0px 10px 10px;background: #090919;margin:5%;border-radius: 15px;border:aqua 2px solid;}
+td a{text-decoration-line: none}
+@media(min-width:641px){
+  .hhr{width: 555px}
+	.lowerbar2{display: grid;grid-template-columns: auto auto auto auto;text-align:center}
+}
+
+#c2a{
+	display: grid;
+	grid-template-columns: auto;
+}
+.c2a{
+	border: 2px solid ;
+	width:220px;
+	margin: auto;
+	padding:5px;
+	margin: 5px auto;
+	background: rgba(0,255,255,0.2);
+	border-radius: 10px;
+	cursor:  grab;
+}
+.c2a:hover{box-shadow: rgba(0,255,195,0.2) 0px 0px 10px 10px;}
+
+svg text {font-size: 4px !important;}
+svg text.watermark{font-size: 12px !important;}
+
+@media(min-width:641px){
+	#c2a{
+		display: grid;
+		grid-template-columns: auto 280px 280px auto;
+	}
+	svg text {font-size: 3px !important;}
+	svg polyline#pl_t_f {stroke-width: 0.25;}
+}
+html{background:radial-gradient(circle at bottom, #125, #122, #100);background-attachment: fixed;}
+*{text-shadow:6px 6px 5px black;color:#e3e9f2}
+.lowerbar{
+  font-size: 1.25em;
+  font-weight: bolder;
+}
+.lowerbar a{
+  font-size: 0.75em;
+  font-weight: lighter;
+  padding: 10px 10px 10px 0px;
+  color:#32fbe2;
+  text-decoration: none
+}
+.lowerbar img{width:24px}
+.lowerbar .subimg{width:16px;height:16px;position: relative;right:9px;top:4px;margin-right:-11px}
+@font-face{font-family:bold;src: url(https://ftm.guru/font/bold.ttf);}
+@font-face{ font-family:italic;src: url(https://ftm.guru/font/italic.ttf);}
+@font-face{ font-family:light;src: url(https://ftm.guru/font/light.ttf);}
+@font-face{ font-family:light_italic;src: url(https://ftm.guru/font/light_italic.ttf);}
+@font-face{ font-family:regular;src: url(https://ftm.guru/font/regular.ttf);}
+@font-face{ font-family:regular_italic;src: url(https://ftm.guru/font/regular_italic.ttf);}
+*{font-family:regular;}
+
+thead tr td{text-align:center}
+td:nth-child(4),td:nth-child(5){padding:0}
+td:nth-child(2){text-align:right}
+td:nth-child(3){padding-right: 0}
+td:nth-child(6){padding-left: 0}
+tr td:first-child{font-family: bold;font-size: 1.1337rem}
+
+</style>
+
+<div class="topbar">
+	<div align="center">
+		<a href="https://charts.mtv.guru"><b style="font-size:2em">apr.vax.mtv.guru</b></a><br><br>
+		<!--<a href="farmlands.html">Farmlands👽</a>
+		<a href="index.html">FTM-Gems</a>-->
+		<a href="https://mtv.guru/GRAIN">Kompound</a>
+		<a href="https://mtv.guru/LF">Farmland</a>
+		<a href="https://vax.mtv.guru/GRAIN">VAX</a>
+		<a href="https://scan.mtv.guru/dex">Rankings</a>
+		<a href="https://scan.mtv.guru/tokens">Token-Explorer</a>
+		<a href="https://mtv.guru/airdropper">Airdropper</a>
+		<a href="https://scan.mtv.guru">scan.mtv.guru</a>
+	</div>
+</div>
+<br>
+<div style="overflow:auto" align="center">
+<hr class="hhr">
+	<br><b>APR Charts for VAX on MultiVAC</b><br><a href="https://discord.gg/QpyfMarNrV">Powered by Guru Network.</a>
+	<br>
+	<br>
+	<table>
+		<thead>
+			<tr>
+				<td>A.P.R.</td>
+				<td>Reserve</td>
+				<td colspan="2">Asset</td>
+				<td colspan="2">Base</td>
+				<td>Reserve</td>
+				<td>Age</td>
+				<td>R.O.I.</td>
+			</tr>
+		</thead>
+		<tbody id="aprt">
+		</tbody>
+	</table>
+
+</div>
+
+<br>
+<br>
+
+<div align="center" class="advert">
+<!--
+<pre>Get $ELITE Tokens
+0xf43Cc235E686d7BC513F53Fbffb61F760c3a1882</pre>
+<div id="c2a">
+	<div class="">
+	</div>
+	<div class="c2a" id="a2m">
+		🦊 Add ELITE to MetaMask
+	</div>
+	<div class="c2a" id="ibe" onclick="c1()">
+		Insta-Buy 15 FTM of ELITE
+	</div>
+	<div class="">
+	</div>
+</div>
+<br>
+<a href="https://ftmscan.com/token/0xf43cc235e686d7bc513f53fbffb61f760c3a1882" target="_blank"><button>ftmScan</button></a>
+<a href="https://app.sushi.com/swap?outputCurrency=0xf43cc235e686d7bc513f53fbffb61f760c3a1882" target="_blank"><button>Sushi</button></a>
+<a href="https://spookyswap.finance/swap?outputCurrency=0xf43cc235e686d7bc513f53fbffb61f760c3a1882" target="_blank"><button>Spooky</button></a>
+<a href="https://swap.spiritswap.finance/#/add/FTM/0xf43cc235e686d7bc513f53fbffb61f760c3a1882" target="_blank"><button>Spirit</button></a>
+<a href="https://dex.zoocoin.cash/orders/market?inputCurrency=0xf43Cc235E686d7BC513F53Fbffb61F760c3a1882&outputCurrency=FTM" target="_blank"><button>ZDEX</button></a>
+-->
+<br><br>
+<div class="lowerbar">Powered by Guru Network.
+<br>
+	<a target="_blank" href="https://ech.guru">ECH.guru</a>
+	<a target="_blank" href="https://fmc.guru">FMC.guru</a>
+	<a target="_blank" href="https://ftm.guru">FTM.guru</a>
+	<a target="_blank" href="https://fmc.guru">FMC.guru</a>
+	<a target="_blank" href="https://fmc.guru">MTV.guru</a>
+	<br><br>
+	<a target="_blank" href="https://messari.io/asset/ftm-guru"><img src="https://ftm.guru/icons/messari.svg"></a>
+	<a target="_blank" href="https://fmc.guru"><img src="https://ftm.guru/icons/FMC.svg"></a>
+	<a target="_blank" href="https://www.coingecko.com/coins/elite-1337"><img src="https://ftm.guru/icons/gecko.svg"></a>
+	<a target="_blank" href="https://coinmarketcap.com/currencies/elite-1337"><img src="https://ftm.guru/icons/cmc.svg"></a>
+	<a target="_blank" href="https://defillama.com/protocol/ftmguru"><img src="https://ftm.guru/crypto-icons/defillama.svg"><img class="subimg" src="https://ftm.guru/crypto-icons/64.png"></a>
+	<a target="_blank" href="https://defillama.com/protocol/kccguru"><img src="https://ftm.guru/crypto-icons/defillama.svg"><img class="subimg" src="https://ftm.guru/crypto-icons/kucino.svg"></a>
+	<a target="_blank" href="https://nomics.com/assets/elite2-ftmguru"><img src="https://ftm.guru/icons/nomics.svg"></a>
+	<br><br>
+	<a target="_blank" href="https://medium.com/@ftm1337"><img src="https://ftm.guru/icons/medium.svg"></a>
+	<a target="_blank" href="https://twitter.com/ftm1337"><img src="https://ftm.guru/crypto-icons/twitter.svg"></a>
+	<a target="_blank" href="https://t.me/ftm1337"><img src="https://ftm.guru/crypto-icons/telegram.svg"></a>
+	<a target="_blank" href="https://discord.com/invite/QpyfMarNrV"><img src="https://ftm.guru/crypto-icons/discord.svg"></a>
+</div>
+<a href="https://t.me/Sam4x" target="_blank">Contact us to Advertise Here.</a>
+</div>
+<hr><br><br>
+<h5 align="center" id="disclaimer"><b><u>Disclaimer & Notice</u></b><br>
+All information presented here is only for aesthetic uses and posesses no validity to settle any claims. It is also non-exhaustive and prone to error. Advertisements are not endorsements. This dashboard is ultra-real time - It means that the data on this page has zero latency, unlike CMC or CG which have 1-10 minutes old data. FTM.guru and FMC.guru are trying to keep up with our <b>Fast First</b> motto. <i>A much deserved shoutout to all open-source and web3 developers for their benign Services!</i> A "-" or a "0" represents unavailability or anomalities in data and it is masked to suppress pollution.<br>We encourage you to report inconsistencies, ask business queries, request new Token, Protocol or DEX listings or start an ad campaign at one of our community channels:<br>
+<b><a href="https://t.me/FTM1337" target="_blank">Telegram</a> or <a href="https://discord.gg/QpyfMarNrV" target="_blank">Discord.</a></b><!--
+Our Address: 0x921Ed37f62CBe4d86D38b720EF4a4a44B24a1C5D--></h5>
+<br>
+<br>
+<div align="center" id="spadd" style="">
+<font id="spadf" size="2" style="text-align:center">(Sponsored Ad)</font>
+<br>
+<i><a href="https://t.me/FTM1337">Please Telegram us for queries.</a></i>
+<br>
+<a id="spada" href="" target="_blank">
+<img id="spadi" src="" width="80%"></img><br>
+</a>
+</div>
+
+<br><br>
+<hr class="hhr">
+<br><br>
+<div class="lowerbar2" align="center">
+	<div align="left" class="lowercat">
+		<span>Ecosystem</span><br>
+		<a href="https://mtv.guru" target="_blank">MTV.Guru</a><br>
+		<a href="https://fmc.guru" target="_blank">FantomMarketCap</a><br>
+		<a href="https://ftm.guru" target="_blank">FTM1337</a><br>
+		<a href="https://kcc.guru" target="_blank">Kucino Casino</a><br>
+	</div>
+	<div align="left" class="lowercat">
+		<span>Farming</span><br>
+		<a href="https://mtv.guru/GRAIN.html">🌾 Kompound</a><br>
+		<a href="https://ftm.guru/yieldstate.html">🔱 YieldState</a><br>
+		<a href="https://ftm.guru/LF">👽 LITE Farmlands</a><br>
+		<a href="https://vfat.tools/fantom/guru">🧑‍🌾 vfat.tools</a>
+	</div>
+	<div class="lowercat">
+		<span><a href="https://kcc.guru/casino.html">Casino & Games</a></span><br>
+		<a href="https://kcc.guru/jackpot_1.html">2-player Jackpot</a><br>
+		<a href="https://kcc.guru/instalotto.html">instaLOTTO</a><br>
+		<a href="https://kcc.guru/21hrlotto.html">🎟 21-hour LOTTO</a>
+	</div>
+	<div class="lowercat">
+		<span><a href="https://kcc.guru/dashboard.html">Dashboard</a></span><br>
+		<a href="https://kcc.guru/claimkcs.html">Claim KCS Earnings</a><br>
+		<a href="https://kcc.guru/markets.html">Market Statistics</a><br>
+		<a href="https://kcc.guru/balancesheet.html">Balance Sheet</a><br>
+	</div>
+	<div align="left" class="lowercat">
+		<span>Our Dapps</span><br>
+		<a href="https://ftm.guru/degam.html">✨ FTM CASINO</a><br>
+		<a href="https://ftm.guru/degam.html">🎰 KCS Kucino</a><br>
+		<a href="https://ftm.guru/approver.html">✅ Approver</a><br>
+		<a href="https://ftm.guru/airdrop.html">Airdrop-Tool</a><br>
+	</div>
+	<div align="left" class="lowercat">
+		<span>Chain Tools</span><br>
+		<a href="https://ftm.guru/pair.html">DEX-Explorer</a><br>
+		<a href="https://ftm.guru/fantomscan.html">🔍 FantomScan</a><br>
+		<a href="https://kcc.guru/kscan" target="_blank">🔎 kscan</a><br>
+		<a href="https://ftm.guru/apelist.html">Ape-List</a><br>
+	</div>
+	<div align="left" class="lowercat">
+		<span>Opera Utilities</span><br>
+		<a href="https://ftm.guru/elite.html">ELITE Analytics</a><br>
+		<a href="https://t.me/FTM1337/12497" target="_blank">🤖 GambleBot Telegram</a><br>
+		<a href="https://ftm.guru/index.html">🗳 Elite-Gems Voting</a>
+	</div>
+	<div class="lowercat">
+		<span>$KUCINO</span><br>
+		<a target="_blank" href="https://swap.kudex.finance/#/swap?outputCurrency=0x4c9fa6297d3413fbbe7ba935e14022d0e5a39dc7">Trade at Kudex</a><br>
+		<a target="_blank" href="https://explorer.kcc.io/token/0x4c9fa6297d3413fbbe7ba935e14022d0e5a39dc7">KCC Explorer</a><br>
+		<a target="_blank" href="https://t.me/kccguru">Chart at Poocoin</a><br>
+		<a target="_blank" href="https://testnet.bscscan.com/address/0x4c9fa6297d3413fbbe7ba935e14022d0e5a39dc7#code">View Source</a>
+	</div>
+	<div class="lowercat">
+		<span>Resources</span><br>
+		<a target="_blank" href="https://kcc.guru/roadmap">Kucino Roadmap</a><br>
+		<a target="_blank" href="https://kcc.guru/roadmap">KUCINO Tokenimcs</a><br>
+		<a target="_blank" href="https://ftmscan.com/address/0x74bfb7e94bef5767f5f6ace2d0df73a224adb689">385 ELITE ETL</a><br>
+		<a target="_blank" href="https://kudex.finance/locker">KCS Liquidity Lock</a><br>
+		<a target="_blank" href="https://kudex.finance/locker">70% KUCINO ETL</a><br>
+		<a target="_blank" href="docs">📚 Documentation</a><br>
+	</div>
+	<div class="lowercat">
+		<span>Telegrams</span><br>
+		<a target="_blank" href="https://t.me/ftm1337">FantomOpera#1337</a><br>
+		<a target="_blank" href="https://t.me/ftmguru">Announcements</a><br>
+		<a target="_blank" href="https://t.me/kucino">Kucino Group</a><br>
+		<a target="_blank" href="https://t.me/kccguru">KCC.guru Channel</a><br>
+		<a target="_blank" href="https://t.me/kccguru">FMC New Listings</a><br>
+	</div>
+	<div class="lowercat">
+		<span>Social & Media</span><br>
+		<a target="_blank" href="https://medium.com/@ftm1337">Medium Journal</a><br>
+		<a target="_blank" href="https://discord.gg/QpyfMarNrV">Discord Server</a><br>
+		<a target="_blank" href="https://twitter.com/kccGuru">Kucino Twitter</a><br>
+		<a target="_blank" href="mailto:ftm1337@protonmail.com">Official Mail</a><br>
+	</div>
+	<div class="lowercat">
+		<a href="https://mtv.guru/index.html"><b style="font-size:2em"><code>MTV.guru</code></b></a><br>
+		<a href="https://ftm.guru/index.html"><b style="font-size:2em"><code>FTM.guru</code></b></a><br>
+		<a href="https://fmc.guru/index.html"><b style="font-size:2em"><code>FMC.guru</code></b></a><br>
+		<a href="https://kcc.guru/index.html"><b style="font-size:2em"><code>KCC.guru</code></b></a>
+	</div>
+	<div class="lowercat">
+	</div>
+</div>
+
+
+<script src="https://ftm.guru/web3.min.js">
+</script>
+<script>
+window.addEventListener('load',function()
+{
+	if(window.ethereum&&Number(window.ethereum.chainId==62621)){web3 = new Web3(web3.currentProvider);}
+	//else{web3 = new Web3("https://rpc.mtv.ac")}
+	else{web3 = new Web3("https://rpc-eu.mtv.ac")}
+	//basics();
+	//console.log("in basics")
+	//f1(["0x6AB59648514Af1083949f850Ef50957Ec5D59E64",1,18,6,9750000])
+	//targ()
+	aprs()
+}, false);
+
+function $(_) {return document.getElementById(_);}
+
+abp=[{"inputs":[],"name":"getReserves","outputs":[{"internalType":"uint112","name":"_reserve0","type":"uint112"},{"internalType":"uint112","name":"_reserve1","type":"uint112"},{"internalType":"uint32","name":"_blockTimestampLast","type":"uint32"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"}]
+
+POOLS = [
+	["0x6ab59648514af1083949f850ef50957ec5d59e64",	9748675,	"MTV",	"USDC",	"mtv.png",	"usdc.svg",	18,	6],
+	["0xf1c8dc0cea54d40359d5f84dbf323a869230d475",	9753250,	"DIRT",	"MTV",	"dirt.png",	"mtv.png",	18,	18],
+	["0x36ea2506f1184fcc33213b11deeea1a5cfbec781",	9784793,	"USDT",	"BUSD",	"usdt.svg",	"busd.svg",	6,	18],
+	["0xed60dd51d2c6290ddf9007c084396df8cb1ce583",	9790278,	"ISAAC","MTV",	"isaac.svg","mtv.png",	18,	18],
+	["0x775ea316984a7d5a49fadb4e5f0d5f2aeb009a2f",	9816670,	"BUSD",	"USDC",	"busd.svg",	"usdc.svg",	18,	6],
+	["0xce885346382ecfd5e20ed1c112aa57ba14dce617",	9866781,	"MTV",	"GSOUL","mtv.png",	"gsoul.png",18,	18],
+	["0xc9037b123f10c36a6e4aa6cd60580f93386858e5",	9868297,	"USDT",	"USDC",	"usdt.svg",	"usdc.svg",	6,	6],
+	["0x17a350ec3c5d86d3ac16a4cdf11891281bda493f",	10311916,	"MTV",	"msMTV","mtv.png",	"mtv.png",	18,	18],
+	["0x0e5f4fb116fed2fadf0a291d5718f9b40a0cb046",	10339451,	"ETH",	"MTV",	"eth.svg",	"mtv.png",	18,	18],
+	["0x6dc11982e172798a81556598f4237a1a5230fb21",	10339518,	"BNB",	"MTV",	"bnb.svg",	"mtv.png",	18,	18],
+	["0x2c1a6801a5b570c03a067408143069fdc45a1772",	10352385,	"BNB",	"USDC",	"bnb.svg",	"usdc.svg",	18,	6],
+	["0xcd634998f5f5d324b18ad5a503f5e4d1c9e5635e",	10600028,	"USDT",	"MTV",	"usdt.svg",	"mtv.png",	6,	18],
+]
+
+async function aprs() {
+	B = await web3.eth.getBlockNumber()
+	C = [];
+	for(i=0;i< POOLS.length;i++) {
+		P = new web3.eth.Contract(abp,POOLS[i][0])
+		C[i] = P.methods.getReserves().call()
+		C[i+POOLS.length] = P.methods.totalSupply().call()
+	}
+	Promise.all(C)
+	.then(R=>{
+		for(i=0;i< POOLS.length;i++) {
+			age = (B-POOLS[i][1])*3;
+			rk = (Number(R[i][0])*Number(R[i][1]))**0.5
+			pr = (rk/Number(R[i+POOLS.length])-1)
+			apr = pr/age*86400*365
+			$("aprt").innerHTML += `
+				<tr>
+					<td>${(apr*100).toLocaleString()}%</td>
+					<td>${Number(R[i][0])/10**POOLS[i][6]}</td>
+					<td>${POOLS[i][2]}</td>
+					<td><img height="24px;" style="" src="https://ftm.guru/icons/${POOLS[i][4]}"></td>
+					<td><img height="24px" style="" src="https://ftm.guru/icons/${POOLS[i][5]}"></td>
+					<td>${POOLS[i][3]}</td>
+					<td>${Number(R[i][1])/10**POOLS[i][7]}</td>
+					<td>${(age/86400).toFixed()}</td>
+					<td>${(pr*100).toLocaleString()}%</td>
+					<td></td>
+				</tr>
+			`
+		}
+	})
+}
+
+
+</script>
+</html>
