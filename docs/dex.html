@@ -2268,6 +2268,8 @@ async function ggmtv()
 
 
 	//VAX
+	//OLD
+
 	Promise.all([
 		MULTI.methods.tvlOfCoinLPT(//balanceOf("0x8e321596267a4727746b2f48bc8736db5da26977",
 			[
@@ -2281,9 +2283,19 @@ async function ggmtv()
 			]
 		).call()
 	]).then(m=>{
-		console.log("MTVSWAP: ",m[0])
+		console.log("VAX: ",m[0])
 		$("d_vax").getElementsByTagName("td")[2].innerHTML = Number((m[0][1]/1e18).toFixed()).toLocaleString()
-		$("d_vax").getElementsByTagName("td")[3].innerHTML = Number((m[0][1]/1e18).toFixed()).toLocaleString()
+		//$("d_vax").getElementsByTagName("td")[3].innerHTML = Number((m[0][1]/1e18).toFixed()).toLocaleString()
+		sortit(3);sortit(3);
+	})
+
+
+	fetch("https://api.llama.fi/protocol/vax")
+	.then(d1=>{return d1.json()})
+	.then(d2=>{
+		console.log(d2)
+		//$("d_vax").getElementsByTagName("td")[2].innerHTML = Number((d2.tvl[d2.tvl.length-1].totalLiquidityUSD).toFixed()).toLocaleString()
+		$("d_vax").getElementsByTagName("td")[3].innerHTML = Number((d2.tvl[d2.tvl.length-1].totalLiquidityUSD).toFixed()).toLocaleString()
 		sortit(3);sortit(3);
 	})
 
