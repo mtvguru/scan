@@ -38,6 +38,43 @@ td a{text-decoration-line: none}
 #c2a{
 	display: grid;
 	grid-template-columns: auto;
+}function sortit(n) {
+  var t, r, z, i, x, y, v, b, c = 0;
+  t = document.getElementById("maintable");
+  z = true;
+  b = "a";
+  while (z) {
+    z = false;
+    r = t.rows;
+    for (i = 0; i < (r.length - 1); i++) {
+      v = false;
+      x = (r[i].getElementsByTagName("TD")[n].innerHTML).replaceAll(/,| |\.|\$|%/g,'');
+      if(isFinite(x)){x=Number(x)}else{x=x.toLowerCase()}
+      y = (r[i + 1].getElementsByTagName("TD")[n].innerHTML).replaceAll(/,| |\.|\$|%/g,'');
+      if(isFinite(y)){y=Number(y)}else{y=y.toLowerCase()}
+      if (b == "a") {
+        if ((x) > (y)) {
+          v= true;
+          break;
+        }
+      } else if (b == "d") {
+        if ((x) < (y)) {
+          v = true;
+          break;
+        }
+      }
+    }
+    if (v) {
+      r[i].parentNode.insertBefore(r[i + 1], r[i]);
+      z = true;
+      c ++;
+    } else {
+      if (c == 0 && b == "a") {
+        b = "d";
+        z = true;
+      }
+    }
+  }
 }
 .c2a{
 	border: 2px solid ;
@@ -87,7 +124,7 @@ html{background:radial-gradient(circle at bottom, #125, #122, #100);background-a
 
 thead tr td{text-align:center}
 td:nth-child(4),td:nth-child(5){padding:0}
-td:nth-child(2){text-align:right}
+td:nth-child(1),td:nth-child(2){text-align:right}
 td:nth-child(3){padding-right: 0}
 td:nth-child(6){padding-left: 0}
 tr td:first-child{font-family: bold;font-size: 1.1337rem}
@@ -117,13 +154,13 @@ tr td:first-child{font-family: bold;font-size: 1.1337rem}
 	<table>
 		<thead>
 			<tr>
-				<td>A.P.R.</td>
-				<td>Reserve</td>
-				<td colspan="2">Asset</td>
-				<td colspan="2">Base</td>
-				<td>Reserve</td>
-				<td>Age</td>
-				<td>R.O.I.</td>
+				<td onclick="sortit('aprt',0)">A.P.R.</td>
+				<td onclick="sortit('aprt',1)">Reserve</td>
+				<td onclick="sortit('aprt',2)" colspan="2">Asset</td>
+				<td onclick="sortit('aprt',5)" colspan="2">Base</td>
+				<td onclick="sortit('aprt',6)">Reserve</td>
+				<td onclick="sortit('aprt',7)">Age</td>
+				<td onclick="sortit('aprt',8)">R.O.I.</td>
 			</tr>
 		</thead>
 		<tbody id="aprt">
@@ -321,8 +358,9 @@ POOLS = [
 	["0x17a350ec3c5d86d3ac16a4cdf11891281bda493f",	10311916,	"MTV",	"msMTV","mtv.png",	"mtv.png",	18,	18],
 	["0x0e5f4fb116fed2fadf0a291d5718f9b40a0cb046",	10339451,	"ETH",	"MTV",	"eth.svg",	"mtv.png",	18,	18],
 	["0x6dc11982e172798a81556598f4237a1a5230fb21",	10339518,	"BNB",	"MTV",	"bnb.svg",	"mtv.png",	18,	18],
-	["0x2c1a6801a5b570c03a067408143069fdc45a1772",	10352385,	"BNB",	"USDC",	"bnb.svg",	"usdc.svg",	18,	6],
+	//["0x2c1a6801a5b570c03a067408143069fdc45a1772",	10352385,	"BNB",	"USDC",	"bnb.svg",	"usdc.svg",	18,	6],
 	["0xcd634998f5f5d324b18ad5a503f5e4d1c9e5635e",	10600028,	"USDT",	"MTV",	"usdt.svg",	"mtv.png",	6,	18],
+	["0xCC9f5690a5Bb22f75F3736151228F516875F5774",	11526470,	"PROX",	"USDC",	"prox.png",	"usdc.svg",	18,	6],
 ]
 
 async function aprs() {
@@ -342,7 +380,7 @@ async function aprs() {
 			apr = pr/age*86400*365
 			$("aprt").innerHTML += `
 				<tr>
-					<td>${(apr*100).toLocaleString()}%</td>
+					<td>${(apr*100).toFixed(4)}%</td>
 					<td>${Number(R[i][0])/10**POOLS[i][6]}</td>
 					<td>${POOLS[i][2]}</td>
 					<td><img height="24px;" style="" src="https://ftm.guru/icons/${POOLS[i][4]}"></td>
@@ -350,14 +388,52 @@ async function aprs() {
 					<td>${POOLS[i][3]}</td>
 					<td>${Number(R[i][1])/10**POOLS[i][7]}</td>
 					<td>${(age/86400).toFixed()}</td>
-					<td>${(pr*100).toLocaleString()}%</td>
+					<td>${(pr*100).toFixed(4)}%</td>
 					<td></td>
 				</tr>
 			`
 		}
+		sortit('aprt',0);sortit('aprt',0);
 	})
 }
-
+function sortit(el,n) {
+  var t, r, z, i, x, y, v, b, c = 0;
+  t = document.getElementById(el);
+  z = true;
+  b = "a";
+  while (z) {
+    z = false;
+    r = t.rows;
+    for (i = 0; i < (r.length - 1); i++) {
+      v = false;
+      x = (r[i].getElementsByTagName("TD")[n].innerHTML).replaceAll(/,| |\.|\$|%/g,'');
+      if(isFinite(x)){x=Number(x)}else{x=x.toLowerCase()}
+      y = (r[i + 1].getElementsByTagName("TD")[n].innerHTML).replaceAll(/,| |\.|\$|%/g,'');
+      if(isFinite(y)){y=Number(y)}else{y=y.toLowerCase()}
+      if (b == "a") {
+        if ((x) > (y)) {
+          v= true;
+          break;
+        }
+      } else if (b == "d") {
+        if ((x) < (y)) {
+          v = true;
+          break;
+        }
+      }
+    }
+    if (v) {
+      r[i].parentNode.insertBefore(r[i + 1], r[i]);
+      z = true;
+      c ++;
+    } else {
+      if (c == 0 && b == "a") {
+        b = "d";
+        z = true;
+      }
+    }
+  }
+}
 
 </script>
 </html>
