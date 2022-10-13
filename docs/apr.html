@@ -122,13 +122,16 @@ html{background:radial-gradient(circle at bottom, #125, #122, #100);background-a
 @font-face{ font-family:regular_italic;src: url(https://ftm.guru/font/regular_italic.ttf);}
 *{font-family:regular;}
 
-thead tr td{text-align:center}
-td:nth-child(4),td:nth-child(5){padding:0}
-td:nth-child(1),td:nth-child(2){text-align:right}
-td:nth-child(3){padding-right: 0}
-td:nth-child(6){padding-left: 0}
-tr td:first-child{font-family: bold;font-size: 1.1337rem}
+tbody td:nth-child(6),tbody td:nth-child(7){padding:0}
+tbody td:nth-child(3),tbody td:nth-child(4),tbody td:nth-child(6),tbody td:nth-child(11){text-align:right}
+tbody td:nth-child(4),tbody td:nth-child(6){padding-right: 5px}
+tbody td:nth-child(5),tbody td:nth-child(8){padding-left: 5px}
+tbody tr td:nth-child(6){font-family: bold;font-size: 1.1337rem}
+td:nth-child(5),td:nth-child(7){text-align: center}
 
+thead tr td{text-align: center;font-family: bold}
+thead tr td:nth-child(5),thead tr td:nth-child(6){text-align: left}
+thead tr td:nth-child(2),thead tr td:nth-child(8){text-align: right}
 </style>
 
 <div class="topbar">
@@ -154,13 +157,14 @@ tr td:first-child{font-family: bold;font-size: 1.1337rem}
 	<table>
 		<thead>
 			<tr>
-				<td onclick="sortit('aprt',0)">A.P.R.</td>
-				<td onclick="sortit('aprt',1)">Reserve</td>
-				<td onclick="sortit('aprt',2)" colspan="2">Asset</td>
-				<td onclick="sortit('aprt',5)" colspan="2">Base</td>
-				<td onclick="sortit('aprt',6)">Reserve</td>
-				<td onclick="sortit('aprt',7)">Age</td>
-				<td onclick="sortit('aprt',8)">R.O.I.</td>
+				<td onclick="sortit('aprt',1)" colspan="2">Decentralized Exchange</td>
+				<td onclick="sortit('aprt',2)">Reserve (A)</td>
+				<td onclick="sortit('aprt',3)" colspan="2">Asset</td>
+				<td onclick="sortit('aprt',5)">A.P.R.</td>
+				<td onclick="sortit('aprt',7)" colspan="2">Base</td>
+				<td onclick="sortit('aprt',8)">Reserve (B)</td>
+				<td onclick="sortit('aprt',9)">Age</td>
+				<td onclick="sortit('aprt',10)">R.O.I.</td>
 			</tr>
 		</thead>
 		<tbody id="aprt">
@@ -348,20 +352,27 @@ function $(_) {return document.getElementById(_);}
 abp=[{"inputs":[],"name":"getReserves","outputs":[{"internalType":"uint112","name":"_reserve0","type":"uint112"},{"internalType":"uint112","name":"_reserve1","type":"uint112"},{"internalType":"uint32","name":"_blockTimestampLast","type":"uint32"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"}]
 
 POOLS = [
-	["0x6ab59648514af1083949f850ef50957ec5d59e64",	9748675,	"MTV",	"USDC",	"mtv.png",	"usdc.svg",	18,	6],
-	["0xf1c8dc0cea54d40359d5f84dbf323a869230d475",	9753250,	"DIRT",	"MTV",	"dirt.png",	"mtv.png",	18,	18],
-	["0x36ea2506f1184fcc33213b11deeea1a5cfbec781",	9784793,	"USDT",	"BUSD",	"usdt.svg",	"busd.svg",	6,	18],
-	["0xed60dd51d2c6290ddf9007c084396df8cb1ce583",	9790278,	"ISAAC","MTV",	"isaac.png","mtv.png",	18,	18],
-	["0x775ea316984a7d5a49fadb4e5f0d5f2aeb009a2f",	9816670,	"BUSD",	"USDC",	"busd.svg",	"usdc.svg",	18,	6],
-	["0xce885346382ecfd5e20ed1c112aa57ba14dce617",	9866781,	"MTV",	"GSOUL","mtv.png",	"gsoul.png",18,	18],
-	["0xc9037b123f10c36a6e4aa6cd60580f93386858e5",	9868297,	"USDT",	"USDC",	"usdt.svg",	"usdc.svg",	6,	6],
-	["0x17a350ec3c5d86d3ac16a4cdf11891281bda493f",	10311916,	"MTV",	"msMTV","mtv.png",	"mtv.png",	18,	18],
-	["0x0e5f4fb116fed2fadf0a291d5718f9b40a0cb046",	10339451,	"ETH",	"MTV",	"eth.svg",	"mtv.png",	18,	18],
-	["0x6dc11982e172798a81556598f4237a1a5230fb21",	10339518,	"BNB",	"MTV",	"bnb.svg",	"mtv.png",	18,	18],
-//["0x2c1a6801a5b570c03a067408143069fdc45a1772",	10352385,	"BNB",	"USDC",	"bnb.svg",	"usdc.svg",	18,	6],
-	["0xcd634998f5f5d324b18ad5a503f5e4d1c9e5635e",	10600028,	"USDT",	"MTV",	"usdt.svg",	"mtv.png",	6,	18],
-	["0xCC9f5690a5Bb22f75F3736151228F516875F5774",	11526470,	"PROX",	"USDC",	"prox.png",	"usdc.svg",	18,	6],
-	["0x1aefad32b0Eb7f1AF814Ab17cc96Cdf753083DEC",	12661948,	"DIRT",	"USDC",	"dirt.png",	"usdc.svg",	18,	6],
+	["0x6ab59648514af1083949f850ef50957ec5d59e64",	9748675,	"MTV",	"USDC",	"mtv.png",	"usdc.svg",	18,	6,	"VAX.mtv.Guru",	"vax.svg"],
+	["0xf1c8dc0cea54d40359d5f84dbf323a869230d475",	9753250,	"DIRT",	"MTV",	"dirt.png",	"mtv.png",	18,	18,	"VAX.mtv.Guru",	"vax.svg"],
+	["0x36ea2506f1184fcc33213b11deeea1a5cfbec781",	9784793,	"USDT",	"BUSD",	"usdt.svg",	"busd.svg",	6,	18,	"VAX.mtv.Guru",	"vax.svg"],
+	["0xed60dd51d2c6290ddf9007c084396df8cb1ce583",	9790278,	"ISAAC","MTV",	"isaac.png","mtv.png",	18,	18,	"VAX.mtv.Guru",	"vax.svg"],
+	["0x775ea316984a7d5a49fadb4e5f0d5f2aeb009a2f",	9816670,	"BUSD",	"USDC",	"busd.svg",	"usdc.svg",	18,	6,	"VAX.mtv.Guru",	"vax.svg"],
+	["0xce885346382ecfd5e20ed1c112aa57ba14dce617",	9866781,	"MTV",	"GSOUL","mtv.png",	"gsoul.png",18,	18,	"VAX.mtv.Guru",	"vax.svg"],
+	["0xc9037b123f10c36a6e4aa6cd60580f93386858e5",	9868297,	"USDT",	"USDC",	"usdt.svg",	"usdc.svg",	6,	6,	"VAX.mtv.Guru",	"vax.svg"],
+	["0x17a350ec3c5d86d3ac16a4cdf11891281bda493f",	10311916,	"MTV",	"msMTV","mtv.png",	"mtv.png",	18,	18,	"VAX.mtv.Guru",	"vax.svg"],
+	["0x0e5f4fb116fed2fadf0a291d5718f9b40a0cb046",	10339451,	"ETH",	"MTV",	"eth.svg",	"mtv.png",	18,	18,	"VAX.mtv.Guru",	"vax.svg"],
+	["0x6dc11982e172798a81556598f4237a1a5230fb21",	10339518,	"BNB",	"MTV",	"bnb.svg",	"mtv.png",	18,	18,	"VAX.mtv.Guru",	"vax.svg"],
+//["0x2c1a6801a5b570c03a067408143069fdc45a1772",	10352385,	"BNB",	"USDC",	"bnb.svg",	"usdc.svg",	18,	6,	"VAX.mtv.Guru",	"vax.svg"],
+	["0xcd634998f5f5d324b18ad5a503f5e4d1c9e5635e",	10600028,	"USDT",	"MTV",	"usdt.svg",	"mtv.png",	6,	18,	"VAX.mtv.Guru",	"vax.svg"],
+	["0xCC9f5690a5Bb22f75F3736151228F516875F5774",	11526470,	"PROX",	"USDC",	"prox.png",	"usdc.svg",	18,	6,	"VAX.mtv.Guru",	"vax.svg"],
+	["0x1aefad32b0Eb7f1AF814Ab17cc96Cdf753083DEC",	12661948,	"DIRT",	"USDC",	"dirt.png",	"usdc.svg",	18,	6,	"VAX.mtv.Guru",	"vax.svg"],
+	["0xF0A21Ff216f42D7b262261778b7fFE6685082169",	7836043,	"USDC",	"HTZ",	"usdc.svg",	"htz.png",	6,	18,	"TGR.finance",	"htz.png"],
+	["0x5269308450724513887eF0D51234976D7229c18E",	6890585,	"MTV",	"HTZ",	"mtv.png",	"htz.png",	6,	18,	"TGR.finance",	"htz.png"],
+//	["0xF0A21Ff216f42D7b262261778b7fFE6685082169",	12661948,	"USDC",	"HTZ",	"usdc.svg",	"htz.png",	6,	18,	"TGR.finance",	"htz.png"],
+	["0x04e254aB6BB60a3eB3b4be4a6Bb7e2D6771F56fC",	7697754,	"USDT",	"MTV",	"usdt.svg",	"mtv.png",	6,	18,	"Mtvswap",		"swappy.png"],
+	["0xf4E32d7622bc69D39B203c425a93529b8ECdC500",	7697606,	"BNB",	"MTV",	"bnb.svg",	"mtv.png",	18,	18,	"Mtvswap",		"swappy.png"],
+	["0xf5403bb206008188D6895a006B119aAA0d24c24c",	7697698,	"ETH",	"MTV",	"bnb.svg",	"mtv.png",	18,	18,	"Mtvswap",		"swappy.png"],
+	["0xFcd8C457a7490646e7B2a8e69b8fb4A73614e2Ae",	7697391,	"MTV",	"MTV",	"mtv.png",	"swappy.png",18,18,	"Mtvswap",		"swappy.png"],
 ]
 
 async function aprs() {
@@ -381,20 +392,22 @@ async function aprs() {
 			apr = pr/age*86400*365
 			$("aprt").innerHTML += `
 				<tr>
-					<td>${(apr*100).toFixed(4)}%</td>
+					<td><img height="24px;" style="" src="https://ftm.guru/icons/${POOLS[i][9]}"></td>
+					<td>${POOLS[i][8]}</td>
 					<td>${Number(R[i][0])/10**POOLS[i][6]}</td>
 					<td>${POOLS[i][2]}</td>
 					<td><img height="24px;" style="" src="https://ftm.guru/icons/${POOLS[i][4]}"></td>
+					<td>${(apr*100).toFixed(4)} %</td>
 					<td><img height="24px" style="" src="https://ftm.guru/icons/${POOLS[i][5]}"></td>
 					<td>${POOLS[i][3]}</td>
 					<td>${Number(R[i][1])/10**POOLS[i][7]}</td>
 					<td>${(age/86400).toFixed()}</td>
-					<td>${(pr*100).toFixed(4)}%</td>
+					<td>${(pr*100).toFixed(4)} %</td>
 					<td></td>
 				</tr>
 			`
 		}
-		sortit('aprt',0);sortit('aprt',0);
+		sortit('aprt',5);sortit('aprt',5);
 	})
 }
 function sortit(el,n) {
