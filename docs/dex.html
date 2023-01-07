@@ -152,7 +152,7 @@ thead tr::before{
 .selcol{color:#020611 !important;background:aqua !important; border:1px #e3e9f2 ridge !important;}
 .discol{color:aqua !important;background:rgba(0,255,255,0.25) !important;border:1px #e3e9f2 dashed !important;}
 
-
+#maintable tr td img {height: 32px;position: relative;vertical-align: middle}
 
 </style>
 </head>
@@ -208,7 +208,8 @@ thead tr::before{
 				<th>Links</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody id="maintable">
+			<!--
 			<tr class="" id="d_moonswap">
 				<td>MoonSwap</td>
 				<td>0</td>
@@ -241,11 +242,10 @@ thead tr::before{
 					<a href="https://asimov.ac/swap" target="_blank">💱</a>
 				</span></td>
 			</tr>
-			<!--
 			<tr class="" id="d_amaterasu">
 				<td>Amaterasu</td>
-				<td>0</td>
-				<td>0</td>
+				<td>7</td>
+				<td>8</td>
 				<td>0</td>
 				<td>0</td>
 				<td>0</td>
@@ -255,7 +255,6 @@ thead tr::before{
 				<td>UI Defunct</td>
 				<td><span><a href="https://amaterasu.finance" target="_blank">💱</a></td>
 			</tr>
-			-->
 			<tr class="" id="d_cyberswap">
 				<td>CyberSwap</td>
 				<td>0</td>
@@ -300,6 +299,22 @@ thead tr::before{
 					<a href="https://vax.mtv.guru" target="_blank">💱</a>
 				</span></td>
 			</tr>
+			<tr class="" id="d_vax">
+				<td>Value Added eXchange</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>vax.mtv.guru</td>
+				<td><span>
+					<a href="https://vax.mtv.guru" target="_blank">💱</a>
+				</span></td>
+			</tr>
+			-->
 		</tbody>
 	</table>
 </div>
@@ -477,6 +492,7 @@ window.addEventListener('load',function()
 function $(_) {return document.getElementById(_);}
 function basics()
 {
+	paintbase()
 	//advertise()
 	copsca()
 	fillage()
@@ -497,49 +513,36 @@ function basics()
 //Leave Non-Factories Blank: ""
 di=
 [
-	["AsimovSwap",		"",												"",												"1627238441"],
-	["MoonSwap",		"0xf2350ebaa37d6e8ecaf00422e72cb7e5426a06e8",	"0x3e692D181E114FA0C47805b5e89244342c024e43",	"1637866385"],
-	["CyberSwap",		"0x4B4c5D87fa1aFE3365Fa1ee9cb6c38cC6FAB8fEf",	"0x2CFE0fF1819d02d30aEF4045aE771b33fCAc12a0",	"1645395659"],
-	["MtvSwap",			"0x5475d369ebc9521319b193d01e795ecf80915be6",	"0x971A49c760e0584Acac3e66100239e777323226e",	"1647816134"],
-	["VAX",				"0x40d40eb64CB2e06EE67b932F7Cb3f57fE8f14C2f",	"0xbaC576111e2BC5EfBbE7c5d765b9DC44083901fD",	"1653952691"],
+	["AsimovSwap",		"0x0000000000000000000000000000000000000000",	"0x0000000000000000000000000000000000000000",	"1627238441",	"https://ftm.guru/icons/isaac.png",			"https://asmiov.ac",				"Asimov Cross-chain Swap"],
+	["MoonSwap",		"0xf2350ebaa37d6e8ecaf00422e72cb7e5426a06e8",	"0x3e692D181E114FA0C47805b5e89244342c024e43",	"1637866385",	"https://ftm.guru/icons/moon.png",			"https://mtv.moonswap.tech",		"Moon Swap"],
+	["Amaterasu",		"0x9e377bb8dac93eda51f66c92140fca3a2d569df4",	"0x9E377Bb8DAC93Eda51F66c92140Fca3a2d569df4",	"1644347138",	"https://ftm.guru/icons/iza.png",			"https://amaterasu.finance",		"Amaterasu Finance"],
+	["CyberSwap",		"0x4B4c5D87fa1aFE3365Fa1ee9cb6c38cC6FAB8fEf",	"0x2CFE0fF1819d02d30aEF4045aE771b33fCAc12a0",	"1645395659",	"https://ftm.guru/icons/htz.png",			"https://tgr.finance",				"The Great Reset (The X DAO)"],
+	["MtvSwap",			"0x5475d369ebc9521319b193d01e795ecf80915be6",	"0x971A49c760e0584Acac3e66100239e777323226e",	"1647816134",	"https://ftm.guru/icons/mtvswap.svg",		"https://mtvswap.finance",			"MtvSwap"],
+	["VAX",				"0x40d40eb64CB2e06EE67b932F7Cb3f57fE8f14C2f",	"0xbaC576111e2BC5EfBbE7c5d765b9DC44083901fD",	"1653952691",	"https://ftm.guru/icons/vax.svg",			"https://vax.mtv.guru",				"Value Added Exchange"],
+	["ABcDeFX",			"0x8e2e0eAF90F444C6A516e1A09698e99DDc8dE57d",	"0x01F43D2A7F4554468f77e06757e707150e39130c",	"1670095781",	"https://ftm.guru/icons/abcdefx.png",		"https://abcdefx.eliteness.network","A.Bc.De.FX."],
 ]
-/*
 
-
-					[[ STABLE-SWAPS ]]
-
-
-Froyo
-	"Frozen.yogurt.finance FUSDT/USDC/DAI" (3FROYO) [USDC-DAI-fUSDT]
-	LPT = 0x4f85Bbf3B0265DCEd4Ec72ebD0358ccCf190F1B3
-	DEX = 0x83E5f18Da720119fF363cF63417628eB0e9fd523
-
-Synapse
-	""
-	LPT =
-	DEX = "0x2913E812Cf0dcCA30FB28E6Cac3d2DCFF4497688"
-Iron
-	"IronSwap 3USD" (IS3USD) [USDC-DAI-fUSDT]
-	LPT = 0xc143a1500ca4a471eE9cc70B9AC0C739576F84bb
-	DEX	= 0x952BDA8A83c3D5F398a686bb4e8C6DD90072d523
-
-Stable AMM - Steak
-	[USDC-FUSD]
-	LPT + DEX = 0xa0828eE559110b041DEdbf10Ae0cf42274251de1
-
-Saddle
-	[USDC-FRAX]
-	LPT = 0xc969dd0a7ab0f8a0c5a69c0839db39b6c928bc08
-	DEX = 0xbea9f78090bdb9e662d8cb301a00ad09a5b756e9
-Dictionary
-
-
-*/
-
-
-
-
-
+async function paintbase() {
+	for(i=0;i< di.length;i++){
+		$("maintable").innerHTML += `
+			<tr class="" id="d_${(di[i][0]).toLowerCase()}">
+				<td><img src="${di[i][4]}"> ${di[i][6]}</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>0</td>
+				<td>${di[i][5].split("https://")[1]}</td>
+				<td><span>
+					<a href="{di[i][5]}" target="_blank">💱</a>
+				</span></td>
+			</tr>
+		`
+	}
+}
 
 async function gp()
 {
@@ -553,6 +556,8 @@ async function gp()
 
 async function gpi(i,sc,el)
 {	//console.log("in gpi at i=",i)
+
+	console.log ( "gpi(i,sc,el)", i,sc,el)
 	F=new web3.eth.Contract(ab,di[i][2]);
 	if(el=="d_soul")
 	{
@@ -568,6 +573,10 @@ async function gpi(i,sc,el)
 	{
 		F=new web3.eth.Contract(ab,sc);
 		F.methods.pool_count().call((e,r)=>{$(el).getElementsByTagName("td")[1].innerHTML=(Number(r)+2).toLocaleString()})
+	}
+	else if(el=="d_asimovswap")
+	{
+		$(el).getElementsByTagName("td")[1].innerHTML=4;
 	}
 	else
 	{
@@ -806,1318 +815,6 @@ date_id = date_id/1000 - (date_id/1000)%1;
 date_id = date_id/86400 - (date_id/86400)%1;
 //gobj = {"liq":0,"dv":0,"tv":0,"tt":0}
 gobj=[0,0,0,0];
-async function gg()
-{
-//gobj=[0,0,0,0];
-
-try{
-	gdq_wraith =
-		`query {
-  		wraithFactories(first:1) {
-    		id
-    		totalVolumeUSD    totalVolumeFTM  untrackedVolumeUSD
-    		totalLiquidityUSD    totalLiquidityFTM
-    		totalTransactions    totalPairs
-  		}
-
-  		wraithSwapDayDatas(where:{id:${date_id}}){
-    		id  date
-    		dailyVolumeFTM	dailyVolumeUSD	dailyVolumeUntracked
-    		totalVolumeUSD	totalVolumeFTM
-    		totalLiquidityUSD	totalLiquidityFTM
-    		totalTransactions
-			}
-		}`
-	gdqr_wraith = new XMLHttpRequest();
-	gdqr_wraith.open("POST","https://api.thegraph.com/subgraphs/name/sy-finance/wraithswap",true);
-	gdqr_wraith.onload=function(){
-		gdqd_wraith=JSON.parse(this.response).data;
-		$("d_wraith").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_wraith.wraithFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
-		$("d_wraith").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_wraith.wraithSwapDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_wraith").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_wraith.wraithFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_wraith").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_wraith.wraithFactories[0].totalTransactions).toFixed(0)).toLocaleString()
-		gobj[0]+=Number(gdqd_wraith.wraithFactories[0].totalLiquidityUSD)
-		gobj[1]+=Number(gdqd_wraith.wraithSwapDayDatas[0].dailyVolumeUSD)
-		gobj[2]+=Number(gdqd_wraith.wraithFactories[0].totalVolumeUSD)
-		gobj[3]+=Number(gdqd_wraith.wraithFactories[0].totalTransactions)
-		ref_os();
-		sortit(3);sortit(3);
-	}
-	gdqr_wraith.send(JSON.stringify({query:gdq_wraith}))
-
-	gdq_zoo =
-		`query {
-  			uniswapFactories(first: 1) {
-    			id
-    			pairCount	txCount
-    			totalVolumeUSD    totalVolumeETH	untrackedVolumeUSD
-    			totalLiquidityUSD	totalLiquidityETH
-    			txCount
-  			}
-  			uniswapDayDatas(where:{id: ${date_id}}) {
-    			id	date
-    			txCount
-    			dailyVolumeUSD	dailyVolumeETH	dailyVolumeUntracked
-    			totalVolumeUSD	totalVolumeETH
-    			totalLiquidityUSD	totalLiquidityETH
-  			}
-		}`
-	gdqr_zoo = new XMLHttpRequest();
-	gdqr_zoo.open("POST","https://api.thegraph.com/subgraphs/name/ruvlol/graph-n",true);
-	gdqr_zoo.onload=function(){
-		gdqd_zoo=JSON.parse(this.response).data;
-		$("d_zoo").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_zoo.uniswapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
-		$("d_zoo").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_zoo.uniswapDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_zoo").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_zoo.uniswapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_zoo").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_zoo.uniswapFactories[0].txCount).toFixed(0)).toLocaleString()
-		gobj[0]+=Number(gdqd_zoo.uniswapFactories[0].totalLiquidityUSD)
-		gobj[1]+=Number(gdqd_zoo.uniswapDayDatas[0].dailyVolumeUSD)
-		gobj[2]+=Number(gdqd_zoo.uniswapFactories[0].totalVolumeUSD)
-		gobj[3]+=Number(gdqd_zoo.uniswapFactories[0].txCount)
-		ref_os();
-		sortit(3);sortit(3);
-	}
-	gdqr_zoo.send(JSON.stringify({query:gdq_zoo}))
-
-	gdq_sushi =
-		`query {
-  			factories(first:1){
-    			id	pairCount	userCount	txCount	tokenCount
-    			volumeUSD	volumeETH	untrackedVolumeUSD
-    			liquidityUSD	liquidityETH
-  			}
-  			dayDatas(where:{id: ${date_id}}){
-    			id	date	txCount
-    			volumeUSD	volumeUSD	untrackedVolume
-    			liquidityETH	liquidityUSD
-  			}
-		}`
-	gdqr_sushi = new XMLHttpRequest();
-	gdqr_sushi.open("POST","https://api.thegraph.com/subgraphs/name/sushiswap/fantom-exchange",true);
-	gdqr_sushi.onload=function(){
-		gdqd_sushi=JSON.parse(this.response).data;
-		$("d_sushi").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_sushi.factories[0].liquidityUSD).toFixed(0)).toLocaleString()
-		$("d_sushi").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_sushi.dayDatas[0].volumeUSD).toFixed(0)).toLocaleString()
-		$("d_sushi").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_sushi.factories[0].volumeUSD).toFixed(0)).toLocaleString()
-		$("d_sushi").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_sushi.factories[0].txCount).toFixed(0)).toLocaleString()
-		$("d_sushi").getElementsByTagName("td")[8].innerHTML=Number(Number(gdqd_sushi.factories[0].userCount).toFixed(0)).toLocaleString()
-		gobj[0]+=Number(gdqd_sushi.factories[0].liquidityUSD)
-		gobj[1]+=Number(gdqd_sushi.dayDatas[0].volumeUSD)
-		gobj[2]+=Number(gdqd_sushi.factories[0].volumeUSD)
-		gobj[3]+=Number(gdqd_sushi.factories[0].txCount)
-		ref_os();
-		sortit(3);sortit(3);
-	}
-	gdqr_sushi.send(JSON.stringify({query:gdq_sushi}))
-
-	gdq_spooky =
-		`query {
-  			uniswapFactories(first: 1) {
-    			id
-    			pairCount	txCount
-    			totalVolumeUSD    totalVolumeETH	untrackedVolumeUSD
-    			totalLiquidityUSD	totalLiquidityETH
-    			txCount
-  			}
-  			uniswapDayDatas(where:{id: ${date_id}}) {
-    			id	date
-    			txCount
-    			dailyVolumeUSD	dailyVolumeETH	dailyVolumeUntracked
-    			totalVolumeUSD	totalVolumeETH
-    			totalLiquidityUSD	totalLiquidityETH
-  			}
-		}`
-	gdqr_spooky = new XMLHttpRequest();
-	gdqr_spooky.open("POST","https://api.thegraph.com/subgraphs/name/eerieeight/spooky-swap-exchange",true);
-	gdqr_spooky.onload=function(){
-		gdqd_spooky=JSON.parse(this.response).data;
-		$("d_spooky").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_spooky.uniswapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
-		$("d_spooky").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_spooky.uniswapDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_spooky").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_spooky.uniswapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_spooky").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_spooky.uniswapFactories[0].txCount).toFixed(0)).toLocaleString()
-		gobj[0]+=Number(gdqd_spooky.uniswapFactories[0].totalLiquidityUSD)
-		gobj[1]+=Number(gdqd_spooky.uniswapDayDatas[0].dailyVolumeUSD)
-		gobj[2]+=Number(gdqd_spooky.uniswapFactories[0].totalVolumeUSD)
-		gobj[3]+=Number(gdqd_spooky.uniswapFactories[0].txCount)
-		ref_os();
-		sortit(3);sortit(3);
-	}
-	gdqr_spooky.send(JSON.stringify({query:gdq_spooky}))
-
-	gdq_spirit =
-		`query {
-  		spiritswapFactories(first:1) {
-    		id
-    		totalVolumeUSD    totalVolumeFTM  untrackedVolumeUSD
-    		totalLiquidityUSD    totalLiquidityFTM
-    		txCount    pairCount
-  		}
-
-  		spiritswapDayDatas(where:{id: ${date_id}}){
-    		id  date
-    		dailyVolumeUSD	dailyVolumeFTM	dailyVolumeUntracked
-    		totalVolumeUSD	totalVolumeFTM
-    		totalLiquidityUSD	totalLiquidityFTM
-    		txCount
-			}
-		}`
-	gdqr_spirit = new XMLHttpRequest();
-	gdqr_spirit.open("POST","https://api.thegraph.com/subgraphs/name/layer3org/spiritswap-analytics",true);
-	gdqr_spirit.onload=function(){
-		gdqd_spirit=JSON.parse(this.response).data;
-		$("d_spirit").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_spirit.spiritswapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
-		$("d_spirit").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_spirit.spiritswapDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_spirit").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_spirit.spiritswapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_spirit").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_spirit.spiritswapFactories[0].txCount).toFixed(0)).toLocaleString()
-		gobj[0]+=Number(gdqd_spirit.spiritswapFactories[0].totalLiquidityUSD)
-		gobj[1]+=Number(gdqd_spirit.spiritswapDayDatas[0].dailyVolumeUSD)
-		gobj[2]+=Number(gdqd_spirit.spiritswapFactories[0].totalVolumeUSD)
-		gobj[3]+=Number(gdqd_spirit.spiritswapFactories[0].txCount)
-		ref_os();
-		sortit(3);sortit(3);
-	}
-	gdqr_spirit.send(JSON.stringify({query:gdq_spirit}))
-
-	gdq_paint =
-		`query {
-  		paintFactories(first:1) {
-    		id
-    		totalVolumeUSD    totalVolumeFTM  untrackedVolumeUSD
-    		totalLiquidityUSD    totalLiquidityFTM
-    		totalPairs    totalTransactions
-  		}
-
-  		paintDayDatas(where:{id: ${date_id}}){
-    		id  date
-    		dailyVolumeUSD	dailyVolumeFTM	dailyVolumeUntracked
-    		totalVolumeUSD	totalVolumeFTM
-    		totalLiquidityUSD	totalLiquidityFTM
-    		totalTransactions
-			}
-		}`
-	gdqr_paint = new XMLHttpRequest();
-	gdqr_paint.open("POST","https://api.thegraph.com/subgraphs/name/paint-swap-finance/exchange",true);
-	gdqr_paint.onload=function(){
-		gdqd_paint=JSON.parse(this.response).data;
-		$("d_paint").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_paint.paintFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
-		$("d_paint").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_paint.paintDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_paint").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_paint.paintFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_paint").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_paint.paintFactories[0].totalTransactions).toFixed(0)).toLocaleString()
-		gobj[0]+=Number(gdqd_paint.paintFactories[0].totalLiquidityUSD)
-		gobj[1]+=Number(gdqd_paint.paintDayDatas[0].dailyVolumeUSD)
-		gobj[2]+=Number(gdqd_paint.paintFactories[0].totalVolumeUSD)
-		gobj[3]+=Number(gdqd_paint.paintFactories[0].totalTransactions)
-		ref_os();
-		sortit(3);sortit(3);
-	}
-	gdqr_paint.send(JSON.stringify({query:gdq_paint}))
-
-	gdq_waka =
-		`query {
-  		wakaSwapFactories(first:1) {
-    		id
-    		totalVolumeUSD    totalVolumeETH  untrackedVolumeUSD
-    		totalLiquidityUSD    totalLiquidityETH
-    		pairCount    txCount
-  		}
-
-  		wakaSwapDayDatas(where:{id: ${date_id}}){
-    		id  date
-    		dailyVolumeUSD	dailyVolumeETH	dailyVolumeUntracked
-    		totalVolumeUSD	totalVolumeETH
-    		totalLiquidityUSD	totalLiquidityETH
-    		txCount
-			}
-		}`
-	gdqr_waka = new XMLHttpRequest();
-	gdqr_waka.open("POST","https://api.thegraph.com/subgraphs/name/waka-finance/waka-graph",true);
-	gdqr_waka.onload=function(){
-		gdqd_waka=JSON.parse(this.response).data;
-		$("d_waka").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_waka.wakaSwapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
-		$("d_waka").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_waka.wakaSwapDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_waka").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_waka.wakaSwapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_waka").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_waka.wakaSwapFactories[0].txCount).toFixed(0)).toLocaleString()
-		gobj[0]+=Number(gdqd_waka.wakaSwapFactories[0].totalLiquidityUSD)
-		gobj[1]+=Number(gdqd_waka.wakaSwapDayDatas[0].dailyVolumeUSD)
-		gobj[2]+=Number(gdqd_waka.wakaSwapFactories[0].totalVolumeUSD)
-		gobj[3]+=Number(gdqd_waka.wakaSwapFactories[0].txCount)
-		ref_os();
-		sortit(3);sortit(3);
-	}
-	gdqr_waka.send(JSON.stringify({query:gdq_waka}))
-
-	gdq_elk =
-		`query {
-  		elkFactories(first:1) {
-    		id
-    		totalVolumeUSD    totalVolumeETH  untrackedVolumeUSD
-    		totalLiquidityUSD    totalLiquidityETH
-    		pairCount    txCount
-  		}
-
-  		elkDayDatas(where:{id: ${date_id}}){
-    		id  date
-    		dailyVolumeUSD	dailyVolumeETH	dailyVolumeUntracked
-    		totalVolumeUSD	totalVolumeETH
-    		totalLiquidityUSD	totalLiquidityETH
-    		txCount
-			}
-		}`
-	gdqr_elk = new XMLHttpRequest();
-	gdqr_elk.open("POST","https://api.thegraph.com/subgraphs/name/elkfinance/elkdex-ftm",true);
-	gdqr_elk.onload=function(){
-		gdqd_elk=JSON.parse(this.response).data;
-		$("d_elk").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_elk.elkFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
-		$("d_elk").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_elk.elkDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_elk").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_elk.elkFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_elk").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_elk.elkFactories[0].txCount).toFixed(0)).toLocaleString()
-		gobj[0]+=Number(gdqd_elk.elkFactories[0].totalLiquidityUSD)
-		gobj[1]+=Number(gdqd_elk.elkDayDatas[0].dailyVolumeUSD)
-		gobj[2]+=Number(gdqd_elk.elkFactories[0].totalVolumeUSD)
-		gobj[3]+=Number(gdqd_elk.elkFactories[0].txCount)
-		ref_os();
-		sortit(3);sortit(3);
-	}
-	gdqr_elk.send(JSON.stringify({query:gdq_elk}))
-
-	gdq_nipple =
-		`query {
-  			uniswapFactories(first: 1) {
-    			id
-    			pairCount	txCount
-    			totalVolumeUSD    totalVolumeFTM	untrackedVolumeUSD
-    			totalLiquidityUSD	totalLiquidityFTM
-    			txCount
-  			}
-  			uniswapDayDatas(where:{id: ${date_id}}) {
-    			id	date
-    			txCount
-    			dailyVolumeUSD	dailyVolumeFTM	dailyVolumeUntracked
-    			totalVolumeUSD	totalVolumeFTM
-    			totalLiquidityUSD	totalLiquidityFTM
-  			}
-		}`
-	gdqr_nipple = new XMLHttpRequest();
-	gdqr_nipple.open("POST","https://api.thegraph.com/subgraphs/name/nipple-labs/nipplelabs",true);
-	gdqr_nipple.onload=function(){
-		gdqd_nipple=JSON.parse(this.response).data;
-		$("d_nipple").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_nipple.uniswapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
-		$("d_nipple").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_nipple.uniswapDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_nipple").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_nipple.uniswapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_nipple").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_nipple.uniswapFactories[0].txCount).toFixed(0)).toLocaleString()
-		gobj[0]+=Number(gdqd_nipple.uniswapFactories[0].totalLiquidityUSD)
-		gobj[1]+=Number(gdqd_nipple.uniswapDayDatas[0].dailyVolumeUSD)
-		gobj[2]+=Number(gdqd_nipple.uniswapFactories[0].totalVolumeUSD)
-		gobj[3]+=Number(gdqd_nipple.uniswapFactories[0].txCount)
-		ref_os();
-		sortit(3);sortit(3);
-	}
-	gdqr_nipple.send(JSON.stringify({query:gdq_nipple}))
-
-	gdq_shiba =
-		`query {
-  			uniswapFactories(first: 1) {
-    			id
-    			pairCount	txCount
-    			totalVolumeUSD    totalVolumeFTM	untrackedVolumeUSD
-    			totalLiquidityUSD	totalLiquidityFTM
-    			txCount
-  			}
-  			uniswapDayDatas(where:{id: ${date_id}}) {
-    			id	date
-    			txCount
-    			dailyVolumeUSD	dailyVolumeFTM	dailyVolumeUntracked
-    			totalVolumeUSD	totalVolumeFTM
-    			totalLiquidityUSD	totalLiquidityFTM
-  			}
-		}`
-	gdqr_shiba = new XMLHttpRequest();
-	gdqr_shiba.open("POST","https://api.thegraph.com/subgraphs/name/shiba-fantom/exchange",true);
-	gdqr_shiba.onload=function(){
-		gdqd_shiba=JSON.parse(this.response).data;
-		$("d_shiba").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_shiba.uniswapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
-		$("d_shiba").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_shiba.uniswapDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_shiba").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_shiba.uniswapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_shiba").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_shiba.uniswapFactories[0].txCount).toFixed(0)).toLocaleString()
-		gobj[0]+=Number(gdqd_shiba.uniswapFactories[0].totalLiquidityUSD)
-		gobj[1]+=Number(gdqd_shiba.uniswapDayDatas[0].dailyVolumeUSD)
-		gobj[2]+=Number(gdqd_shiba.uniswapFactories[0].totalVolumeUSD)
-		gobj[3]+=Number(gdqd_shiba.uniswapFactories[0].txCount)
-		ref_os();
-		sortit(3);sortit(3);
-	}
-	gdqr_shiba.send(JSON.stringify({query:gdq_shiba}))
-
-	gdq_jet =
-		`query {
-  			uniswapFactories(first: 1) {
-    			id
-    			pairCount	txCount
-    			totalVolumeUSD    totalVolumeETH	untrackedVolumeUSD
-    			totalLiquidityUSD	totalLiquidityETH
-    			txCount
-  			}
-  			uniswapDayDatas(where:{id: ${date_id}}) {
-    			id	date
-    			txCount
-    			dailyVolumeUSD	dailyVolumeETH	dailyVolumeUntracked
-    			totalVolumeUSD	totalVolumeETH
-    			totalLiquidityUSD	totalLiquidityETH
-  			}
-		}`
-	gdqr_jet = new XMLHttpRequest();
-	gdqr_jet.open("POST","https://api.thegraph.com/subgraphs/name/smartcookie0501/jetswap-subgraph-fantom",true);
-	gdqr_jet.onload=function(){
-		gdqd_jet=JSON.parse(this.response).data;
-		$("d_jet").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_jet.uniswapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
-		$("d_jet").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_jet.uniswapDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_jet").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_jet.uniswapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_jet").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_jet.uniswapFactories[0].txCount).toFixed(0)).toLocaleString()
-		gobj[0]+=Number(gdqd_jet.uniswapFactories[0].totalLiquidityUSD)
-		gobj[1]+=Number(gdqd_jet.uniswapDayDatas[0].dailyVolumeUSD)
-		gobj[2]+=Number(gdqd_jet.uniswapFactories[0].totalVolumeUSD)
-		gobj[3]+=Number(gdqd_jet.uniswapFactories[0].txCount)
-		ref_os()
-
-		ref_os();
-		sortit(3);sortit(3);
-	}
-	gdqr_jet.send(JSON.stringify({query:gdq_jet}))
-
-/*
-	gdq_cyber =
-		`query {
-  		xdaoFactories(first:1) {
-    		id
-    		totalVolumeUSD    totalVolumeFTM  untrackedVolumeUSD
-    		totalLiquidityUSD    totalLiquidityFTM
-    		txCount    pairCount
-  		}
-
-  		xdaoDayDatas(where:{id:18897}){
-    		id  date
-    		dailyVolumeFTM	dailyVolumeUSD	dailyVolumeUntracked
-    		totalVolumeUSD	totalVolumeFTM
-    		totalLiquidityUSD	totalLiquidityFTM
-    		txCount
-			}
-		}`
-	gdqr_cyber = new XMLHttpRequest();
-	gdqr_cyber.open("POST","https://api.studio.thegraph.com/query/7564/xdaoexchange/1.1.2",true);
-	gdqr_cyber.onload=function(){
-		gdqd_cyber=JSON.parse(this.response).data;
-		$("d_cyber").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_cyber.xdaoFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
-		$("d_cyber").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_cyber.xdaoDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_cyber").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_cyber.xdaoFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_cyber").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_cyber.xdaoFactories[0].txCount).toFixed(0)).toLocaleString()
-		gobj[0]+=Number(gdqd_cyber.xdaoFactories[0].totalLiquidityUSD)
-		gobj[1]+=Number(gdqd_cyber.xdaoSwapDayDatas[0].dailyVolumeUSD)
-		gobj[2]+=Number(gdqd_cyber.xdaoFactories[0].totalVolumeUSD)
-		gobj[3]+=Number(gdqd_cyber.xdaoFactories[0].txCount)
-		ref_os();
-		sortit(3);sortit(3);
-	}
-	gdqr_cyber.send(JSON.stringify({query:gdq_cyber}))
-
-
-*/
-
-	fetch('https://api.studio.thegraph.com/query/7564/xdaoexchange/1.1.2', {
-  	method: 'POST',
-  	body: JSON.stringify({
-    	query: `query {
-  			xdaoFactories(first:1) {
-    			id
-    			totalVolumeUSD    totalVolumeFTM  untrackedVolumeUSD
-    			totalLiquidityUSD    totalLiquidityFTM
-    			txCount    pairCount
-  			}
-
-  			xdaoDayDatas(where:{id:18897}){
-    			id  date
-    			dailyVolumeFTM	dailyVolumeUSD	dailyVolumeUntracked
-    			totalVolumeUSD	totalVolumeFTM
-    			totalLiquidityUSD	totalLiquidityFTM
-    			txCount
-				}
-			}`,
-    	variables: {
-    	}
-  	}),
-  	headers: {
-      	'content-type': 'application/json'
-  	}
-	}).then(async (data) => {
-    	// Console log our return data
-    	var gdqd_cyber=(await data.json()).data;
-		$("d_cyber").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_cyber.xdaoFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
-		$("d_cyber").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_cyber.xdaoDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_cyber").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_cyber.xdaoFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_cyber").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_cyber.xdaoFactories[0].txCount).toFixed(0)).toLocaleString()
-		gobj[0]+=Number(gdqd_cyber.xdaoFactories[0].totalLiquidityUSD)
-		gobj[1]+=Number(gdqd_cyber.xdaoDayDatas[0].dailyVolumeUSD)
-		gobj[2]+=Number(gdqd_cyber.xdaoFactories[0].totalVolumeUSD)
-		gobj[3]+=Number(gdqd_cyber.xdaoFactories[0].txCount)
-	});
-
-
-
-
-	gdq_beethoven =
-		`query {
-  balancers(first:1){
-    totalLiquidity
-    totalSwapCount
-    poolCount
-    totalSwapVolume
-    totalSwapFee
-    id
-  }
-}`
-	gdqr_beethoven = new XMLHttpRequest();
-	//old:
-	gdqr_beethoven.open("POST","https://graph-node.beets-ftm-node.com/subgraphs/name/beethovenx",true);
-	//gdqr_beethoven.open("POST","https://graph-node.beets-ftm-node.com/subgraphs/name/beethovenx-v4",true);
-	//gdqr_beethoven.open("POST","https://eu-lb.beets-ftm-node.com/subgraphs/name/beethovenx-canary",true);
-	gdqr_beethoven.onload=function(){
-		gdqd_beethoven=JSON.parse(this.response).data.balancers[0];
-		$("d_beethoven").getElementsByTagName("td")[1].innerHTML=Number(Number(gdqd_beethoven.poolCount).toFixed(0)).toLocaleString()
-		$("d_beethoven").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_beethoven.totalLiquidity).toFixed(0)).toLocaleString()
-		$("d_beethoven").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_beethoven.totalSwapVolume).toFixed(0)).toLocaleString()
-		$("d_beethoven").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_beethoven.totalSwapCount).toFixed(0)).toLocaleString()
-		gobj[0]+=Number(gdqd_beethoven.totalLiquidity)
-		//gobj[1]+=Number(gdqd_beethoven.uniswapDayDatas[0].dailyVolumeUSD)
-		gobj[2]+=Number(gdqd_beethoven.totalSwapVolume)
-		gobj[3]+=Number(gdqd_beethoven.totalSwapCount)
-		ref_os();
-		sortit(3);sortit(3);
-	}
-	gdqr_beethoven.send(JSON.stringify({query:gdq_beethoven}))
-
-
-
-
-
-
-
-	/*
-
-
-	gdq_shiba =
-		`query {
-  			uniswapFactories(first: 1) {
-    			id
-    			pairCount	txCount
-    			totalVolumeUSD    totalVolumeFTM	untrackedVolumeUSD
-    			totalLiquidityUSD	totalLiquidityFTM
-    			txCount
-  			}
-  			uniswapDayDatas(where:{id: ${date_id}}) {
-    			id	date
-    			txCount
-    			dailyVolumeUSD	dailyVolumeFTM	dailyVolumeUntracked
-    			totalVolumeUSD	totalVolumeFTM
-    			totalLiquidityUSD	totalLiquidityFTM
-  			}
-		}`
-	gdqr_shiba = new XMLHttpRequest();
-	gdqr_shiba.open("POST","https://api.thegraph.com/subgraphs/name/shiba-fantom/exchange",true);
-	gdqr_shiba.onload=function(){
-		gdqd_shiba=JSON.parse(this.response).data;
-		$("d_shiba").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_shiba.uniswapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
-		$("d_shiba").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_shiba.uniswapDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_shiba").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_shiba.uniswapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_shiba").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_shiba.uniswapFactories[0].txCount).toFixed(0)).toLocaleString()
-		gobj[0]+=Number(gdqd_shiba.uniswapFactories[0].totalLiquidityUSD)
-		gobj[1]+=Number(gdqd_shiba.uniswapDayDatas[0].dailyVolumeUSD)
-		gobj[2]+=Number(gdqd_shiba.uniswapFactories[0].totalVolumeUSD)
-		gobj[3]+=Number(gdqd_shiba.uniswapFactories[0].txCount)
-		ref_os();
-		sortit(3);sortit(3);
-	}
-	gdqr_shiba.send(JSON.stringify({query:gdq_shiba}))
-
-	*/
-
-
-
-	gdq_dmm =
-		`query {
-  		dmmFactories(first:1) {
-    		id
-    		totalVolumeUSD    totalVolumeETH  untrackedVolumeUSD
-    		totalFeeUSD	untrackedFeeUSD totalProtocolFeeUSD
-    		totalLiquidityUSD    totalLiquidityETH
-    		txCount    pairCount	poolCount
-  		}
-
-  		dmmDayDatas(where:{id: ${date_id}}) {
-    		id  date
-    		dailyVolumeETH	dailyVolumeUSD	dailyVolumeUntracked
-    		totalVolumeUSD	totalVolumeETH
-    		totalLiquidityUSD	totalLiquidityETH
-    		txCount
-			}
-		}`
-	gdqr_dmm = new XMLHttpRequest();
-	gdqr_dmm.open("POST","https://api.thegraph.com/subgraphs/name/dynamic-amm/dmm-exchange-ftm",true);
-	gdqr_dmm.onload=function(){
-		gdqd_dmm=JSON.parse(this.response).data;
-		$("d_dmm").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_dmm.dmmFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
-		$("d_dmm").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_dmm.dmmDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_dmm").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_dmm.dmmFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_dmm").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_dmm.dmmFactories[0].txCount).toFixed(0)).toLocaleString()
-		gobj[0]+=Number(gdqd_dmm.dmmFactories[0].totalLiquidityUSD)
-		gobj[1]+=Number(gdqd_dmm.dmmDayDatas[0].dailyVolumeUSD)
-		gobj[2]+=Number(gdqd_dmm.dmmFactories[0].totalVolumeUSD)
-		gobj[3]+=Number(gdqd_dmm.dmmFactories[0].txCount)
-		ref_os();
-		sortit(3);sortit(3);
-	}
-	gdqr_dmm.send(JSON.stringify({query:gdq_dmm}))
-
-
-
-
-
-
-	gdq_empire =
-		`query {
-  			uniswapFactories(first: 1) {
-    			id
-    			pairCount	txCount
-    			totalVolumeUSD    totalVolumeETH	untrackedVolumeUSD
-    			totalLiquidityUSD	totalLiquidityETH
-    			txCount
-  			}
-  			uniswapDayDatas(where:{id: ${date_id}}) {
-    			id	date
-    			txCount
-    			dailyVolumeUSD	dailyVolumeETH	dailyVolumeUntracked
-    			totalVolumeUSD	totalVolumeETH
-    			totalLiquidityUSD	totalLiquidityETH
-  			}
-		}`
-
-
-	gdqr_empire = new XMLHttpRequest();
-	gdqr_empire.open("POST","https://api.thegraph.com/subgraphs/name/zikyfranky/empire-exchange",true);
-	gdqr_empire.onload=function(){
-		gdqd_empire=JSON.parse(this.response).data;
-		$("d_empire").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_empire.uniswapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
-		$("d_empire").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_empire.uniswapDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_empire").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_empire.uniswapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_empire").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_empire.uniswapFactories[0].txCount).toFixed(0)).toLocaleString()
-		gobj[0]+=Number(gdqd_empire.uniswapFactories[0].totalLiquidityUSD)
-		gobj[1]+=Number(gdqd_empire.uniswapDayDatas[0].dailyVolumeUSD)
-		gobj[2]+=Number(gdqd_empire.uniswapFactories[0].totalVolumeUSD)
-		gobj[3]+=Number(gdqd_empire.uniswapFactories[0].txCount)
-		ref_os();
-		sortit(3);sortit(3);
-	}
-	gdqr_empire.send(JSON.stringify({query:gdq_empire}))
-
-
-
-
-
-	gdq_dfyn =
-		`query {
-  			uniswapFactories(first: 1) {
-    			id
-    			pairCount	txCount
-    			totalVolumeUSD    totalVolumeETH	untrackedVolumeUSD
-    			totalLiquidityUSD	totalLiquidityETH
-    			txCount
-  			}
-  			uniswapDayDatas(where:{id: ${date_id}}) {
-    			id	date
-    			txCount
-    			dailyVolumeUSD	dailyVolumeETH	dailyVolumeUntracked
-    			totalVolumeUSD	totalVolumeETH
-    			totalLiquidityUSD	totalLiquidityETH
-  			}
-		}`
-
-
-	gdqr_dfyn = new XMLHttpRequest();
-	gdqr_dfyn.open("POST","https://api.thegraph.com/subgraphs/name/ss-sonic/fantom-v4",true);
-	gdqr_dfyn.onload=function(){
-		gdqd_dfyn=JSON.parse(this.response).data;
-		$("d_dfyn").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_dfyn.uniswapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
-		$("d_dfyn").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_dfyn.uniswapDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_dfyn").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_dfyn.uniswapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_dfyn").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_dfyn.uniswapFactories[0].txCount).toFixed(0)).toLocaleString()
-		gobj[0]+=Number(gdqd_dfyn.uniswapFactories[0].totalLiquidityUSD)
-		gobj[1]+=Number(gdqd_dfyn.uniswapDayDatas[0].dailyVolumeUSD)
-		gobj[2]+=Number(gdqd_dfyn.uniswapFactories[0].totalVolumeUSD)
-		gobj[3]+=Number(gdqd_dfyn.uniswapFactories[0].txCount)
-		ref_os();
-		sortit(3);sortit(3);
-	}
-	gdqr_dfyn.send(JSON.stringify({query:gdq_dfyn}))
-
-
-
-
-	gdq_morpheus =
-		`query {
-  			pancakeFactories(first: 1) {
-    			id
-    			totalPairs	totalTransactions
-    			totalVolumeUSD    totalVolumeBNB	untrackedVolumeUSD
-    			totalLiquidityUSD	totalLiquidityBNB
-  			}
-  			pancakeDayDatas(where:{id: ${date_id}})
-  {
-    			id	date
-    			totalTransactions
-    			dailyVolumeUSD	dailyVolumeBNB	dailyVolumeUntracked
-    			totalVolumeUSD	totalVolumeBNB
-    			totalLiquidityUSD	totalLiquidityBNB
-  			}
-		}`
-
-
-	gdqr_morpheus = new XMLHttpRequest();
-	gdqr_morpheus.open("POST","https://api.thegraph.com/subgraphs/name/daedboi/morpheus-swap",true);
-	gdqr_morpheus.onload=function(){
-		gdqd_morpheus=JSON.parse(this.response).data;
-		$("d_morpheus").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_morpheus.pancakeFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
-		$("d_morpheus").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_morpheus.pancakeDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_morpheus").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_morpheus.pancakeFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_morpheus").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_morpheus.pancakeFactories[0].totalTransactions).toFixed(0)).toLocaleString()
-		gobj[0]+=Number(gdqd_morpheus.pancakeFactories[0].totalLiquidityUSD)
-		gobj[1]+=Number(gdqd_morpheus.pancakeDayDatas[0].dailyVolumeUSD)
-		gobj[2]+=Number(gdqd_morpheus.pancakeFactories[0].totalVolumeUSD)
-		gobj[3]+=Number(gdqd_morpheus.pancakeFactories[0].totalTransactions)
-		ref_os();
-		sortit(3);sortit(3);
-	}
-	gdqr_morpheus.send(JSON.stringify({query:gdq_morpheus}))
-
-
-
-
-	gdq_firebird =
-		`query {
-  			exchanges(first: 1) {
-    			id
-    			poolCount	txCount
-    			totalSwapVolume
-    			totalLiquidity
-    			totalSwapFee	totalProtocolFee	protocolFee
-  			}
-  			exchangeDayDatas(where:{id: "${date_id}-1"})
-  {
-    			id	date	exchangeID {
-    			  id
-    			}
-    			txCount
-    			dailyVolumeUSD
-    			totalVolumeUSD
-    			totalLiquidityUSD
-    			dailyFeeUSD	dailyProtocolFeeUSD	totalFeeUSD
-  			}
-		}`
-
-
-	gdqr_firebird = new XMLHttpRequest();
-	gdqr_firebird.open("POST","https://api.thegraph.com/subgraphs/name/firebirdgraph/fantom-exchange",true);
-	gdqr_firebird.onload=function(){
-		gdqd_firebird=JSON.parse(this.response).data;
-		$("d_firebird").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_firebird.exchanges[0].totalLiquidity).toFixed(0)).toLocaleString()
-		$("d_firebird").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_firebird.exchangeDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_firebird").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_firebird.exchanges[0].totalSwapVolume).toFixed(0)).toLocaleString()
-		$("d_firebird").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_firebird.exchanges[0].txCount).toFixed(0)).toLocaleString()
-		gobj[0]+=Number(gdqd_firebird.exchanges[0].totalLiquidity)
-		gobj[1]+=Number(gdqd_firebird.exchangeDayDatas[0].dailyVolumeUSD)
-		gobj[2]+=Number(gdqd_firebird.exchanges[0].totalSwapVolume)
-		gobj[3]+=Number(gdqd_firebird.exchanges[0].txCount)
-		ref_os();
-		sortit(3);sortit(3);
-	}
-	gdqr_firebird.send(JSON.stringify({query:gdq_firebird}))
-
-
-
-	gdq_soul =
-		`query {
-  			uniswapFactories{
-    			id	pairCount	txCount
-    			totalVolumeUSD	totalVolumeETH	untrackedVolumeUSD
-    			totalLiquidityUSD	totalLiquidityETH
-  			}
-  			uniswapDayDatas(where:{id: ${date_id}}){
-    			id	date
-    			dailyVolumeUSD	dailyVolumeETH	dailyVolumeUntracked
-    			totalVolumeUSD	totalVolumeETH
-    			totalLiquidityUSD	totalLiquidityETH
-    			txCount
-  			}
-		}`
-	gdqr_soul = new XMLHttpRequest();
-	gdqr_soul.open("POST","https://api.thegraph.com/subgraphs/name/soulswapfinance/fantom-soulswap",true);
-	gdqr_soul.onload=function(){
-		gdqd_soul=JSON.parse(this.response).data;
-		$("d_soul").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_soul.uniswapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
-		$("d_soul").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_soul.uniswapDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_soul").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_soul.uniswapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_soul").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_soul.uniswapFactories[0].txCount).toFixed(0)).toLocaleString()
-		gobj[0]+=Number(gdqd_soul.uniswapFactories[0].totalLiquidityUSD)
-		gobj[1]+=Number(gdqd_soul.uniswapDayDatas[0].dailyVolumeUSD)
-		gobj[2]+=Number(gdqd_soul.uniswapFactories[0].totalVolumeUSD)
-		gobj[3]+=Number(gdqd_soul.uniswapFactories[0].txCount)
-		ref_os();
-		sortit(3);sortit(3);
-	}
-	gdqr_soul.send(JSON.stringify({query:gdq_soul}))
-
-
-
-	gdq_fbomb =
-		`query {
-  		bombswapFactories(first:1){
-    		id
-    		totalVolumeUSD    totalVolumeFTM  untrackedVolumeUSD
-    		totalLiquidityUSD    totalLiquidityFTM
-    		totalPairs    totalTransactions
-  		}
-
-  		bombswapDayDatas(where:{id: ${date_id}}){
-    		id  date
-    		dailyVolumeUSD	dailyVolumeFTM	dailyVolumeUntracked
-    		totalVolumeUSD	totalVolumeFTM
-    		totalLiquidityUSD	totalLiquidityFTM
-    		totalTransactions
-			}
-		}`
-	gdqr_fbomb = new XMLHttpRequest();
-	gdqr_fbomb.open("POST","https://api.thegraph.com/subgraphs/name/fbomb-finance/bombswap-exchange",true);
-	gdqr_fbomb.onload=function(){
-		gdqd_fbomb=JSON.parse(this.response).data;
-		$("d_fbomb").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_fbomb.bombswapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
-		$("d_fbomb").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_fbomb.bombswapDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_fbomb").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_fbomb.bombswapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_fbomb").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_fbomb.bombswapFactories[0].totalTransactions).toFixed(0)).toLocaleString()
-		gobj[0]+=Number(gdqd_fbomb.bombswapFactories[0].totalLiquidityUSD)
-		gobj[1]+=Number(gdqd_fbomb.bombswapDayDatas[0].dailyVolumeUSD)
-		gobj[2]+=Number(gdqd_fbomb.bombswapFactories[0].totalVolumeUSD)
-		gobj[3]+=Number(gdqd_fbomb.bombswapFactories[0].totalTransactions)
-		ref_os();
-		sortit(3);sortit(3);
-	}
-	gdqr_fbomb.send(JSON.stringify({query:gdq_fbomb}))
-
-
-
-
-	gdq_knight =
-		`query {
-  		uniswapFactories{
-    		id
-    		totalVolumeUSD    totalVolumeETH  untrackedVolumeUSD
-    		totalLiquidityUSD    totalLiquidityETH
-    		pairCount    txCount
-  		}
-
-  		uniswapDayDatas(where:{id: ${date_id}}){
-    		id  date
-    		dailyVolumeUSD	dailyVolumeETH	dailyVolumeUntracked
-    		totalVolumeUSD	totalVolumeETH
-    		totalLiquidityUSD	totalLiquidityETH
-    		txCount
-			}
-		}`
-	gdqr_knight = new XMLHttpRequest();
-	gdqr_knight.open("POST","https://api.thegraph.com/subgraphs/name/shahzeb8285/dark-knight-two",true);
-	gdqr_knight.onload=function(){
-		gdqd_knight=JSON.parse(this.response).data;
-		$("d_knight").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_knight.uniswapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
-		$("d_knight").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_knight.uniswapDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_knight").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_knight.uniswapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_knight").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_knight.uniswapFactories[0].txCount).toFixed(0)).toLocaleString()
-		gobj[0]+=Number(gdqd_knight.uniswapFactories[0].totalLiquidityUSD)
-		gobj[1]+=Number(gdqd_knight.uniswapDayDatas[0].dailyVolumeUSD)
-		gobj[2]+=Number(gdqd_knight.uniswapFactories[0].totalVolumeUSD)
-		gobj[3]+=Number(gdqd_knight.uniswapFactories[0].txCount)
-		ref_os();
-		sortit(3);sortit(3);
-	}
-	gdqr_knight.send(JSON.stringify({query:gdq_knight}))
-
-
-
-	gdq_defy =
-		`query {
-  		pancakeFactories(first:1) {
-    		id
-    		totalVolumeUSD    totalVolumeBNB  untrackedVolumeUSD
-    		totalLiquidityUSD    totalLiquidityBNB
-    		totalPairs    totalTransactions
-  		}
-
-  		pancakeDayDatas(where:{id: ${date_id}}){
-    		id  date
-    		dailyVolumeUSD	dailyVolumeBNB	dailyVolumeUntracked
-    		totalVolumeUSD	totalVolumeBNB
-    		totalLiquidityUSD	totalLiquidityBNB
-    		totalTransactions
-			}
-		}`
-	gdqr_defy = new XMLHttpRequest();
-	gdqr_defy.open("POST","https://api.thegraph.com/subgraphs/name/birchydefy/defyswapv2",true);
-	gdqr_defy.onload=function(){
-		gdqd_defy=JSON.parse(this.response).data;
-		$("d_defy").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_defy.pancakeFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
-		$("d_defy").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_defy.pancakeDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_defy").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_defy.pancakeFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_defy").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_defy.pancakeFactories[0].totalTransactions).toFixed(0)).toLocaleString()
-		gobj[0]+=Number(gdqd_defy.pancakeFactories[0].totalLiquidityUSD)
-		gobj[1]+=Number(gdqd_defy.pancakeDayDatas[0].dailyVolumeUSD)
-		gobj[2]+=Number(gdqd_defy.pancakeFactories[0].totalVolumeUSD)
-		gobj[3]+=Number(gdqd_defy.pancakeFactories[0].totalTransactions)
-		ref_os();
-		sortit(3);sortit(3);
-	}
-	gdqr_defy.send(JSON.stringify({query:gdq_defy}))
-
-
-
-
-	gdq_wing =
-		`query {
-  		wingSwapFactories(first:1) {
-    		id
-    		totalVolumeUSD    totalVolumeETH  untrackedVolumeUSD
-    		totalLiquidityUSD    totalLiquidityETH
-    		totalPairs    totalTransactions
-  		}
-
-  		wingSwapDayDatas(where:{id: ${date_id}}){
-    		id  date
-    		dailyVolumeUSD	dailyVolumeETH	dailyVolumeUntracked
-    		totalVolumeUSD	totalVolumeETH
-    		totalLiquidityUSD	totalLiquidityETH
-    		totalTransactions
-			}
-		}`
-	gdqr_wing = new XMLHttpRequest();
-	gdqr_wing.open("POST","https://api.thegraph.com/subgraphs/name/wingswap/wingswap-exchange",true);
-	gdqr_wing.onload=function(){
-		gdqd_wing=JSON.parse(this.response).data;
-		$("d_wing").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_wing.wingSwapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
-		$("d_wing").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_wing.wingSwapDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_wing").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_wing.wingSwapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_wing").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_wing.wingSwapFactories[0].totalTransactions).toFixed(0)).toLocaleString()
-		gobj[0]+=Number(gdqd_wing.wingSwapFactories[0].totalLiquidityUSD)
-		gobj[1]+=Number(gdqd_wing.wingSwapDayDatas[0].dailyVolumeUSD)
-		gobj[2]+=Number(gdqd_wing.wingSwapFactories[0].totalVolumeUSD)
-		gobj[3]+=Number(gdqd_wing.wingSwapFactories[0].totalTransactions)
-		ref_os();
-		sortit(3);sortit(3);
-	}
-	gdqr_wing.send(JSON.stringify({query:gdq_wing}))
-
-
-
-
-
-
-	gdq_degenhaus =
-		`query {
-  		pancakeFactories(first:1) {
-    		id
-    		totalVolumeUSD    totalVolumeBNB  untrackedVolumeUSD
-    		totalLiquidityUSD    totalLiquidityBNB
-    		totalPairs    totalTransactions
-  		}
-
-  		pancakeDayDatas(where:{id: ${date_id}}){
-    		id  date
-    		dailyVolumeUSD	dailyVolumeBNB	dailyVolumeUntracked
-    		totalVolumeUSD	totalVolumeBNB
-    		totalLiquidityUSD	totalLiquidityBNB
-    		totalTransactions
-      	}
-	}`
-	gdqr_degenhaus = new XMLHttpRequest();
-	gdqr_degenhaus.open("POST","https://api.thegraph.com/subgraphs/name/cryptoinhero/degenswap-exchange",true);
-	gdqr_degenhaus.onload=function(){
-		gdqd_degenhaus=JSON.parse(this.response).data;
-		$("d_degenhaus").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_degenhaus.pancakeFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
-		$("d_degenhaus").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_degenhaus.pancakeDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_degenhaus").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_degenhaus.pancakeFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_degenhaus").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_degenhaus.pancakeFactories[0].totalTransactions).toFixed(0)).toLocaleString()
-		gobj[0]+=Number(gdqd_degenhaus.pancakeFactories[0].totalLiquidityUSD)
-		gobj[1]+=Number(gdqd_degenhaus.pancakeDayDatas[0].dailyVolumeUSD)
-		gobj[2]+=Number(gdqd_degenhaus.pancakeFactories[0].totalVolumeUSD)
-		gobj[3]+=Number(gdqd_degenhaus.pancakeFactories[0].totalTransactions)
-		ref_os();
-		sortit(3);sortit(3);
-	}
-	gdqr_degenhaus.send(JSON.stringify({query:gdq_degenhaus}))
-
-
-
-
-	gdq_protofi =
-		`query {
-  		pancakeFactories(first:1) {
-    		id
-    		totalVolumeUSD    totalVolumeBNB  untrackedVolumeUSD
-    		totalLiquidityUSD    totalLiquidityBNB
-    		totalPairs    totalTransactions
-  		}
-
-  		pancakeDayDatas(where:{id: ${date_id}}){
-    		id  date
-    		dailyVolumeUSD	dailyVolumeBNB	dailyVolumeUntracked
-    		totalVolumeUSD	totalVolumeBNB
-    		totalLiquidityUSD	totalLiquidityBNB
-    		totalTransactions
-      	}
-	}`
-	gdqr_protofi = new XMLHttpRequest();
-	gdqr_protofi.open("POST","https://api.thegraph.com/subgraphs/name/theothercrypto/protofi-dex-fantom",true);
-	gdqr_protofi.onload=function(){
-		gdqd_protofi=JSON.parse(this.response).data;
-		$("d_protofi").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_protofi.pancakeFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
-		$("d_protofi").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_protofi.pancakeDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_protofi").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_protofi.pancakeFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_protofi").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_protofi.pancakeFactories[0].totalTransactions).toFixed(0)).toLocaleString()
-		gobj[0]+=Number(gdqd_protofi.pancakeFactories[0].totalLiquidityUSD)
-		gobj[1]+=Number(gdqd_protofi.pancakeDayDatas[0].dailyVolumeUSD)
-		gobj[2]+=Number(gdqd_protofi.pancakeFactories[0].totalVolumeUSD)
-		gobj[3]+=Number(gdqd_protofi.pancakeFactories[0].totalTransactions)
-		ref_os();
-		sortit(3);sortit(3);
-	}
-	gdqr_protofi.send(JSON.stringify({query:gdq_protofi}))
-
-
-
-
-	gdq_metro =
-		`query {
-  			uniswapFactories(first: 1) {
-    			id
-    			pairCount	txCount
-    			totalVolumeUSD    totalVolumeNativeCurrency	untrackedVolumeUSD
-    			totalLiquidityUSD	totalLiquidityNativeCurrency
-  			}
-  			uniswapDayDatas#(where:{id: ${date_id}}){
-  			{
-    			id	date
-    			txCount
-    			dailyVolumeUSD	dailyVolumeNativeCurrency	dailyVolumeUntracked
-    			totalVolumeUSD	totalVolumeNativeCurrency
-    			totalLiquidityUSD	totalLiquidityNativeCurrency
-  			}
-        }`
-	gdqr_metro = new XMLHttpRequest();
-	gdqr_metro.open("POST","https://api.thegraph.com/subgraphs/name/tetcoin/metroswap-fantom",true);
-	gdqr_metro.onload=function(){
-		gdqd_metro=JSON.parse(this.response).data;
-		//$("d_metro").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_metro.uniswapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
-		$("d_metro").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_metro.uniDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
-		//$("d_metro").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_metro.uniswapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_metro").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_metro.uniswapFactories[0].txCount).toFixed(0)).toLocaleString()
-		//gobj[0]+=Number(gdqd_metro.uniswapFactories[0].totalLiquidityUSD)
-		gobj[1]+=Number(gdqd_metro.uniDayDatas[0].dailyVolumeUSD)
-		//gobj[2]+=Number(gdqd_metro.uniswapFactories[0].totalVolumeUSD)
-		gobj[3]+=Number(gdqd_metro.uniswapFactories[0].txCount)
-		ref_os();
-		sortit(3);sortit(3);
-	}
-	gdqr_metro.send(JSON.stringify({query:gdq_metro}))
-	//console.log("sent metro")
-
-
-
-	gdq_wigo =
-		`query {
-  			wigoswapFactories(first: 1) {
-    			id
-    			totalPairs	totalTransactions
-    			totalVolumeUSD    totalVolumeFTM	untrackedVolumeUSD
-    			totalLiquidityUSD	totalLiquidityFTM
-  			}
-  			wigoDayDatas(where:{id: ${date_id}}){
-    			id	date
-    			totalTransactions
-    			dailyVolumeUSD	dailyVolumeFTM	dailyVolumeUntracked
-    			totalVolumeUSD	totalVolumeFTM
-    			totalLiquidityUSD	totalLiquidityFTM
-  			}
-        }`
-	gdqr_wigo = new XMLHttpRequest();
-	gdqr_wigo.open("POST","https://api.thegraph.com/subgraphs/name/wigoswap/exchange",true);
-	gdqr_wigo.onload=function(){
-		gdqd_wigo=JSON.parse(this.response).data;//console.log("WIGO",gdqd_wigo)
-		$("d_wigo").getElementsByTagName("td")[3].innerHTML=Number(Number(gdqd_wigo.wigoswapFactories[0].totalLiquidityUSD).toFixed(0)).toLocaleString()
-		$("d_wigo").getElementsByTagName("td")[5].innerHTML=Number(Number(gdqd_wigo.wigoDayDatas[0].dailyVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_wigo").getElementsByTagName("td")[6].innerHTML=Number(Number(gdqd_wigo.wigoswapFactories[0].totalVolumeUSD).toFixed(0)).toLocaleString()
-		$("d_wigo").getElementsByTagName("td")[7].innerHTML=Number(Number(gdqd_wigo.wigoswapFactories[0].totalTransactions).toFixed(0)).toLocaleString()
-		gobj[0]+=Number(gdqd_wigo.wigoswapFactories[0].totalLiquidityUSD)
-		gobj[1]+=Number(gdqd_wigo.wigoDayDatas[0].dailyVolumeUSD)
-		gobj[2]+=Number(gdqd_wigo.wigoswapFactories[0].totalVolumeUSD)
-		gobj[3]+=Number(gdqd_wigo.wigoswapFactories[0].totalTransactions)
-		ref_os();
-		sortit(3);sortit(3);
-	}
-	gdqr_wigo.send(JSON.stringify({query:gdq_wigo}))
-
-
-
-
-
-
-//ITVL - tvlGuru.sol, The Universal On-chain TVL Finder
-
-TVLGURU = "0x3f0458FfB6D106d2F5CdeC9CEdc9054A69275489"
-tvlAbi = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[],"name":"DAO","outputs":[{"internalType":"address payable","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"_bankOf_coin","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"_bankOf_e_usd","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"_bankOf_lpt_coin_usd","outputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"_bankOf_lpt_tt_coin_usd","outputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_f","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"_bankOf_lpt_tt_usd","outputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_u","type":"address"},{"internalType":"address","name":"u","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"_bankOf_lpt_usd","outputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"u","type":"address"},{"internalType":"address","name":"lp","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"_bankOf_t_coin_usd","outputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"_bankOf_t_tt_coin_usd","outputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_f","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"_bankOf_t_tt_usd","outputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_u","type":"address"},{"internalType":"address","name":"u","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"_bankOf_t_usd","outputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"u","type":"address"},{"internalType":"address","name":"lp","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256[]","name":"_e_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_coin_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_t_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_t_coin_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_t_tt_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_t_tt_coin_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_lpt_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_lpt_coin_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_lpt_tt_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_lpt_tt_coin_usd","type":"uint256[]"}],"name":"_puBankOf_pool2_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256[]","name":"_e_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_coin_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_t_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_t_coin_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_t_tt_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_t_tt_coin_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_lpt_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_lpt_coin_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_lpt_tt_usd","type":"uint256[]"},{"internalType":"uint256[]","name":"_lpt_tt_coin_usd","type":"uint256[]"}],"name":"_puBankOf_staking_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_pullBankOf_coin","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_pullBankOf_e_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_pullBankOf_lpt_coin_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_pullBankOf_lpt_tt_coin_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_pullBankOf_lpt_tt_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_pullBankOf_lpt_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_pullBankOf_t_coin_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_pullBankOf_t_tt_coin_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_pullBankOf_t_tt_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_pullBankOf_t_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"asset","type":"address"}],"name":"_pushBankOf_coin","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"asset","type":"address"}],"name":"_pushBankOf_e_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp","type":"address"}],"name":"_pushBankOf_lpt_coin_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_f","type":"address"}],"name":"_pushBankOf_lpt_tt_coin_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_u","type":"address"},{"internalType":"address","name":"u","type":"address"}],"name":"_pushBankOf_lpt_tt_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"u","type":"address"},{"internalType":"address","name":"lp","type":"address"}],"name":"_pushBankOf_lpt_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp","type":"address"}],"name":"_pushBankOf_t_coin_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_f","type":"address"}],"name":"_pushBankOf_t_tt_coin_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_u","type":"address"},{"internalType":"address","name":"u","type":"address"}],"name":"_pushBankOf_t_tt_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"u","type":"address"},{"internalType":"address","name":"lp","type":"address"}],"name":"_pushBankOf_t_usd","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_tvlOf_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_tvlOf_e_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_tvlOf_lpt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_tvlOf_lpt_tt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_tvlOf_lpt_tt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_tvlOf_lpt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvlOf_pool2_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvlOf_staking_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_tvlOf_t_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_tvlOf_t_tt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_tvlOf_t_tt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"n","type":"uint256"}],"name":"_tvlOf_t_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_e_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_lpt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_lpt_tt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_lpt_tt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_lpt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_pool2_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_staking_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_t_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_t_tt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_t_tt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"_tvl_t_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"coinusd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"lp","type":"address"}],"name":"p_lpt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"bt","type":"address"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_f","type":"address"}],"name":"p_lpt_tt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"bt","type":"address"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_u","type":"address"},{"internalType":"address","name":"u","type":"address"}],"name":"p_lpt_tt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"u","type":"address"},{"internalType":"address","name":"lp","type":"address"}],"name":"p_lpt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"lp","type":"address"}],"name":"p_t_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"qt","type":"address"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_f","type":"address"}],"name":"p_t_tt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"qt","type":"address"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_u","type":"address"},{"internalType":"address","name":"u","type":"address"}],"name":"p_t_tt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"u","type":"address"},{"internalType":"address","name":"lp","type":"address"}],"name":"p_t_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pool2","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"tokenAddress","type":"address"},{"internalType":"uint256","name":"tokens","type":"uint256"}],"name":"rescue","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"reset","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"u","type":"address"},{"internalType":"address","name":"w","type":"address"},{"internalType":"address","name":"l","type":"address"}],"name":"setUW","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"staking","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"tvl","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"q","type":"address"}],"name":"tvlOf_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"q","type":"address"}],"name":"tvlOf_e_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"components":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp","type":"address"}],"internalType":"struct tvlGuru.lpt_coin_usd","name":"q","type":"tuple"}],"name":"tvlOf_lpt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"components":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_f","type":"address"}],"internalType":"struct tvlGuru.lpt_tt_coin_usd","name":"q","type":"tuple"}],"name":"tvlOf_lpt_tt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"components":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_u","type":"address"},{"internalType":"address","name":"u","type":"address"}],"internalType":"struct tvlGuru.lpt_tt_usd","name":"q","type":"tuple"}],"name":"tvlOf_lpt_tt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"components":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"u","type":"address"},{"internalType":"address","name":"lp","type":"address"}],"internalType":"struct tvlGuru.lpt_usd","name":"q","type":"tuple"}],"name":"tvlOf_lpt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"components":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp","type":"address"}],"internalType":"struct tvlGuru.t_coin_usd","name":"q","type":"tuple"}],"name":"tvlOf_t_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"components":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_f","type":"address"}],"internalType":"struct tvlGuru.t_tt_coin_usd","name":"q","type":"tuple"}],"name":"tvlOf_t_tt_coin_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"components":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"lp_tt","type":"address"},{"internalType":"address","name":"lp_bt_u","type":"address"},{"internalType":"address","name":"u","type":"address"}],"internalType":"struct tvlGuru.t_tt_usd","name":"q","type":"tuple"}],"name":"tvlOf_t_tt_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"components":[{"internalType":"address","name":"asset","type":"address"},{"internalType":"address","name":"pool","type":"address"},{"internalType":"uint8","name":"dec","type":"uint8"},{"internalType":"address","name":"u","type":"address"},{"internalType":"address","name":"lp","type":"address"}],"internalType":"struct tvlGuru.t_usd","name":"q","type":"tuple"}],"name":"tvlOf_t_usd","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"usd","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"usd_d","outputs":[{"internalType":"uint8","name":"","type":"uint8"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"wcoin","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"wcoinusd","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"}]
-tvlGuru = new web3.eth.Contract(tvlAbi,TVLGURU);
-
-
-
-
-
-
-
-
-
-
-USDC = "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75";
-usdc = new web3.eth.Contract(ab,USDC);
-
-FUSD = "0xAd84341756Bf337f5a0164515b1f6F993D194E1f";
-fusd = new web3.eth.Contract(ab,FUSD);
-
-DAI  = "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E";
-dai  = new web3.eth.Contract(ab,DAI);
-
-USDT = "0x049d68029688eAbF473097a2fC38ef61633A3C7A";
-usdt = new web3.eth.Contract(ab,USDT);
-
-NUSD  = "0xED2a7edd7413021d440b09D654f3b87712abAB66";
-nusd  = new web3.eth.Contract(ab,NUSD);
-
-MIM   = "0x82f0B8B456c1A451378467398982d4834b6829c1";
-mim   = new web3.eth.Contract(ab,MIM);
-
-ETH   = "0x74b23882a30290451A17c44f4F05243b6b58C76d";
-eth   = new web3.eth.Contract(ab,ETH);
-
-NETH   = "0x67c10c397dd0ba417329543c1a40eb48aaa7cd00";
-neth   = new web3.eth.Contract(ab,NETH);
-
-
-
-
-
-
-
-
-
-
-	// IRON
-	fetch("https://api-v2.iron.finance/tvl?chainId=250")
-		.then(m=>{return (m.json())})
-		.then(d=>
-		{
-			$("d_iron").getElementsByTagName("td")[3].innerHTML=Number((Number(d["total"])/1e18).toFixed(0)).toLocaleString()
-			gobj[0]+=Number(d["total"])/1e18;
-			ref_os();
-			sortit(3);sortit(3);
-		})
-
-
-
-
-/**********************
-	// KEEP AT LAST
-	// CONTAINS AWAIT
-**********************/
-/**********************
-	// Don't worry
-	// Don't await
-**********************/
-
-
-
-	// FROYO
-	froyo_1 = "0x83E5f18Da720119fF363cF63417628eB0e9fd523";
-	froyoi = [{"stateMutability":"view","type":"function","name":"balances","inputs":[{"name":"arg0","type":"uint256"}],"outputs":[{"name":"","type":"uint256"}]}];
-
-	Promise.all([
-		usdt.methods.balanceOf(froyo_1).call(),
-		dai.methods.balanceOf(froyo_1).call(),
-		usdc.methods.balanceOf(froyo_1).call()
-	]).then(froyo_l=>{
-		froyo_tl = (froyo_l[0]/1e6) + (froyo_l[1]/1e18) +  (froyo_l[2]/1e6)
-		$("d_froyo").getElementsByTagName("td")[3].innerHTML=Number(Number(froyo_tl).toFixed(0)).toLocaleString()
-		gobj[0]+=froyo_tl;
-		ref_os();
-		sortit(3);sortit(3);
-	})
-
-
-	// SYNAPSE
-	synapse_1 = "0x2913E812Cf0dcCA30FB28E6Cac3d2DCFF4497688";
-	synapse_2 = "0x85662fd123280827e11C59973Ac9fcBE838dC3B4";
-	synapse_3 = "0x080F6AEd32Fc474DD5717105Dba5ea57268F46eb";
-	synapse_4 = "0x8d9ba570d6cb60c7e3e0f31343efe75ab8e65fb1";
-	synapsei = [{"stateMutability":"view","type":"function","name":"getTokenBalance","inputs":[{"name":"arg0","type":"uint256"}],"outputs":[{"name":"","type":"uint256"}]}];
-
-	Promise.all([
-		nusd.methods.balanceOf(synapse_1).call(),
-		mim.methods.balanceOf(synapse_1).call(),
-		usdc.methods.balanceOf(synapse_1).call(),
-		usdt.methods.balanceOf(synapse_1).call(),
-
-		nusd.methods.balanceOf(synapse_2).call(),
-		usdc.methods.balanceOf(synapse_2).call(),
-		usdt.methods.balanceOf(synapse_2).call(),
-
-		mim.methods.balanceOf(synapse_3).call(),
-		usdc.methods.balanceOf(synapse_3).call(),
-		usdt.methods.balanceOf(synapse_3).call(),
-
-		tvlGuru.methods.p_t_coin_usd("0x3d0bd54c48c2c433ea6fed609cc3d5fb7a77622b").call(),
-		eth.methods.balanceOf(synapse_4).call(),
-		neth.methods.balanceOf(synapse_4).call(),
-	]).then(synapse_l=>{
-		synapse_tl = 0
-			+ (synapse_l[0]/1e18) + (synapse_l[1]/1e18) + (synapse_l[2]/1e6) + (synapse_l[3]/1e6)
-			+ (synapse_l[4]/1e18) + (synapse_l[5]/1e6) + (synapse_l[6]/1e6)
-			+ (synapse_l[7]/1e18) + (synapse_l[8]/1e6) + (synapse_l[9]/1e6)
-			+ ( (synapse_l[11]/1e18) + (synapse_l[12]/1e18) ) * synapse_l[10]/1e18
-		;
-		$("d_synapse").getElementsByTagName("td")[3].innerHTML=Number(Number(synapse_tl).toFixed(0)).toLocaleString()
-		gobj[0]+=synapse_tl;
-		ref_os();
-		sortit(3);sortit(3);
-	})
-
-
-	// Steak-sAMM
-	steak_1	= "0xa0828eE559110b041DEdbf10Ae0cf42274251de1";
-	FUSD_USDC_PAIR = "0x679449a920087828776aeEF4074549410D5c8065";
-	steaki = [{"inputs":[],"name":"reserve0","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"reserve1","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}]
-
-	fusd_usdc_pair = new web3.eth.Contract(ab,FUSD_USDC_PAIR);
-	Promise.all([
-		usdc.methods.balanceOf(steak_1).call(),
-		fusd.methods.balanceOf(steak_1).call(),
-		fusd_usdc_pair.methods.getReserves().call()
-	]).then(steak_l=>{
-		steak_tl = (steak_l[0]/1e6) + (steak_l[1]/1e18) * ((Number(steak_l[2][0])/1e6)/(Number(steak_l[2][1])/1e18));
-		$("d_steaksamm").getElementsByTagName("td")[3].innerHTML=Number(Number(steak_tl).toFixed(0)).toLocaleString()
-		gobj[0]+=steak_tl;
-		ref_os();
-		sortit(3);sortit(3);
-	})
-
-
-	// funi
-	// Main pair has FUSD+WFTM, counting just 1 pool.
-	// Uses tvlGuru to find out TVL, & TVL === Liq
-	FUNI_0 = "0x34Bf23e2f08BFE00CAE2aDC15D4B47cF8B9ee7BF";	//Pair#0: FUSD-WFTM LPT
-	funi_0 = new web3.eth.Contract(ab,FUNI_0);
-	Promise.all([
-		tvlGuru.methods.p_lpt_coin_usd(FUNI_0).call(),
-		funi_0.methods.totalSupply().call()
-	]).then(funi_0_l=>{
-		//console.log("at uk",funi_0_l);
-		funi_0_tl = (Number(funi_0_l[0])*Number(funi_0_l[1]))/1e36;
-		$("d_funi").getElementsByTagName("td")[2].innerHTML=Number(Number(funi_0_tl).toFixed(0)).toLocaleString();
-		$("d_funi").getElementsByTagName("td")[3].innerHTML=Number(Number(funi_0_tl).toFixed(0)).toLocaleString();
-		gobj[0]+=funi_0_tl;
-		ref_os();
-		sortit(3);sortit(3);
-	})
-
-
-	//fanSwap
-	// Main pair has FTL+USDC, counting just 1 pool.
-	// TVL === Liq
-	usdc.methods.balanceOf("0x202D9b3ECA3C856F169FE383e2Ad326530aF0628").call((e,r)=>{	//Pair#0
-		$("d_fan").getElementsByTagName("td")[2].innerHTML=Number((Number(r)/1e6*2).toFixed(0)).toLocaleString();
-		$("d_fan").getElementsByTagName("td")[3].innerHTML=Number((Number(r)/1e6*2).toFixed(0)).toLocaleString();
-		gobj[0]+=(Number(r)/1e6*2);
-		ref_os();
-		sortit(3);sortit(3);
-	})
-
-
-	/*
-		//PanicSwap
-		// Main pair has FTL+USDC, counting just 1 pool.
-		// Uses tvlGuru to find out TVL, & TVL === Liq
-		panic_0_p = tvlGuru.methods.p_lpt_coin_usd("0x2502f5d1f11DEC4691FC75Fe46b2AC07bffdEF55").call()	//Pair#0
-		panic_0_s = (new web3.eth.Contract(ab,"0x2502f5d1f11DEC4691FC75Fe46b2AC07bffdEF55")).methods.totalSupply().call()
-		Promise.all([panic_0_p,panic_0_s]).then(r=>{
-			//$("d_panic").getElementsByTagName("td")[2].innerHTML=Number((Number(r[0])*Number(r[1])/1e36).toFixed(0)).toLocaleString();
-			$("d_panic").getElementsByTagName("td")[3].innerHTML=Number((Number(r[0])*Number(r[1])/1e36).toFixed(0)).toLocaleString();
-			gobj[0]+=(Number(r[0])*Number(r[1])/1e36);
-			ref_os();
-		})
-	*/
-
-
-
-	//PanicSwap
-	//console.log("PANIC!!")
-	//Using @PanicSwap/YVAprCalculator
-	//0x427dfbf4376ab621586fe0f218f5e28e1389ff7f
-	panic_tvlguru = new web3.eth.Contract([{"inputs":[],"name":"totalTvl","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}],"0x427dfbf4376ab621586fe0f218f5e28e1389ff7f");
-	panic_tvl = panic_tvlguru.methods.totalTvl().call()
-	Promise.all([panic_tvl]).then(_panic_tvl => {
-		//console.log("PANIC:",_panic_tvl)
-		$("d_panic").getElementsByTagName("td")[3].innerHTML=Number((Number(_panic_tvl)/1e18).toFixed(0)).toLocaleString();
-		$("d_panic").getElementsByTagName("td")[2].innerHTML=Number((Number(_panic_tvl)/1e18).toFixed(0)).toLocaleString();
-		gobj[0]+=(Number(tl)/1e36);
-		ref_os();
-		sortit(3);sortit(3);
-	})
-
-	//TombSwap
-	//0x9d2f00f684960Ec83a3d042F3EAdD70e105f83cb	0	tomb-tshare
-	//0xfca12A13ac324C09e9F43B5e5cfC9262f3Ab3223	1	tomb-ftm
-	//0x846f03785F665AC77862ED0F8F5061C0f5B3c7Bf	2	tshare-ftm
-	//0x2B2703716D3234b787C42E89950653688C012dEa	3	tomb-tbond
-	//0x45f4682B560d4e3B8FF1F1b3A38FDBe775C7177b	4	tomb-mai
-	//0xD4B8c09b1D79138bF2727b1656f552A543111914	5	ftm-tbond
-	// Uses tvlGuru to find out price of tomb, 2x those for balances in LP
-	// find p_lpt of tshare-ftm, x TotalSuppl
-	tomb_tom = new web3.eth.Contract(ab,"0x6c021ae822bea943b2e66552bde1d2696a53fbb7")
-	tomb_p_tom = tvlGuru.methods.p_t_coin_usd("0xfca12A13ac324C09e9F43B5e5cfC9262f3Ab3223").call()	//Price of tomb
-	tomb_plp_tsh = tvlGuru.methods.p_lpt_coin_usd("0x846f03785F665AC77862ED0F8F5061C0f5B3c7Bf").call()	//Price of tshare
-	tomb_lts_tsh = (new web3.eth.Contract(ab,"0x2502f5d1f11DEC4691FC75Fe46b2AC07bffdEF55")).methods.totalSupply().call() //tsup
-	tomb_tom_0 = tomb_tom.methods.balanceOf("0x9d2f00f684960Ec83a3d042F3EAdD70e105f83cb").call();
-	tomb_tom_1 = tomb_tom.methods.balanceOf("0xfca12A13ac324C09e9F43B5e5cfC9262f3Ab3223").call();
-	tomb_tom_3 = tomb_tom.methods.balanceOf("0x2B2703716D3234b787C42E89950653688C012dEa").call();
-	tomb_tom_4 = tomb_tom.methods.balanceOf("0x45f4682B560d4e3B8FF1F1b3A38FDBe775C7177b").call();
-	Promise.all([tomb_plp_tsh,tomb_lts_tsh, tomb_p_tom, tomb_tom_0,tomb_tom_1,tomb_tom_3,tomb_tom_4]).then(r=>{
-		tl = Number(r[0])*Number(r[1])/1e36	// tvl_lp_tsh#2
-			+ (Number(r[2])/1e18) *2	//p_tom
-			* (Number(r[3]) + Number(r[4]) + Number(r[5]) + Number(r[6])) /1e18;	//tom_bals
-		$("d_tomb").getElementsByTagName("td")[3].innerHTML=Number((tl).toFixed(0)).toLocaleString();
-		gobj[0]+=tl;
-		ref_os();
-		//console.log("TOMB: ",r)
-		sortit(3);sortit(3);
-	})
-
-
-
-}
-catch(e){}
-}
-
-
-
 
 async function ggmtv()
 {
@@ -2158,15 +855,15 @@ async function ggmtv()
 	})
 
 	//xdao
-		/*
-		0xfc0c8d38166fc417f19de5b44cfc339079a70913	htz
-		0x8e321596267a4727746b2f48bc8736db5da26977	wmtv
-		0xea1199d50ee09fa8062fd9da3d55c6f90c1babd2	usdc
+	/*
+	0xfc0c8d38166fc417f19de5b44cfc339079a70913	htz
+	0x8e321596267a4727746b2f48bc8736db5da26977	wmtv
+	0xea1199d50ee09fa8062fd9da3d55c6f90c1babd2	usdc
 
-		0x5269308450724513887ef0d51234976d7229c18e	wmtv-htz
-		0x32f38698550d4b36168a09df49ddd8cba67eaee5	mtv-usdc
-		0xf0a21ff216f42d7b262261778b7ffe6685082169	usdc-htz
-		*/
+	0x5269308450724513887ef0d51234976d7229c18e	wmtv-htz
+	0x32f38698550d4b36168a09df49ddd8cba67eaee5	mtv-usdc
+	0xf0a21ff216f42d7b262261778b7ffe6685082169	usdc-htz
+	*/
 
 	xdao_p_lpt_wmtv_htz = tvlGuru.methods.p_lpt_coin_usd("0x5269308450724513887ef0d51234976d7229c18e").call()
 	xdao_p_lpt_mtv_usdc = tvlGuru.methods.p_lpt_coin_usd("0x32f38698550d4b36168a09df49ddd8cba67eaee5").call()
@@ -2299,6 +996,14 @@ async function ggmtv()
 		sortit(3);sortit(3);
 	})
 
+	fetch("https://api.llama.fi/protocol/abcdefx")
+	.then(d1=>{return d1.json()})
+	.then(d2=>{
+		console.log(d2)
+		$("d_abcdefx").getElementsByTagName("td")[3].innerHTML = Number((d2.currentChainTvls.MultiVAC).toFixed()).toLocaleString()
+		sortit(3);sortit(3);
+	})
+
 
 
 
@@ -2349,7 +1054,9 @@ function fillage()
 {
 	n = Date.now();
 	for(i=0;i< di.length;i++){
-	console.log("d_"+di[i][0].toLowerCase());$("d_"+di[i][0].toLowerCase()).getElementsByTagName("td")[4].innerHTML=((n-di[i][3]*1e3)/(86400000)).toFixed()}
+		console.log("d_"+di[i][0].toLowerCase());
+		$("d_"+di[i][0].toLowerCase()).getElementsByTagName("td")[4].innerHTML=((n-di[i][3]*1e3)/(86400000)).toFixed()
+	}
 }
 </script><!--
 <script defer type="text/javascript" async="true">
